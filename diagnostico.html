@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pre-diagnóstico en línea — DataconsultingRRL</title>
+<style>
+  :root{
+    --fondo:#08091a; --fondo-2:#0f1128; --panel:#141733; --panel-2:#1b1f3f;
+    --linea:#282d55; --linea-luz:#363c6e;
+    --violeta:#7c5cff; --violeta-cl:#9d85ff; --cian:#22d3ee;
+    --texto:#e7e9f7; --suave:#a3a8cc; --tenue:#767ba3; --blanco:#fff;
+    --peligro:#ff6b6b;
+    /* alias heredados por el marcado original */
+    --primary:#7c5cff; --primary-d:#9d85ff; --secondary:#5b7cff; --tertiary:#22d3ee;
+    --neutral:#767ba3; --ink:#ffffff; --card:#141733; --gris:#a3a8cc; --azul:#9d85ff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif}
+  body{background:var(--fondo);color:var(--texto);line-height:1.6;-webkit-font-smoothing:antialiased}
+  header{position:relative;overflow:hidden;text-align:center;padding:44px 18px 40px;
+         background:linear-gradient(150deg,#151338 0%,#0b0c20 100%)}
+  header::before{content:"";position:absolute;inset:0;
+    background:radial-gradient(620px 300px at 50% -10%,rgba(124,92,255,.42),transparent 66%)}
+  header > *{position:relative;z-index:2}
+  header h1{font-size:1.8rem;font-weight:800;letter-spacing:-.03em;color:#fff}
+  header p.tag{color:var(--violeta-cl);font-size:.78rem;margin-top:9px;font-weight:700;
+               letter-spacing:.1em;text-transform:uppercase}
+  header p.frase{color:var(--suave);opacity:.95;font-size:.85rem;margin-top:10px}
+  main{max-width:660px;margin:0 auto;padding:18px}
+  .card{background:var(--panel);border:1px solid var(--linea);border-radius:18px;
+        padding:26px;margin:18px 0}
+  h2{color:#fff;font-size:1.16rem;font-weight:700;margin-bottom:16px;letter-spacing:-.02em}
+  .productos{display:grid;gap:12px}
+  .prod{border:1px solid var(--linea);border-radius:14px;padding:18px;cursor:pointer;
+        transition:.2s;background:var(--fondo-2)}
+  .prod:hover{border-color:var(--linea-luz);transform:translateY(-2px)}
+  .prod.sel{border-color:var(--violeta);background:rgba(124,92,255,.11);
+            box-shadow:0 8px 26px rgba(124,92,255,.26)}
+  .prod b{color:#fff;display:block;font-size:1rem;font-weight:700;margin-bottom:4px}
+  .prod small{color:var(--suave);font-size:.79rem;line-height:1.5;display:block}
+  label{display:block;font-size:.85rem;font-weight:650;color:var(--texto);margin:18px 0 6px}
+  select{width:100%;padding:13px 15px;border:1px solid var(--linea);border-radius:12px;
+    font-size:.9rem;background:var(--fondo-2);color:var(--texto);appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239d85ff' stroke-width='2.5'><path d='M6 9l6 6 6-6'/></svg>");
+    background-repeat:no-repeat;background-position:right 14px center}
+  select:focus{outline:none;border-color:var(--violeta);box-shadow:0 0 0 3px rgba(124,92,255,.25)}
+  select option{background:#141733;color:#e7e9f7}
+  input[type=text],input[type=email],input[type=tel]{width:100%;padding:12px 15px;
+    border:1px solid var(--linea);border-radius:12px;font-size:.9rem;background:var(--fondo-2);
+    color:var(--texto);margin-bottom:4px}
+  input::placeholder{color:#5f648c}
+  input:focus{outline:none;border-color:var(--violeta);box-shadow:0 0 0 3px rgba(124,92,255,.25)}
+  .check{display:flex;gap:11px;align-items:flex-start;margin-top:18px;font-size:.83rem;
+         color:var(--suave)}
+  .check input{margin-top:3px;width:18px;height:18px;flex-shrink:0;accent-color:var(--violeta)}
+  button{width:100%;margin-top:24px;padding:16px;border:none;border-radius:12px;
+    font-size:1rem;font-weight:700;cursor:pointer;transition:.2s;color:#fff;
+    background:linear-gradient(100deg,var(--violeta) 0%,#5b7cff 100%);
+    box-shadow:0 8px 28px rgba(124,92,255,.4)}
+  button:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(124,92,255,.52)}
+  #resultado{display:none}
+  .precio{font-size:2.1rem;font-weight:800;margin:10px 0;letter-spacing:-.03em;
+    background:linear-gradient(100deg,var(--violeta-cl),var(--cian));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .nivel{display:inline-block;background:rgba(34,211,238,.13);color:var(--cian);
+         border:1px solid rgba(34,211,238,.34);border-radius:999px;padding:6px 17px;
+         font-size:.79rem;font-weight:700}
+  .fila{display:flex;justify-content:space-between;gap:14px;padding:12px 0;
+        border-bottom:1px solid var(--linea);font-size:.88rem;color:var(--suave)}
+  .fila span:last-child{font-weight:650;color:#fff;text-align:right}
+  ul.benef{margin:12px 0 0 18px;font-size:.88rem;color:var(--suave)}
+  ul.benef li{margin:6px 0}
+  .alerta{background:rgba(124,92,255,.09);border:1px solid var(--linea);
+          border-left:3px solid var(--violeta);padding:15px;border-radius:12px;
+          font-size:.82rem;margin-top:18px;color:var(--suave)}
+  .eval{background:rgba(255,107,107,.09);border:1px solid rgba(255,107,107,.3);
+        border-left:3px solid var(--peligro);padding:15px;border-radius:12px;
+        font-size:.9rem;font-weight:650;color:#ffb3b3}
+  .cta{position:relative;overflow:hidden;text-align:center;padding:26px;border-radius:16px;
+       margin-top:18px;background:linear-gradient(150deg,#1b1f3f 0%,#12142e 100%);
+       border:1px solid var(--linea-luz);color:var(--texto)}
+  .cta::before{content:"";position:absolute;inset:0;
+    background:radial-gradient(420px 200px at 50% 0%,rgba(124,92,255,.32),transparent 68%)}
+  .cta > *{position:relative;z-index:2}
+  .cta p{font-size:.87rem;color:var(--suave)}
+  .cta a{display:inline-block;margin-top:14px;padding:14px 30px;border-radius:12px;
+    text-decoration:none;font-weight:700;font-size:.95rem;transition:.2s;color:#fff;
+    background:linear-gradient(100deg,var(--violeta) 0%,#5b7cff 100%);
+    box-shadow:0 8px 26px rgba(124,92,255,.4)}
+  .cta a:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(124,92,255,.52)}
+  .check a{display:inline;margin:0;padding:0;background:none;box-shadow:none;
+    color:var(--violeta-cl);text-decoration:underline;font-weight:600;font-size:inherit;
+    border-radius:0}
+  .check a:hover{transform:none;box-shadow:none;color:var(--cian);background:none}
+  footer{text-align:center;color:var(--tenue);font-size:.76rem;padding:24px 18px}
+  .volver{background:none;border:none;color:var(--violeta-cl);text-decoration:underline;
+    font-size:.85rem;width:auto;margin-top:14px;padding:4px;font-weight:500;cursor:pointer;
+    box-shadow:none}
+  .volver:hover{background:none;transform:none;color:var(--cian);box-shadow:none}
+  @media(min-width:620px){header h1{font-size:2.1rem}.productos{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div style="background:#060714;border-bottom:1px solid #282d55;padding:13px 22px">
+  <a href="index.html" style="color:#a3a8cc;text-decoration:none;font-size:.9rem;font-weight:500">&larr; Volver al inicio</a>
+</div>
+<header>
+  <h1>DataconsultingRRL</h1>
+  <p class="tag">Automatización con IA · Business Intelligence · Control de gestión</p>
+  <p class="frase">"Transformamos datos en decisiones. Automatizamos procesos. Impulsamos resultados."</p>
+</header>
+<main>
+
+  <div class="card" id="paso1">
+    <h2>1 · ¿Qué solución necesita su empresa?</h2>
+    <div class="productos">
+      <div class="prod" data-p="360" onclick="elegir('360',this)">
+        <b>Empresa Digital 360</b>
+        <small>CRM, cotizaciones, órdenes de trabajo, facturación, flujo de caja, inventario, dashboard gerencial y automatizaciones. Desde $2.250.000 · 6–16 semanas</small>
+      </div>
+      <div class="prod" data-p="cob" onclick="elegir('cob',this)">
+        <b>Cobranza Inteligente</b>
+        <small>Facturas, correos automáticos, alertas, compromisos de pago e indicadores (vencidas, DSO, antigüedad, recuperación). Desde $450.000 · 2–6 semanas</small>
+      </div>
+      <div class="prod" data-p="aut" onclick="elegir('aut',this)">
+        <b>Automatización y Digitalización de Procesos</b>
+        <small>Levantamiento de procesos, formularios, correos, PDFs, reportes automáticos y dashboard. Desde $750.000 · 3–12 semanas</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" id="paso2" style="display:none">
+    <h2>2 · Cuéntenos sobre su operación</h2>
+    <div id="preguntas"></div>
+    <div class="check">
+      <input type="checkbox" id="devNuevo">
+      <span>Necesito funcionalidades muy específicas que probablemente requieran un desarrollo completamente nuevo.</span>
+    </div>
+    <button onclick="calcular()">Ver mi pre-diagnóstico</button>
+    <button class="volver" onclick="reiniciar()">← Cambiar de producto</button>
+  </div>
+
+  <div class="card" id="resultado">
+    <h2>3 · Su pre-diagnóstico</h2>
+    <div id="resNormal">
+      <span class="nivel" id="rNivel"></span>
+      <p class="precio" id="rPrecio"></p>
+      <div class="fila"><span>Producto</span><span id="rProd"></span></div>
+      <div class="fila"><span>Puntaje de complejidad</span><span id="rPuntos"></span></div>
+      <div class="fila"><span>Duración estimada de implementación</span><span id="rDur"></span></div>
+      <div class="fila"><span>Soporte y mejora continua (Plan Premium)</span><span>$300.000/mes</span></div>
+      <p style="margin-top:14px;font-size:.9rem;font-weight:600;color:var(--azul)">Beneficios para su empresa:</p>
+      <ul class="benef">
+        <li>Reducción de tiempo en tareas repetitivas</li>
+        <li>Disminución de errores</li>
+        <li>Mayor trazabilidad y control</li>
+        <li>Centralización de la información</li>
+        <li>Mejor toma de decisiones</li>
+      </ul>
+    </div>
+    <div class="eval" id="resEval" style="display:none">
+      Su proyecto requiere evaluación técnica.<br>
+      <span style="font-weight:400;font-size:.83rem">Detectamos necesidades de desarrollo a medida. El valor se cotiza fuera del catálogo tras una evaluación con nuestro equipo.</span>
+    </div>
+    <div class="alerta">
+      <b>Importante:</b> este es un precio preliminar referencial. El precio final y el alcance definitivo se confirman con el <b>Diagnóstico Inicial ($225.000)</b>: entrevistas, mapa de procesos, oportunidades de automatización y roadmap de implementación.
+    </div>
+    <div class="cta">
+      <p><b>¿Conversamos sobre su empresa?</b><br>Complete sus datos y reciba la propuesta de Diagnóstico Inicial.</p>
+      <div style="text-align:left;background:rgba(255,255,255,.12);border-radius:12px;padding:14px;margin-top:12px">
+        <label style="color:#fff" for="cEmpresa">Empresa</label>
+        <input id="cEmpresa" type="text" placeholder="Nombre de su empresa">
+        <label style="color:#fff" for="cNombre">Nombre de contacto</label>
+        <input id="cNombre" type="text" placeholder="Su nombre">
+        <label style="color:#fff" for="cEmail">Correo</label>
+        <input id="cEmail" type="email" placeholder="correo@empresa.cl">
+        <label style="color:#fff" for="cFono">Teléfono</label>
+        <input id="cFono" type="tel" placeholder="+56 9 ...">
+        <div class="check" style="color:#eaf3f3;margin-top:12px">
+          <input type="checkbox" id="cConsent">
+          <span>Autorizo el uso de mis datos solo para contactarme sobre esta solicitud, conforme a la
+            <a href="privacidad.html" target="_blank" style="color:#9d85ff">Política de Privacidad</a>
+            (Leyes 19.628 y 21.719).</span>
+        </div>
+      </div>
+      <a id="mailBtn" href="#" onclick="return enviarSolicitud()">Solicitar Diagnóstico</a>
+      <p id="envMsg" style="margin-top:10px;font-size:.8rem;display:none"></p>
+    </div>
+    <button class="volver" onclick="reiniciar()">← Hacer otra simulación</button>
+  </div>
+
+</main>
+<footer>
+  DataConsultingRRL · rocio.rojas@dataconsultingrrl.com<br>
+  Cumplimiento Ley 19.628 y Ley 21.719 · Sus datos se usan únicamente para gestionar esta solicitud.
+</footer>
+
+<script>
+const MATRICES = {
+  "360": {
+    nombre:"Empresa Digital 360", dur:"6–16 semanas",
+    precios:[2250000,2812500,3375000,3937500,4500000],
+    criterios:[
+      {id:"usuarios", label:"¿Cuántas personas usarán el sistema?", ops:[["1–5",0],["6–15",1],["16–30",2],["31 o más",3]]},
+      {id:"sucursales", label:"¿Cuántas sucursales o sedes tiene?", ops:[["1",0],["2–3",1],["4–6",2],["7 o más",3]]},
+      {id:"procesos", label:"¿Cuántos procesos quiere digitalizar?", ops:[["1–3",0],["4–6",1],["7–10",2],["11 o más",3]]},
+      {id:"automatizaciones", label:"¿Cuántas automatizaciones estima necesitar?", ops:[["1–5",0],["6–10",1],["11–20",2],["21 o más",3]]},
+      {id:"dashboards", label:"¿Cuántos dashboards necesita?", ops:[["1",0],["2–3",1],["4–6",2],["7 o más",3]]},
+      {id:"integraciones", label:"¿Con cuántos sistemas externos debe integrarse?", ops:[["Ninguno",0],["1",1],["2",2],["3 o más",3]]},
+      {id:"complejidad", label:"¿Cómo describiría la complejidad de su negocio?", ops:[["Baja (operación simple y estandarizada)",0],["Media (varias áreas y reglas propias)",2],["Alta (múltiples áreas, reglas y excepciones)",4]]}
+    ]
+  },
+  "cob": {
+    nombre:"Cobranza Inteligente", dur:"2–6 semanas",
+    precios:[450000,637500,825000,1012500,1200000],
+    criterios:[
+      {id:"usuarios", label:"¿Cuántas personas usarán el sistema?", ops:[["1–5",0],["6–10",1],["11–20",2],["21 o más",3]]},
+      {id:"automatizaciones", label:"¿Cuántas automatizaciones de cobranza estima?", ops:[["1–2",0],["3–5",1],["6–10",2],["11 o más",3]]},
+      {id:"integraciones", label:"¿Con cuántos sistemas debe integrarse (facturación, ERP)?", ops:[["Ninguno",0],["1",1],["2",2],["3 o más",3]]},
+      {id:"reglas", label:"¿Qué tan complejas son sus reglas de cobranza?", ops:[["Básicas (recordatorios simples)",0],["Intermedias (tramos y escalamiento)",2],["Avanzadas (reglas por cliente, excepciones)",4]]}
+    ]
+  },
+  "aut": {
+    nombre:"Automatización y Digitalización de Procesos", dur:"3–12 semanas",
+    precios:[750000,1312500,1875000,2437500,3000000],
+    criterios:[
+      {id:"procesos", label:"¿Cuántos procesos quiere automatizar?", ops:[["1",0],["2–4",1],["5–8",2],["9 o más",3]]},
+      {id:"automatizaciones", label:"¿Cuántas automatizaciones estima necesitar?", ops:[["1–3",0],["4–8",1],["9–15",2],["16 o más",3]]},
+      {id:"integraciones", label:"¿Con cuántos sistemas externos debe integrarse?", ops:[["Ninguno",0],["1",1],["2",2],["3 o más",3]]},
+      {id:"documentos", label:"¿Cuántos documentos automáticos por mes (PDFs, reportes)?", ops:[["0–5",0],["6–15",1],["16–30",2],["31 o más",3]]},
+      {id:"complejidad", label:"¿Cómo describiría la complejidad de sus procesos?", ops:[["Baja",0],["Media",2],["Alta",4]]}
+    ]
+  }
+};
+const NIVELES = [
+  {max:4,  nombre:"Nivel Base", idx:0},
+  {max:8,  nombre:"Nivel 2", idx:1},
+  {max:12, nombre:"Nivel 3", idx:2},
+  {max:16, nombre:"Nivel 4", idx:3},
+  {max:Infinity, nombre:"Nivel Máximo", idx:4}
+];
+let productoSel = null;
+
+function elegir(p, el){
+  productoSel = p;
+  document.querySelectorAll('.prod').forEach(x=>x.classList.remove('sel'));
+  el.classList.add('sel');
+  const m = MATRICES[p];
+  document.getElementById('preguntas').innerHTML = m.criterios.map(c =>
+    `<label for="${c.id}">${c.label}</label>
+     <select id="${c.id}">${c.ops.map((o,i)=>`<option value="${o[1]}">${o[0]}</option>`).join('')}</select>`
+  ).join('');
+  document.getElementById('paso2').style.display='block';
+  document.getElementById('resultado').style.display='none';
+  document.getElementById('devNuevo').checked=false;
+  document.getElementById('paso2').scrollIntoView({behavior:'smooth'});
+}
+
+function fmt(n){ return '$' + n.toLocaleString('es-CL'); }
+
+// URL del flujo de Power Automate ("When an HTTP request is received").
+// Pendiente de definir: pegar aquí la URL al crear el flujo (ver web/automatizacion_solicitudes.md).
+const FLOW_URL = "";
+let ultimoResultado = null;
+
+function calcular(){
+  const m = MATRICES[productoSel];
+  let puntos = 0;
+  const detalle = m.criterios.map(c=>{
+    const sel = document.getElementById(c.id);
+    puntos += parseInt(sel.value);
+    return c.label + ': ' + sel.options[sel.selectedIndex].text;
+  });
+  const devNuevo = document.getElementById('devNuevo').checked;
+  const nivel = NIVELES.find(n => puntos <= n.max);
+
+  ultimoResultado = {
+    producto: m.nombre, detalle, puntos,
+    nivel: devNuevo ? 'Requiere evaluación técnica' : nivel.nombre,
+    precioRef: devNuevo ? null : m.precios[nivel.idx],
+    duracion: m.dur, evaluacionTecnica: devNuevo,
+    fecha: new Date().toISOString()
+  };
+
+  document.getElementById('resultado').style.display='block';
+  if(devNuevo){
+    document.getElementById('resNormal').style.display='none';
+    document.getElementById('resEval').style.display='block';
+  } else {
+    document.getElementById('resNormal').style.display='block';
+    document.getElementById('resEval').style.display='none';
+    document.getElementById('rNivel').textContent = nivel.nombre;
+    document.getElementById('rPrecio').textContent = fmt(m.precios[nivel.idx]) + ' + IVA (referencial)';
+    document.getElementById('rProd').textContent = m.nombre;
+    document.getElementById('rPuntos').textContent = puntos + ' puntos';
+    document.getElementById('rDur').textContent = m.dur;
+  }
+  document.getElementById('envMsg').style.display='none';
+  document.getElementById('resultado').scrollIntoView({behavior:'smooth'});
+}
+
+function resumenTexto(r, c){
+  return 'Solicitud de Diagnóstico\n\nProducto: ' + r.producto + '\n' + r.detalle.join('\n') + '\n' +
+    (r.evaluacionTecnica ? 'Nota: posible desarrollo a medida (requiere evaluación técnica).'
+      : 'Puntaje: ' + r.puntos + ' — ' + r.nivel + ' — Precio referencial: ' + fmt(r.precioRef)) +
+    '\n\nEmpresa: ' + c.empresa + '\nContacto: ' + c.nombre + '\nCorreo: ' + c.email + '\nTeléfono: ' + c.telefono;
+}
+
+function msg(t, ok){
+  const el = document.getElementById('envMsg');
+  el.textContent = t; el.style.display='block'; el.style.color = ok ? '#eaffea' : '#ffe3e0';
+}
+
+function enviarSolicitud(){
+  const c = {
+    empresa: document.getElementById('cEmpresa').value.trim(),
+    nombre: document.getElementById('cNombre').value.trim(),
+    email: document.getElementById('cEmail').value.trim(),
+    telefono: document.getElementById('cFono').value.trim()
+  };
+  if(!ultimoResultado){ msg('Primero complete el pre-diagnóstico.', false); return false; }
+  if(!c.empresa || !c.nombre || !c.email){ msg('Complete empresa, nombre y correo.', false); return false; }
+  if(!document.getElementById('cConsent').checked){ msg('Debe autorizar el uso de sus datos para contactarlo.', false); return false; }
+
+  const mailto = 'mailto:rocio.rojas@dataconsultingrrl.com?subject=' +
+    encodeURIComponent('Solicitud de Diagnóstico — ' + ultimoResultado.producto) +
+    '&body=' + encodeURIComponent(resumenTexto(ultimoResultado, c));
+
+  if(!FLOW_URL){ window.location.href = mailto; return false; }
+
+  msg('Enviando…', true);
+  fetch(FLOW_URL, {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({ ...ultimoResultado, contacto: c, origen:'web/diagnostico_cliente.html' })
+  }).then(r => {
+    if(!r.ok) throw new Error(r.status);
+    msg('¡Solicitud recibida! Le contactaremos a la brevedad a ' + c.email + '.', true);
+  }).catch(() => {
+    msg('No pudimos enviar en línea; se abrirá su correo como alternativa.', false);
+    window.location.href = mailto;
+  });
+  return false;
+}
+
+function reiniciar(){
+  productoSel=null;
+  document.querySelectorAll('.prod').forEach(x=>x.classList.remove('sel'));
+  document.getElementById('paso2').style.display='none';
+  document.getElementById('resultado').style.display='none';
+  document.getElementById('paso1').scrollIntoView({behavior:'smooth'});
+}
+</script>
+<div style="background:#060714;border-top:1px solid #282d55;color:#767ba3;padding:26px 22px;text-align:center;font-size:.84rem">
+  © 2026 DataconsultingRRL ·
+  <a href="terminos.html" style="color:#a3a8cc">Términos de uso</a> ·
+  <a href="privacidad.html" style="color:#a3a8cc">Política de privacidad</a><br>
+  Los valores mostrados son referenciales, en pesos chilenos y no incluyen IVA.
+</div>
+</body>
+</html>
