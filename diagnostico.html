@@ -176,7 +176,7 @@
       </div>
       <div class="prod" data-p="prem" onclick="elegir('prem',this)">
         <b>Plan de Continuidad</b>
-        <small>Mantención y mejoras después de la implementación. 5% del valor del proyecto al mes, desde $45.000</small>
+        <small>Mantención y mejoras después de la implementación. Horas mensuales según el tamaño del sistema, desde $90.000</small>
       </div>
     </div>
     </div>
@@ -202,7 +202,7 @@
       <div class="fila" id="filaPuntos"><span>Puntaje de complejidad</span><span id="rPuntos"></span></div>
       <div class="fila" id="filaFinal"><span>Precio final</span><span id="rFinal"></span></div>
       <div class="fila"><span>Duración estimada</span><span id="rDur"></span></div>
-      <div class="fila" id="filaGarantia"><span>Garantía incluida</span><span>2 meses sin costo</span></div>
+      <div class="fila" id="filaGarantia"><span>Acompañamiento post-implementación</span><span id="rGarantia"></span></div>
       <div class="fila" id="filaPremium"><span>Plan de Continuidad (opcional, desde el mes 3)</span><span id="rContinuidad"></span></div>
       <p style="margin-top:14px;font-size:.9rem;font-weight:600;color:var(--azul)">Beneficios para su empresa:</p>
       <ul class="benef">
@@ -343,7 +343,7 @@ const MATRICES = {
       {id:"foco", label:"¿Qué área le preocupa más hoy?", ops:[["Comercial y clientes",0],["Operaciones y producción",0],["Finanzas y cobranza",0],["Toda la empresa",1]]}
     ]},
   "prem": { tipo:"fijo",
-    nombre:"Plan de Continuidad", dur:"Mensual, sin permanencia mínima", precio:45000, mensual:true, desdeMensual:true,
+    nombre:"Plan de Continuidad", dur:"Mensual, sin permanencia mínima", precio:90000, mensual:true, desdeMensual:true,
     criterios:[
       {id:"implementado", label:"¿Ya tiene una solución implementada con nosotros?", ops:[["Sí",0],["Todavía no, estoy evaluando",1]]},
       {id:"soporte", label:"¿Qué necesita principalmente del plan?", ops:[["Mantención y correcciones",0],["Mejoras y nuevas funciones",0],["Ambas",0]]}
@@ -376,12 +376,18 @@ function elegir(p, el){
 
 function fmt(n){ return '$' + n.toLocaleString('es-CL'); }
 
-// Plan de Continuidad: 5% del valor del proyecto al mes, piso $45.000, tope $250.000.
-// El soporte nunca debe costar más que el desarrollo en un horizonte corto.
-function continuidad(monto){
-  const bruto = Math.round(monto * 0.05 / 5000) * 5000;
-  return Math.min(250000, Math.max(45000, bruto));
-}
+// Plan de Continuidad: se cotiza por HORAS, no por porcentaje del proyecto.
+// Un sistema grande tiene más módulos, usuarios e integraciones, y sus
+// incidencias son más complejas: el precio refleja tiempo, no valor.
+// Valor hora de soporte: $45.000 (pendiente de confirmación).
+const TRAMOS = [
+  {max:500000,  horas:0, valor:0},
+  {max:1000000, horas:2, valor:90000},
+  {max:2000000, horas:3, valor:135000},
+  {max:3500000, horas:5, valor:225000},
+  {max:Infinity,horas:8, valor:360000}
+];
+function tramo(monto){ return TRAMOS.find(t => monto <= t.max); }
 
 // URL del flujo de Power Automate ("When an HTTP request is received").
 // Pendiente de definir: pegar aquí la URL al crear el flujo (ver web/automatizacion_solicitudes.md).
@@ -414,7 +420,7 @@ function calcular(){
     etiqueta = 'Valor fijo';
     montoRef = m.precio;
     textoPrecio = (m.desdeMensual ? 'Desde ' : '') + fmt(montoRef) + (m.mensual ? ' por mes' : '') + ' + IVA';
-    if(m.desdeMensual) precioFinal = '5% del valor del proyecto al mes, con tope de $250.000';
+    if(m.desdeMensual) precioFinal = 'Por tramos de horas según el proyecto: $90.000 (2 h) · $135.000 (3 h) · $225.000 (5 h) · $360.000 (8 h)';
   }
 
   ultimoResultado = {
@@ -442,7 +448,13 @@ function calcular(){
     document.getElementById('filaPuntos').style.display = esProducto ? 'flex' : 'none';
     document.getElementById('filaPremium').style.display = (m.tipo === 'fijo') ? 'none' : 'flex';
     document.getElementById('filaGarantia').style.display = (m.tipo === 'fijo') ? 'none' : 'flex';
-    document.getElementById('rContinuidad').textContent = fmt(continuidad(montoRef)) + '/mes';
+    const t = tramo(montoRef);
+    document.getElementById('rGarantia').textContent = montoRef >= 1000000
+      ? '2 meses sin costo'
+      : (t.valor ? '2 meses obligatorios: ' + fmt(t.valor * 2) : '2 meses de soporte a demanda');
+    document.getElementById('rContinuidad').textContent = t.valor
+      ? fmt(t.valor) + '/mes · ' + t.horas + ' horas incluidas'
+      : 'A demanda: $45.000/hora';
     const fFinal = document.getElementById('filaFinal');
     if(precioFinal){ document.getElementById('rFinal').textContent = precioFinal; fFinal.style.display='flex'; }
     else { fFinal.style.display='none'; }
@@ -453,7 +465,7 @@ function calcular(){
   } else if(m.tipo === 'complementario'){
     aviso.innerHTML = '<b>Importante:</b> los servicios complementarios se publican solo con precio <b>desde</b>. El valor final depende del alcance real y se confirma con el <b>Diagnóstico Inicial ($225.000)</b>: entrevistas, mapa de procesos y roadmap de implementación.';
   } else if(m.tipo === 'fijo'){
-    aviso.innerHTML = '<b>Importante:</b> todo proyecto incluye <b>2 meses de garantía sin costo</b>. El Plan de Continuidad es opcional y recién parte en el tercer mes, sobre una solución ya implementada por DataconsultingRRL. Cuesta el <b>5% del valor del proyecto al mes</b> (piso $45.000, tope $250.000) y no tiene permanencia mínima: se puede suspender cuando quiera.';
+    aviso.innerHTML = '<b>Importante:</b> los proyectos desde $1.000.000 incluyen <b>2 meses de acompañamiento sin costo</b>; bajo ese monto los 2 meses se cobran como línea aparte. El Plan de Continuidad es opcional, parte en el tercer mes sobre una solución ya implementada por DataconsultingRRL y se cotiza por <b>horas mensuales</b> según el tamaño del sistema, no como porcentaje del proyecto. Sin permanencia mínima: se suspende cuando quiera.';
   } else {
     aviso.innerHTML = '<b>Importante:</b> este es un precio preliminar referencial. El precio final y el alcance definitivo se confirman con el <b>Diagnóstico Inicial ($225.000)</b>: entrevistas, mapa de procesos, oportunidades de automatización y roadmap de implementación.';
   }
