@@ -176,7 +176,7 @@
       </div>
       <div class="prod" data-p="prem" onclick="elegir('prem',this)">
         <b>Plan de Continuidad</b>
-        <small>Mantención y mejoras después de la implementación. 10% exacto del valor del proyecto al mes, con horas incluidas</small>
+        <small>Mantención y mejoras después de la implementación. 10% exacto del valor del proyecto al mes (mín. $45.000 = 1 hora), con horas incluidas</small>
       </div>
     </div>
     </div>
@@ -381,7 +381,8 @@ function fmt(n){ return '$' + n.toLocaleString('es-CL'); }
 // la defienden. Valor hora de soporte: $45.000 (confirmado 2026-08-13).
 const HORA_SOPORTE = 45000;
 function continuidad(monto){
-  const valor = Math.round(monto * 0.10);
+  // 10% exacto, con un piso de una hora: bajo eso no hay servicio que prestar.
+  const valor = Math.max(HORA_SOPORTE, Math.round(monto * 0.10));
   return { valor, horas: valor / HORA_SOPORTE };
 }
 function fmtHoras(h){
@@ -422,7 +423,7 @@ function calcular(){
     etiqueta = 'Valor fijo';
     montoRef = m.precio;
     textoPrecio = (m.desdeMensual ? 'Desde ' : '') + fmt(montoRef) + (m.mensual ? ' por mes' : '') + ' + IVA';
-    if(m.desdeMensual) precioFinal = '10% exacto del valor del proyecto al mes. Ejemplos: $1.200.000 → $120.000 (2 h 40 min) · $3.000.000 → $300.000 (6 h 40 min)';
+    if(m.desdeMensual) precioFinal = '10% exacto del valor del proyecto al mes, con un mínimo de $45.000 (1 hora). Ejemplos: $1.200.000 → $120.000 (2 h 40 min) · $3.000.000 → $300.000 (6 h 40 min)';
   }
 
   ultimoResultado = {
