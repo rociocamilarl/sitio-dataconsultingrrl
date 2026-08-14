@@ -176,7 +176,7 @@
       </div>
       <div class="prod" data-p="prem" onclick="elegir('prem',this)">
         <b>Plan de Continuidad</b>
-        <small>Mantención y mejoras después de la implementación. 10% del valor del proyecto al mes, con horas incluidas</small>
+        <small>Mantención y mejoras después de la implementación. 10% exacto del valor del proyecto al mes, con horas incluidas</small>
       </div>
     </div>
     </div>
@@ -381,10 +381,15 @@ function fmt(n){ return '$' + n.toLocaleString('es-CL'); }
 // la defienden. Valor hora de soporte: $45.000 (confirmado 2026-08-13).
 const HORA_SOPORTE = 45000;
 function continuidad(monto){
-  const horas = Math.max(1, Math.round(monto * 0.10 / HORA_SOPORTE * 2) / 2);
-  return { horas, valor: horas * HORA_SOPORTE };
+  const valor = Math.round(monto * 0.10);
+  return { valor, horas: valor / HORA_SOPORTE };
 }
-function fmtHoras(h){ return (h % 1 ? h.toFixed(1).replace('.', ',') : h) + (h === 1 ? ' hora' : ' horas'); }
+function fmtHoras(h){
+  let e = Math.floor(h), m = Math.round((h - e) * 60);
+  if(m === 60){ e++; m = 0; }
+  if(e === 0) return m + ' min';
+  return e + ' h' + (m ? ' ' + m + ' min' : '');
+}
 
 // URL del flujo de Power Automate ("When an HTTP request is received").
 // Pendiente de definir: pegar aquí la URL al crear el flujo (ver web/automatizacion_solicitudes.md).
@@ -417,7 +422,7 @@ function calcular(){
     etiqueta = 'Valor fijo';
     montoRef = m.precio;
     textoPrecio = (m.desdeMensual ? 'Desde ' : '') + fmt(montoRef) + (m.mensual ? ' por mes' : '') + ' + IVA';
-    if(m.desdeMensual) precioFinal = '10% del valor del proyecto al mes. Ejemplos: $1.200.000 → $112.500 (2,5 h) · $3.000.000 → $292.500 (6,5 h)';
+    if(m.desdeMensual) precioFinal = '10% exacto del valor del proyecto al mes. Ejemplos: $1.200.000 → $120.000 (2 h 40 min) · $3.000.000 → $300.000 (6 h 40 min)';
   }
 
   ultimoResultado = {
@@ -461,7 +466,7 @@ function calcular(){
   } else if(m.tipo === 'complementario'){
     aviso.innerHTML = '<b>Importante:</b> los servicios complementarios se publican solo con precio <b>desde</b>. El valor final depende del alcance real y se confirma con el <b>Diagnóstico Inicial ($225.000)</b>: entrevistas, mapa de procesos y roadmap de implementación.';
   } else if(m.tipo === 'fijo'){
-    aviso.innerHTML = '<b>Importante:</b> los proyectos desde $1.000.000 incluyen <b>2 meses de acompañamiento sin costo</b>; bajo ese monto los 2 meses se cobran como línea aparte. El Plan de Continuidad es opcional, parte en el tercer mes sobre una solución ya implementada por DataconsultingRRL y cuesta el <b>10% del valor del proyecto al mes</b>, con un número concreto de horas incluidas. Sin permanencia mínima: se suspende cuando quiera.';
+    aviso.innerHTML = '<b>Importante:</b> los proyectos desde $1.000.000 incluyen <b>2 meses de acompañamiento sin costo</b>; bajo ese monto los 2 meses se cobran como línea aparte. El Plan de Continuidad es opcional, parte en el tercer mes sobre una solución ya implementada por DataconsultingRRL y cuesta el <b>10% exacto del valor del proyecto al mes</b>, con un número concreto de horas incluidas. Sin permanencia mínima: se suspende cuando quiera.';
   } else {
     aviso.innerHTML = '<b>Importante:</b> este es un precio preliminar referencial. El precio final y el alcance definitivo se confirman con el <b>Diagnóstico Inicial ($225.000)</b>: entrevistas, mapa de procesos, oportunidades de automatización y roadmap de implementación.';
   }
