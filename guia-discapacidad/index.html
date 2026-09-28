@@ -316,7 +316,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.9rem}
     <h2 id="t-co">6. ¿A quién llamar?</h2>
     <p class="lead">Toca el número para llamar desde tu celular.</p>
     <div class="grid g2">
-      <div class="card contact"><h3>SENADIS: orientación en discapacidad</h3><a class="tel" href="tel:800000058">800 000 058</a><span>Línea gratuita, de lunes a viernes de 9:00 a 18:00. Orienta a personas con discapacidad y a cuidadores.</span><a href="https://www.vi-sor.cl" target="_blank" rel="noopener">Intérprete de lengua de señas por video (vi-sor.cl) ↗</a></div>
+      <div class="card contact"><h3>Línea «Conectados al Cuidar» (financiada por SENADIS)</h3><a class="tel" href="tel:800000058">800 000 058</a><span>Línea gratuita, de lunes a viernes de 9:00 a 18:00. Orienta a personas con discapacidad y a cuidadores.</span><a href="https://www.vi-sor.cl" target="_blank" rel="noopener">Intérprete de lengua de señas por video (vi-sor.cl) ↗</a></div>
       <div class="card contact"><h3>ChileAtiende: pensiones y trámites</h3><a class="tel" href="tel:101">101</a><span>Pensionados: <a href="tel:6004400040">600 440 0040</a></span></div>
       <div class="card contact"><h3>Superintendencia de Pensiones: AFP e invalidez</h3><a class="tel" href="tel:6000061013">600 006 1013</a><span>Desde celular o el extranjero: <a href="tel:+56227074260">+56 2 2707 4260</a></span></div>
       <div class="card contact"><h3>Registro Civil: credencial RND</h3><a class="tel" href="tel:6003702000">600 370 2000</a></div>
@@ -391,7 +391,7 @@ const ESP={
  visceral:[{t:"Ley Ricarte Soto y atención preferente",d:"Revisa si tu enfermedad está incluida en la Ley Ricarte Soto. La Ley 21.380 da atención preferente en salud.",x:L("https://www.minsal.cl/ley-ricarte-soto-preguntas-frecuentes/")}],
  psiquica:[{t:"El Subsidio de Discapacidad incluye la discapacidad mental",d:"Para menores de 18 años con discapacidad mental severa. Salud Responde atiende las 24 horas en el 600 360 7777.",x:""}],
  intelectual:[{t:"Apoyo escolar PIE",d:"Incluye apoyos para estudiantes con discapacidad intelectual dentro del aula común.",x:""}],
- multiple:[{t:"Empieza por la certificación",d:"La COMPIN evalúa tu situación y define el tipo y el grado de discapacidad. Llama gratis a SENADIS al 800 000 058 para que te orienten.",x:""}]
+ multiple:[{t:"Empieza por la certificación",d:"La COMPIN evalúa tu situación y define el tipo y el grado de discapacidad. Llama gratis a la línea «Conectados al Cuidar», financiada por SENADIS, al 800 000 058 para que te orienten.",x:""}]
 };
 const POR_EDAD={nino:["rnd","sdm","ayudas","pie","ricarte","est","cuid","seg"],
  adulto:["rnd","pbsi","ayudas","laboral","beca","ricarte","est","auto","herencia","cuid","seg"],
@@ -407,7 +407,7 @@ function render(scroll){const r=document.getElementById("resultado");
  r.innerHTML=`<div class="card res"><h2 style="font-size:1.2rem">Beneficios que te pueden corresponder</h2><p class="src">Discapacidad ${t.n.toLowerCase().replace("(tea)","(TEA)")} · ${e.n}</p>
  <h3>Específicos para tu caso</h3>${(ESP[st.tipo]||[]).map(b=>card(b,1)).join("")}
  <h3>Para todas las personas inscritas en el RND</h3>${POR_EDAD[st.edad].map(k=>card(B[k])).join("")}
- <div class="note">Cada beneficio tiene sus propios requisitos. Si tienes dudas, llama gratis a SENADIS al <a href="tel:800000058"><b>800 000 058</b></a>.</div></div>`;
+ <div class="note">Cada beneficio tiene sus propios requisitos. Si tienes dudas, llama gratis a la línea «Conectados al Cuidar», financiada por SENADIS, al <a href="tel:800000058"><b>800 000 058</b></a>.</div></div>`;
  if(scroll)r.scrollIntoView({behavior:(document.documentElement.dataset.mode==="calma"||matchMedia("(prefers-reduced-motion: reduce)").matches)?"auto":"smooth",block:"start"})}
 chips(document.getElementById("tipos"),TIPOS,"tipo");chips(document.getElementById("edades"),EDADES,"edad");render(false);
 let fs=1.0625;try{fs=parseFloat(localStorage.getItem("gdc-fs"))||fs}catch(e){}
