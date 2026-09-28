@@ -6,7 +6,7 @@
 <title>Guía Discapacidad Chile</title>
 <meta name="description" content="Orientación gratuita para personas con discapacidad y sus cuidadores en Chile: beneficios estatales, pensiones, trámites, contactos y seguros.">
 <link rel="canonical" href="https://dataconsultingrrl.com/guia-discapacidad/">
-<meta name="theme-color" content="#1C5FAF">
+<meta name="theme-color" content="#08091a">
 <meta property="og:title" content="Guía Discapacidad Chile: beneficios, pensiones y trámites">
 <meta property="og:description" content="Orientación gratuita para personas con discapacidad y sus cuidadores en Chile: beneficios del Estado, pensiones, trámites, contactos y seguros, con información de fuentes oficiales.">
 <meta property="og:type" content="website">
@@ -18,12 +18,12 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
 <style>
 :root{
-  /* Modo colores vivos (predeterminado): azul que da confianza + acento cálido que acoge. Sin blanco puro */
-  --bg:#F6F1E7;--surface:#FCF8F0;--ink:#0F2A4A;--muted:#2F4460;--line:#0F2A4A;
-  --brand:#1C5FAF;--brand-ink:#FCF8F0;--brand-soft:#DCE6F2;
-  --accent:#F4A340;--on-accent:#0F2A4A;
-  --ok:#0F2A4A;--ok-soft:#F4A340;--warn:#1C5FAF;--warn-soft:#FCE3C2;
-  --focus:#F4A340;--radius:14px;--fs:1.125rem;--bw:2px;
+  /* Vista normal: la identidad de dataconsultingrrl.com (azul noche, violeta y cian) con contraste alto */
+  --bg:#08091A;--surface:#141733;--ink:#E7E9F7;--muted:#B3B8D9;--line:#4A5190;
+  --brand:#9D85FF;--brand-ink:#FFFFFF;--brand-soft:#1B1F3F;
+  --accent:#22D3EE;--on-accent:#08091A;
+  --ok:#22D3EE;--ok-soft:#22D3EE;--warn:#9D85FF;--warn-soft:#1B1F3F;
+  --focus:#22D3EE;--radius:16px;--fs:1.125rem;--bw:2px;
 }
 /* Modo sin blancos: fondo oscuro cálido, para fotofobia y encandilamiento */
 :root[data-mode="sinblancos"]{
@@ -68,7 +68,7 @@ header.top{background:var(--surface);border-bottom:var(--bw) solid var(--line);z
 .mode{min-height:60px;padding:6px;border-radius:12px;border:3px solid var(--line);font-size:.9rem;font-weight:700;line-height:1.15;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
 .mode .sw{width:26px;height:14px;border-radius:7px;border:2px solid currentColor}
 .mode[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent)}
-.m-vivos{background:#F6F1E7;color:#0F2A4A}.m-vivos .sw{background:linear-gradient(90deg,#1C5FAF 50%,#F4A340 50%)}
+.m-vivos{background:#08091A;color:#E7E9F7}.m-vivos .sw{background:linear-gradient(100deg,#7C5CFF,#22D3EE)}
 .m-sinblancos{background:#1C1914;color:#E8DCC3}.m-sinblancos .sw{background:#D9A441}
 .m-contraste{background:#000;color:#FFE14D}.m-contraste .sw{background:#FFE14D}
 .m-calma{background:#DDE3DF;color:#23302B}.m-calma .sw{background:#AFC3B8}
@@ -122,6 +122,12 @@ details>div{padding:0 16px 14px}
 .src{font-size:.85rem;color:var(--muted)}
 footer{padding:28px 0 48px;color:var(--muted);font-size:.9rem}
 .btn{display:inline-block;background:var(--brand);color:var(--brand-ink);padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;min-height:48px}
+/* Detalles de marca solo en la vista normal */
+:root:not([data-mode]) .btn,:root:not([data-mode]) ol.steps>li::before{background:linear-gradient(100deg,#7C5CFF 0%,#5B7CFF 100%);color:#fff}
+:root:not([data-mode]) header.top{background:rgba(8,9,26,.92)}
+:root:not([data-mode]) .hero{background:radial-gradient(600px 300px at 10% 0%,rgba(124,92,255,.30),transparent 65%),radial-gradient(500px 280px at 95% 10%,rgba(34,211,238,.16),transparent 60%)}
+:root:not([data-mode]) .money,:root:not([data-mode]) .stat{color:#22D3EE}
+:root:not([data-mode]) .fill{background:linear-gradient(90deg,#7C5CFF,#22D3EE)}
 </style>
 </head>
 <body>
@@ -138,7 +144,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.9rem}
     <div class="modes" role="group" aria-labelledby="l-modo">
       <div class="lbl" id="l-modo">¿Cómo ves mejor?</div>
       <div class="row">
-        <button class="mode m-vivos" data-m="vivos" aria-pressed="true"><span class="sw" aria-hidden="true"></span>Colores vivos</button>
+        <button class="mode m-vivos" data-m="vivos" aria-pressed="true"><span class="sw" aria-hidden="true"></span>Normal</button>
         <button class="mode m-sinblancos" data-m="sinblancos" aria-pressed="false"><span class="sw" aria-hidden="true"></span>Sin blancos</button>
         <button class="mode m-contraste" data-m="contraste" aria-pressed="false"><span class="sw" aria-hidden="true"></span>Alto contraste</button>
         <button class="mode m-calma" data-m="calma" aria-pressed="false"><span class="sw" aria-hidden="true"></span>Calma</button>
@@ -413,7 +419,7 @@ chips(document.getElementById("tipos"),TIPOS,"tipo");chips(document.getElementBy
 let fs=1.0625;try{fs=parseFloat(localStorage.getItem("gdc-fs"))||fs}catch(e){}
 const setFs=v=>{fs=Math.min(1.5,Math.max(.9,v));document.documentElement.style.setProperty("--fs",fs+"rem");try{localStorage.setItem("gdc-fs",fs)}catch(e){}};setFs(fs);
 fsUp.onclick=()=>setFs(fs+.125);fsDown.onclick=()=>setFs(fs-.125);
-const MODE_HELP={vivos:"Azul y naranja cálido, sin blanco puro. Letra grande y todo al centro de la pantalla.",sinblancos:"Fondo oscuro cálido y letra crema. Para quien se encandila con el blanco.",contraste:"Amarillo sobre negro. Máximo contraste para baja visión.",calma:"Colores suaves, sin contrastes fuertes ni movimiento. Pensado para autismo y sensibilidad sensorial."};
+const MODE_HELP={vivos:"Los colores de DataconsultingRRL, con letra grande y buen contraste.",sinblancos:"Fondo oscuro cálido y letra crema. Para quien se encandila con el blanco.",contraste:"Amarillo sobre negro. Máximo contraste para baja visión.",calma:"Colores suaves, sin contrastes fuertes ni movimiento. Pensado para autismo y sensibilidad sensorial."};
 const setMode=m=>{if(!MODE_HELP[m])m="vivos";m==="vivos"?delete document.documentElement.dataset.mode:document.documentElement.dataset.mode=m;
  document.querySelectorAll(".mode").forEach(b=>b.setAttribute("aria-pressed",b.dataset.m===m));modeHelp.textContent=MODE_HELP[m];try{localStorage.setItem("gdc-mode",m)}catch(e){}};
 let m0="vivos";try{m0=localStorage.getItem("gdc-mode")||m0}catch(e){}setMode(m0);
