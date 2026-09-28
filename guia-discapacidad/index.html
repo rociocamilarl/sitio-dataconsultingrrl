@@ -259,6 +259,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.9rem}
       <li><h3>Postula a los beneficios</h3>
         <p>Ya con la credencial, vuelve a la sección <a href="#orientador">Mi caso</a> y revisa qué beneficios te corresponden.</p></li>
     </ol>
+    <div class="note"><b>No esperes la credencial para pedir la pensión.</b> La pensión de invalidez la evalúa la Comisión Médica de la Superintendencia de Pensiones, no la COMPIN, y no pide la credencial. Si la discapacidad ya afecta tu capacidad de trabajar, inicia los dos trámites al mismo tiempo. <a href="#pensiones">Ver pensiones ↑</a></div>
     <div class="note">Para <b>renovar</b> la credencial, pide la reevaluación 90 días antes de que venza.</div>
     <p><a href="https://www.chileatiende.gob.cl/fichas/83219-certificacion-de-discapacidad-de-la-compin" target="_blank" rel="noopener">Ficha oficial de la certificación COMPIN ↗</a> · <a href="https://www.chileatiende.gob.cl/fichas/3349-registro-nacional-de-la-discapacidad-rnd" target="_blank" rel="noopener">Ficha oficial del RND ↗</a></p>
   </section>
@@ -304,6 +305,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.9rem}
         <a class="btn" href="https://www.cmfchile.cl/educa/621/w3-article-53947.html" target="_blank" rel="noopener">Ir a la consulta de seguros CMF ↗</a></li>
       <li><h3>Avisa el siniestro a la aseguradora</h3>
         <p>Hazlo lo antes posible y <b>por escrito</b>, al banco o directamente a la compañía. Guarda una copia con la fecha.</p>
+        <p>Consejo de quienes lo vivimos: <b>comunícate siempre por correo electrónico</b>. Queda respaldo de todo, y a veces hay que insistir para que respondan.</p>
         <p>El plazo y la forma de aviso dependen de cada póliza. Pide tu póliza y léela.</p></li>
       <li><h3>Entrega los documentos y espera la respuesta</h3>
         <p>En el desgravamen hipotecario, la liquidación demora entre 20 y 30 días hábiles desde que entregas los documentos. El pago llega entre 3 y 6 días hábiles después de aprobado.</p></li>
@@ -378,7 +380,7 @@ const B={
  sdm:{t:"Subsidio de Discapacidad: $125.138 al mes",d:"Para discapacidad severa, con Registro Social de Hogares en el 60% más vulnerable.",x:L("https://www.chileatiende.gob.cl/fichas/43187-subsidio-de-discapacidad-para-menores-de-18-anos")},
  pbsi:{t:"Pensión de invalidez (PBSI): $250.275 al mes",d:"Para quien no tiene otra pensión. También puede corresponder el APSI o la pensión de invalidez de la AFP.",x:'<a href="#pensiones">Ver pensiones ↓</a>'},
  pgu:{t:"Pensión Garantizada Universal (PGU)",d:"Desde los 65 años la PBSI termina y se puede pedir la PGU si se cumplen los requisitos.",x:L("https://www.chileatiende.gob.cl/fichas/130457-aumento-de-la-pension-garantizada-universal-pgu")},
- ayudas:{t:"Ayudas técnicas SENADIS",d:"Por ejemplo, sillas de ruedas, bastones o audífonos. Es para personas de 10 años o más inscritas en el RND, con un máximo de 2 ayudas por persona. La convocatoria 2026 ya cerró: estate atento a la próxima.",x:L("https://www.chileatiende.gob.cl/fichas/140696-programa-regular-de-ayudas-tecnicas")},
+ ayudas:{t:"Ayudas técnicas SENADIS",d:"Por ejemplo, sillas de ruedas, bastones o audífonos. Es para personas de 10 años o más inscritas en el RND y en el 70% más vulnerable del Registro Social de Hogares, con un máximo de 2 ayudas por persona. La convocatoria 2026 ya cerró: estate atento a la próxima.",x:L("https://www.chileatiende.gob.cl/fichas/140696-programa-regular-de-ayudas-tecnicas")},
  ricarte:{t:"Ley Ricarte Soto",d:"Cubre el 100% del diagnóstico y tratamiento de alto costo de las enfermedades incluidas en la ley.",x:L("https://www.minsal.cl/ley-ricarte-soto-preguntas-frecuentes/","Ver preguntas frecuentes")},
  est:{t:"Estacionamientos reservados",d:"Pon la credencial RND a la vista en el parabrisas.",x:L("https://www.senadis.gob.cl/pag/188/734/preguntas_frencuentes","Preguntas frecuentes SENADIS")},
  auto:{t:"Importar un vehículo con franquicia",d:"Pagas el 50% del arancel y puedes pagar el IVA hasta en 36 cuotas. El vehículo debe quedar 3 años para uso de la persona con discapacidad.",x:L("https://www.chileatiende.gob.cl/fichas/102249-solicitud-de-franquicia-por-discapacidad")},
@@ -390,7 +392,7 @@ const B={
  seg:{t:"Revisa si tienes seguros de invalidez",d:"Puedes revisarlo gratis en la CMF con tu ClaveÚnica.",x:'<a href="#seguros">Ver cómo ↓</a>'}
 };
 const ESP={
- visual:[{t:"Perros de asistencia (perro guía)",d:"Nadie puede negar la entrada a un perro de asistencia. La multa es de 10 a 120 UTM.",x:L("https://www.bcn.cl/portal/leyfacil/recurso/perros-de-asistencia-para-personas-con-discapacidad","Ley Fácil BCN")}],
+ visual:[{t:"¿Retinitis pigmentosa? Tenemos una ruta completa",d:"Paso a paso desde el diagnóstico: estudio genético, certificación, rehabilitación, pensión, conducir, bastón y tecnología.",x:'<a href="retinitis-pigmentosa.html">Ver la ruta de retinitis pigmentosa →</a>'},{t:"Perros de asistencia (perro guía)",d:"Nadie puede negar la entrada a un perro de asistencia. La multa es de 10 a 120 UTM.",x:L("https://www.bcn.cl/portal/leyfacil/recurso/perros-de-asistencia-para-personas-con-discapacidad","Ley Fácil BCN")}],
  auditiva:[{t:"Lengua de señas chilena (Ley 21.303)",d:"Es la lengua oficial de las personas sordas. En educación, la lengua de señas es la primera lengua.",x:L("https://www.bcn.cl/leychile/navegar?idNorma=1154963","Ver ley")},{t:"Intérprete de lengua de señas por video",d:"Servicio para comunicarte con los servicios públicos.",x:L("https://www.vi-sor.cl","vi-sor.cl")},{t:"Perros de asistencia (perro señal)",d:"Tienen el mismo derecho de acceso que los perros guía.",x:""}],
  tea:[{t:"Ley TEA (Ley 21.545)",d:"Protege la inclusión y la atención integral en salud, educación y ámbito social.",x:L("https://www.bcn.cl/leychile/navegar?idNorma=1190123","Ver ley")},{t:"Permiso laboral por emergencias en el colegio",d:"Padres, madres o tutores de menores con TEA pueden ausentarse del trabajo para atenderlas (art. 66 quinquies del Código del Trabajo).",x:""}],
  fisica:[{t:"Perros de servicio",d:"Asisten en tareas de movilidad y tienen derecho de acceso a lugares públicos.",x:""}],
