@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guía Discapacidad Chile</title>
+<meta name="description" content="Orientación gratuita para personas con discapacidad y sus cuidadores en Chile: beneficios estatales, pensiones, trámites, contactos y seguros.">
+<link rel="canonical" href="https://dataconsultingrrl.com/guia-discapacidad/">
+<meta name="theme-color" content="#1C5FAF">
+<meta property="og:title" content="Guía Discapacidad Chile: beneficios, pensiones y trámites">
+<meta property="og:description" content="Orientación gratuita para personas con discapacidad y sus cuidadores en Chile: beneficios del Estado, pensiones, trámites, contactos y seguros, con información de fuentes oficiales.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dataconsultingrrl.com/guia-discapacidad/">
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+:root{
+  /* Modo colores vivos (predeterminado): azul que da confianza + acento cálido que acoge. Sin blanco puro */
+  --bg:#F6F1E7;--surface:#FCF8F0;--ink:#0F2A4A;--muted:#2F4460;--line:#0F2A4A;
+  --brand:#1C5FAF;--brand-ink:#FCF8F0;--brand-soft:#DCE6F2;
+  --accent:#F4A340;--on-accent:#0F2A4A;
+  --ok:#0F2A4A;--ok-soft:#F4A340;--warn:#1C5FAF;--warn-soft:#FCE3C2;
+  --focus:#F4A340;--radius:14px;--fs:1.125rem;--bw:2px;
+}
+/* Modo sin blancos: fondo oscuro cálido, para fotofobia y encandilamiento */
+:root[data-mode="sinblancos"]{
+  --bg:#1C1914;--surface:#27221A;--ink:#E8DCC3;--muted:#C9BC9F;--line:#5E523D;
+  --brand:#D9A441;--brand-ink:#1C1914;--brand-soft:#3A3226;
+  --accent:#D9A441;--on-accent:#1C1914;
+  --ok:#D9A441;--ok-soft:#3A3226;--warn:#D9A441;--warn-soft:#312A1F;--focus:#F2B705;
+}
+/* Modo alto contraste: amarillo sobre negro, para baja visión */
+:root[data-mode="contraste"]{
+  --bg:#000000;--surface:#000000;--ink:#FFE14D;--muted:#FFE14D;--line:#FFE14D;
+  --brand:#FFE14D;--brand-ink:#000000;--brand-soft:#3D3500;
+  --accent:#FFE14D;--on-accent:#000000;
+  --ok:#FFE14D;--ok-soft:#000000;--warn:#FFE14D;--warn-soft:#000000;--focus:#7FD4FF;
+}
+:root[data-mode="calma"]{
+  /* Modo calma: para autismo y sensibilidad sensorial. Colores suaves, poco contraste de color, sin movimiento */
+  --bg:#DDE3DF;--surface:#E6EBE7;--ink:#23302B;--muted:#3E4B45;--line:#8E9C94;
+  --brand:#3F5F73;--brand-ink:#EEF1EE;--brand-soft:#CBD5D0;
+  --accent:#AFC3B8;--on-accent:#23302B;
+  --ok:#23302B;--ok-soft:#AFC3B8;--warn:#6B7A72;--warn-soft:#D2DAD5;--focus:#3F5F73;
+}
+:root[data-mode="calma"] *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+*{box-sizing:border-box}
+html{font-size:var(--fs)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Atkinson Hyperlegible",Verdana,system-ui,sans-serif;line-height:1.6}
+a{color:var(--brand);text-underline-offset:3px}
+:focus-visible{outline:4px solid var(--focus);outline-offset:3px}
+button{font-family:inherit}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:8px;background:var(--surface);padding:8px 12px;z-index:9}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+header.top{background:var(--surface);border-bottom:var(--bw) solid var(--line);z-index:5}
+@media(min-width:640px){header.top{position:sticky;top:0}}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 0}
+.logo{font-weight:700;font-size:1.05rem;color:var(--ink);text-decoration:none}
+.tools{display:flex;gap:6px}
+.tools button{min-width:48px;min-height:48px;font-weight:700;border:var(--bw) solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;font-size:1rem;cursor:pointer}
+.modes{padding:0 0 12px}
+.modes .lbl{font-size:.85rem;font-weight:700;color:var(--muted);margin-bottom:6px}
+.modes .row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;max-width:680px}
+@media(min-width:640px){.modes .row{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.mode{min-height:60px;padding:6px;border-radius:12px;border:3px solid var(--line);font-size:.9rem;font-weight:700;line-height:1.15;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.mode .sw{width:26px;height:14px;border-radius:7px;border:2px solid currentColor}
+.mode[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent)}
+.m-vivos{background:#F6F1E7;color:#0F2A4A}.m-vivos .sw{background:linear-gradient(90deg,#1C5FAF 50%,#F4A340 50%)}
+.m-sinblancos{background:#1C1914;color:#E8DCC3}.m-sinblancos .sw{background:#D9A441}
+.m-contraste{background:#000;color:#FFE14D}.m-contraste .sw{background:#FFE14D}
+.m-calma{background:#DDE3DF;color:#23302B}.m-calma .sw{background:#AFC3B8}
+#ajuste:empty{display:none}
+#ajuste button{margin-top:8px;min-height:44px;padding:8px 14px;border-radius:10px;border:var(--bw) solid var(--line);background:var(--surface);color:var(--ink);font-weight:700;cursor:pointer}
+.modes .help{font-size:.85rem;color:var(--muted);margin-top:6px}
+nav.menu{display:flex;gap:6px;overflow-x:auto;padding:0 0 10px;scrollbar-width:thin}
+nav.menu a{white-space:nowrap;padding:10px 14px;min-height:44px;font-weight:700;border-radius:999px;background:var(--brand-soft);text-decoration:none;font-size:.9rem;color:var(--ink)}
+.hero{padding:32px 0 8px}
+.hero h1{font-size:1.9rem;line-height:1.2;margin:0 0 10px}
+.hero p{color:var(--muted);margin:0 0 6px;max-width:62ch}
+section{padding:28px 0;border-bottom:1px solid var(--line)}
+h2{font-size:1.45rem;margin:0 0 6px}
+h3{font-size:1.1rem;margin:0 0 4px}
+.lead{color:var(--muted);margin:0 0 18px;max-width:65ch}
+.card{background:var(--surface);border:var(--bw) solid var(--line);border-radius:var(--radius);padding:18px}
+.grid{display:grid;gap:12px}
+@media(min-width:640px){.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}}
+.chips{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media(min-width:640px){.chips{grid-template-columns:repeat(4,1fr)}}
+.chip{min-height:64px;border:3px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:10px;font-size:.98rem;font-weight:600;cursor:pointer;text-align:left;display:flex;gap:8px;align-items:center}
+.chip .dot{width:18px;height:18px;border-radius:50%;border:3px solid currentColor;flex-shrink:0}
+.chip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent);color:var(--on-accent)}
+.chip[aria-pressed="true"] .dot{background:currentColor}
+.step-label{font-weight:700;margin:18px 0 8px}
+.ages{display:flex;flex-wrap:wrap;gap:8px}
+.ages .chip{min-height:48px;flex:1 1 140px}
+#resultado{margin-top:18px}
+.res h3{margin-top:14px}
+.benefit{border-left:4px solid var(--brand);padding:10px 12px;background:var(--surface);border-radius:0 10px 10px 0;margin:8px 0;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.benefit.esp{border-left-color:var(--ok)}
+.benefit b{display:block}
+.benefit small{color:var(--muted)}
+.tag{display:inline-block;font-size:.8rem;font-weight:700;padding:2px 10px;border-radius:8px;background:var(--accent);color:var(--on-accent);margin-bottom:4px}
+.money{font-size:1.5rem;font-weight:800;color:var(--brand)}
+.note{background:var(--warn-soft);color:var(--ink);border-left:4px solid var(--warn);padding:12px 14px;border-radius:0 10px 10px 0;margin:14px 0}
+ol.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+ol.steps>li{counter-increment:s;position:relative;padding:0 0 18px 52px}
+ol.steps>li::before{content:counter(s);position:absolute;left:0;top:0;width:38px;height:38px;border-radius:50%;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-weight:800}
+ol.steps>li:not(:last-child)::after{content:"";position:absolute;left:18px;top:40px;bottom:4px;width:2px;background:var(--line)}
+details{background:var(--surface);border:var(--bw) solid var(--line);border-radius:12px;margin:8px 0}
+summary{cursor:pointer;padding:14px 16px;font-weight:700;min-height:48px}
+details>div{padding:0 16px 14px}
+.contact{display:flex;flex-direction:column;gap:2px}
+.tel{font-size:1.25rem;font-weight:800;text-decoration:none}
+.stat{font-size:2.2rem;font-weight:800;line-height:1.1;color:var(--brand)}
+.barrow{margin:10px 0}
+.barrow .lbl{display:flex;justify-content:space-between;font-size:.95rem}
+.track{height:14px;background:var(--brand-soft);border-radius:999px;overflow:hidden}
+.fill{height:100%;background:var(--brand);border-radius:999px}
+.src{font-size:.85rem;color:var(--muted)}
+footer{padding:28px 0 48px;color:var(--muted);font-size:.9rem}
+.btn{display:inline-block;background:var(--brand);color:var(--brand-ink);padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;min-height:48px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="top">
+  <div class="wrap">
+    <div class="bar">
+      <a class="logo" href="#inicio">Guía Discapacidad Chile</a>
+      <div class="tools" aria-label="Accesibilidad">
+        <button id="fsDown" aria-label="Achicar letra">A−</button>
+        <button id="fsUp" aria-label="Agrandar letra">A+</button>
+      </div>
+    </div>
+    <div class="modes" role="group" aria-labelledby="l-modo">
+      <div class="lbl" id="l-modo">¿Cómo ves mejor?</div>
+      <div class="row">
+        <button class="mode m-vivos" data-m="vivos" aria-pressed="true"><span class="sw" aria-hidden="true"></span>Colores vivos</button>
+        <button class="mode m-sinblancos" data-m="sinblancos" aria-pressed="false"><span class="sw" aria-hidden="true"></span>Sin blancos</button>
+        <button class="mode m-contraste" data-m="contraste" aria-pressed="false"><span class="sw" aria-hidden="true"></span>Alto contraste</button>
+        <button class="mode m-calma" data-m="calma" aria-pressed="false"><span class="sw" aria-hidden="true"></span>Calma</button>
+      </div>
+      <div class="help" id="modeHelp" aria-live="polite"></div>
+    </div>
+    <nav class="menu" aria-label="Secciones">
+      <a href="#orientador">Mi caso</a>
+      <a href="#pensiones">Pensiones</a>
+      <a href="#tramites">Trámites</a>
+      <a href="#cuidadores">Cuidadores</a>
+      <a href="#seguros">Seguros</a>
+      <a href="#contactos">Contactos</a>
+      <a href="#cifras">Cifras</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <div class="hero" id="inicio">
+    <h1>Orientación sobre beneficios y trámites para personas con discapacidad en Chile</h1>
+    <p>Aquí puedes ver qué beneficios del Estado te pueden corresponder, qué trámites hay que hacer y dónde preguntar.</p>
+    <p>Todo es gratis. La información sale de fuentes oficiales, revisadas en septiembre de 2026.</p>
+  </div>
+
+  <!-- ORIENTADOR -->
+  <section id="orientador" aria-labelledby="t-or">
+    <h2 id="t-or">1. Cuéntanos tu caso</h2>
+    <p class="lead">Elige el tipo de discapacidad y la edad de la persona. Te mostramos los beneficios que le pueden corresponder.</p>
+
+    <div class="step-label" id="l-tipo">¿Qué tipo de discapacidad?</div>
+    <div class="chips" role="group" aria-labelledby="l-tipo" id="tipos"></div>
+    <div class="note" id="ajuste" aria-live="polite"></div>
+
+    <div class="step-label" id="l-edad">¿Qué edad tiene la persona?</div>
+    <div class="ages" role="group" aria-labelledby="l-edad" id="edades"></div>
+
+    <div id="resultado" aria-live="polite"></div>
+  </section>
+
+  <!-- PENSIONES -->
+  <section id="pensiones" aria-labelledby="t-pen">
+    <h2 id="t-pen">2. Pensiones y subsidios</h2>
+    <p class="lead">Estos son los montos publicados por ChileAtiende al 27 de septiembre de 2026. Se reajustan cada febrero según el IPC, así que confírmalos antes de postular.</p>
+    <div class="grid g2">
+      <div class="card">
+        <h3>Pensión Básica Solidaria de Invalidez (PBSI)</h3>
+        <div class="money">$250.275 <small style="font-size:.9rem;font-weight:600">al mes</small></div>
+        <p>Para quien no tiene derecho a pensión en ningún sistema.</p>
+        <ul>
+          <li>Tener entre 18 y 64 años.</li>
+          <li>Pertenecer al 80% más vulnerable según el puntaje de focalización.</li>
+          <li>Haber vivido en Chile 5 de los últimos 6 años.</li>
+          <li>Tener invalidez declarada por una comisión médica.</li>
+        </ul>
+        <p>A los 65 años se puede pedir la PGU.</p>
+        <a href="https://www.chileatiende.gob.cl/fichas/5178-pension-basica-solidaria-de-invalidez-pbsi" target="_blank" rel="noopener">Postular en ChileAtiende ↗</a>
+      </div>
+      <div class="card">
+        <h3>Aporte Previsional Solidario de Invalidez (APSI)</h3>
+        <p>Para quien ya tiene una pensión de invalidez baja. El Estado paga la diferencia hasta llegar a <b>$250.275</b>.</p>
+        <p>Los requisitos de edad, vulnerabilidad y residencia son los mismos de la PBSI.</p>
+        <p>Se pide en ChileAtiende, en tu AFP o en tu compañía de seguros.</p>
+        <a href="https://www.chileatiende.gob.cl/fichas/5185-aporte-previsional-solidario-de-invalidez-apsi" target="_blank" rel="noopener">Ver ficha oficial ↗</a>
+      </div>
+      <div class="card">
+        <h3>Pensión de invalidez de la AFP</h3>
+        <p>Para quien cotiza en una AFP y tiene menos de 65 años.</p>
+        <ul>
+          <li><b>Invalidez parcial:</b> pérdida de capacidad de trabajo entre 50% y 65%. Se revisa a los 3 años.</li>
+          <li><b>Invalidez total:</b> pérdida de 66% o más. Es definitiva.</li>
+        </ul>
+        <p>Se pide en la AFP o en ChileAtiende. Evalúa la Comisión Médica de la Superintendencia de Pensiones.</p>
+        <a href="https://www.chileatiende.gob.cl/fichas/5262-pension-de-invalidez-del-sistema-de-pensiones-afp" target="_blank" rel="noopener">Ver ficha oficial ↗</a>
+      </div>
+      <div class="card">
+        <h3>Subsidio de Discapacidad para menores de 18 años</h3>
+        <div class="money">$125.138 <small style="font-size:.9rem;font-weight:600">al mes</small></div>
+        <ul>
+          <li>Discapacidad mental, física o sensorial severa (50% o más).</li>
+          <li>Pertenecer al 60% más vulnerable del Registro Social de Hogares.</li>
+          <li>Tener 3 años de residencia continua en Chile.</li>
+        </ul>
+        <p>A los 17 años y 6 meses, el IPS revisa el paso a la PBSI.</p>
+        <a href="https://www.chileatiende.gob.cl/fichas/43187-subsidio-de-discapacidad-para-menores-de-18-anos" target="_blank" rel="noopener">Ver ficha oficial ↗</a>
+      </div>
+    </div>
+    <div class="note"><b>Importante:</b> la PGU no es una pensión de invalidez. La PBSI se paga hasta el mes en que la persona cumple 65 años. Desde ahí se puede pedir la PGU.</div>
+  </section>
+
+  <!-- TRÁMITES -->
+  <section id="tramites" aria-labelledby="t-tr">
+    <h2 id="t-tr">3. Paso a paso: cómo empezar</h2>
+    <p class="lead">Casi todos los beneficios piden estar inscrito en el <b>Registro Nacional de la Discapacidad (RND)</b>. Este es el primer trámite.</p>
+    <ol class="steps">
+      <li><h3>Consigue tu ClaveÚnica</h3>
+        <p>La necesitas para hacer trámites en línea. Se obtiene en ChileAtiende o en el Registro Civil.</p></li>
+      <li><h3>Pide los informes a tus profesionales</h3>
+        <p>Necesitas dos informes, en PDF y firmados:</p>
+        <ul>
+          <li><b>Informe biomédico funcional:</b> lo hace un médico, psicólogo, fonoaudiólogo, terapeuta ocupacional o kinesiólogo.</li>
+          <li><b>Informe social y de redes de apoyo:</b> lo hace un asistente social. Puedes pedirlo en tu consultorio o en la municipalidad.</li>
+        </ul></li>
+      <li><h3>Solicita la certificación en la COMPIN</h3>
+        <p>Puedes hacerlo en línea en <a href="https://compin.cerofilas.gob.cl" target="_blank" rel="noopener">compin.cerofilas.gob.cl</a> o en una oficina regional de la COMPIN.</p>
+        <p><b>No tiene costo.</b> La respuesta llega en un máximo de 20 días hábiles.</p></li>
+      <li><h3>Inscripción en el RND y credencial</h3>
+        <p>La COMPIN envía su resolución al Registro Civil, que te inscribe en un máximo de 25 días hábiles. La credencial llega a tu casa y cuesta $870.</p>
+        <p>La credencial muestra el tipo y el grado de discapacidad.</p></li>
+      <li><h3>Inscríbete en el Registro Social de Hogares</h3>
+        <p>Si aún no estás, hazlo en tu municipalidad o en <a href="https://registrosocial.gob.cl" target="_blank" rel="noopener">registrosocial.gob.cl</a>. Es necesario para las pensiones solidarias, los subsidios y el módulo de cuidados.</p></li>
+      <li><h3>Postula a los beneficios</h3>
+        <p>Ya con la credencial, vuelve a la sección <a href="#orientador">Mi caso</a> y revisa qué beneficios te corresponden.</p></li>
+    </ol>
+    <div class="note">Para <b>renovar</b> la credencial, pide la reevaluación 90 días antes de que venza.</div>
+    <p><a href="https://www.chileatiende.gob.cl/fichas/83219-certificacion-de-discapacidad-de-la-compin" target="_blank" rel="noopener">Ficha oficial de la certificación COMPIN ↗</a> · <a href="https://www.chileatiende.gob.cl/fichas/3349-registro-nacional-de-la-discapacidad-rnd" target="_blank" rel="noopener">Ficha oficial del RND ↗</a></p>
+  </section>
+
+  <!-- CUIDADORES -->
+  <section id="cuidadores" aria-labelledby="t-cu">
+    <h2 id="t-cu">4. Beneficios para quien cuida</h2>
+    <p class="lead">Si cuidas a una persona con discapacidad o dependencia, también tienes derechos.</p>
+    <div class="grid g2">
+      <div class="card"><h3>Credencial de Persona Cuidadora</h3>
+        <p>Se pide en el módulo de cuidados del Registro Social de Hogares.</p>
+        <p>Da atención preferente en salud, FONASA, ChileAtiende, BancoEstado, Registro Civil, SERVIU, SENADIS y SENAMA.</p>
+        <p>La credencial física se retira en la municipalidad y puede demorar hasta 60 días.</p>
+        <a href="https://www.chileatiende.gob.cl/fichas/112779-persona-cuidadora" target="_blank" rel="noopener">Cómo obtenerla ↗</a></div>
+      <div class="card"><h3>Estipendio para cuidadores</h3>
+        <div class="money">hasta $32.991 <small style="font-size:.9rem;font-weight:600">al mes</small></div>
+        <p>Es para cuidadores no remunerados de personas que están en el Programa de Atención Domiciliaria para Dependencia Severa.</p>
+        <p>No se postula directamente: el equipo del consultorio (CESFAM) hace la postulación.</p>
+        <a href="https://www.chileatiende.gob.cl/fichas/49627-programa-de-pago-de-cuidadores-de-personas-con-discapacidad-estipendio" target="_blank" rel="noopener">Ver ficha oficial ↗</a></div>
+      <div class="card"><h3>Chile Cuida y Red Local de Apoyos y Cuidados</h3>
+        <p>La Ley 21.805 crea el Sistema Nacional de Apoyos y Cuidados. <b>La puerta de entrada es tu municipalidad.</b></p>
+        <p>La Red Local funciona en 215 comunas. El acceso depende del grado de dependencia, no del nivel de ingresos.</p>
+        <a href="https://chilecuida.gob.cl" target="_blank" rel="noopener">chilecuida.gob.cl ↗</a></div>
+      <div class="card"><h3>Permisos laborales</h3>
+        <ul>
+          <li><b>Ley SANNA:</b> seguro para que madres, padres o cuidadores que trabajan acompañen a un niño o niña con una condición grave de salud.</li>
+          <li><b>Artículo 199 bis del Código del Trabajo:</b> hasta 10 jornadas al año si el hijo o hija con discapacidad sufre un accidente o una enfermedad grave.</li>
+          <li><b>Ley TEA:</b> padres, madres o tutores de menores con autismo pueden salir del trabajo para atender emergencias en el colegio.</li>
+          <li><b>Ley 21.380:</b> atención preferente en salud para la persona con discapacidad y su cuidador.</li>
+        </ul>
+        <a href="https://www.chileatiende.gob.cl/fichas/53276-seguro-para-el-acompanamiento-de-ninos-y-ninas-afectados-por-una-condicion-grave-de-salud-ley-sanna" target="_blank" rel="noopener">Ver Ley SANNA ↗</a></div>
+    </div>
+  </section>
+
+  <!-- SEGUROS -->
+  <section id="seguros" aria-labelledby="t-se">
+    <h2 id="t-se">5. Seguros: revisa si tienes uno antes de pagar de tu bolsillo</h2>
+    <p class="lead">Muchas personas tienen seguros de invalidez sin saberlo. Por ejemplo, el seguro de desgravamen de un crédito hipotecario puede incluir invalidez. <b>Lo primero es revisar en la CMF.</b></p>
+    <ol class="steps">
+      <li><h3>Revisa qué seguros tienes en la CMF</h3>
+        <p>Entra con tu ClaveÚnica al <b>Sistema de Consulta de Seguros</b> de la Comisión para el Mercado Financiero. Es gratis y muestra los seguros donde eres asegurado o contratante.</p>
+        <p>También sirve para ver los seguros de un familiar fallecido o declarado incapaz por un juez. Pueden consultarlos el cónyuge o conviviente civil, los hijos, los padres o los herederos.</p>
+        <a class="btn" href="https://www.cmfchile.cl/educa/621/w3-article-53947.html" target="_blank" rel="noopener">Ir a la consulta de seguros CMF ↗</a></li>
+      <li><h3>Avisa el siniestro a la aseguradora</h3>
+        <p>Hazlo lo antes posible y <b>por escrito</b>, al banco o directamente a la compañía. Guarda una copia con la fecha.</p>
+        <p>El plazo y la forma de aviso dependen de cada póliza. Pide tu póliza y léela.</p></li>
+      <li><h3>Entrega los documentos y espera la respuesta</h3>
+        <p>En el desgravamen hipotecario, la liquidación demora entre 20 y 30 días hábiles desde que entregas los documentos. El pago llega entre 3 y 6 días hábiles después de aprobado.</p></li>
+      <li><h3>Si rechazan el pago o no responden: reclama en la CMF</h3>
+        <p>Puedes presentar el reclamo por web, por correo o en persona. Adjunta tu identificación, el motivo del reclamo y la respuesta que te dio la compañía.</p>
+        <a href="https://www.cmfchile.cl/portal/principal/623/w4-article-1244.html" target="_blank" rel="noopener">Presentar reclamo en la CMF ↗</a></li>
+    </ol>
+    <details><summary>Seguro de Invalidez y Sobrevivencia (SIS) de la AFP</summary><div>
+      <p>Es un seguro obligatorio que paga el empleador. Si tu saldo en la AFP no alcanza, el SIS completa la pensión de invalidez.</p>
+      <p>Cubre a trabajadores que cotizan. También cubre a personas cesantes si la invalidez ocurre dentro de 12 meses desde su última cotización y tienen al menos 6 meses cotizados en el año anterior.</p>
+      <a href="https://www.chileatiende.gob.cl/fichas/145651-seguro-de-invalidez-y-sobrevivencia-sis" target="_blank" rel="noopener">Ver ficha SIS ↗</a></div></details>
+  </section>
+
+  <!-- CONTACTOS -->
+  <section id="contactos" aria-labelledby="t-co">
+    <h2 id="t-co">6. ¿A quién llamar?</h2>
+    <p class="lead">Toca el número para llamar desde tu celular.</p>
+    <div class="grid g2">
+      <div class="card contact"><h3>SENADIS: orientación en discapacidad</h3><a class="tel" href="tel:800000058">800 000 058</a><span>Línea gratuita, de lunes a viernes de 9:00 a 18:00. Orienta a personas con discapacidad y a cuidadores.</span><a href="https://www.vi-sor.cl" target="_blank" rel="noopener">Intérprete de lengua de señas por video (vi-sor.cl) ↗</a></div>
+      <div class="card contact"><h3>ChileAtiende: pensiones y trámites</h3><a class="tel" href="tel:101">101</a><span>Pensionados: <a href="tel:6004400040">600 440 0040</a></span></div>
+      <div class="card contact"><h3>Superintendencia de Pensiones: AFP e invalidez</h3><a class="tel" href="tel:6000061013">600 006 1013</a><span>Desde celular o el extranjero: <a href="tel:+56227074260">+56 2 2707 4260</a></span></div>
+      <div class="card contact"><h3>Registro Civil: credencial RND</h3><a class="tel" href="tel:6003702000">600 370 2000</a></div>
+      <div class="card contact"><h3>Salud Responde (24 horas)</h3><a class="tel" href="tel:6003607777">600 360 7777</a><span>FONASA: <a href="tel:6003603000">600 360 3000</a></span></div>
+      <div class="card contact"><h3>CMF: seguros</h3><a class="tel" href="tel:+56226174000">2 2617 4000</a><span>Alameda 1449, Santiago</span></div>
+      <div class="card contact"><h3>COMPIN: certificación</h3><a href="https://compin.cerofilas.gob.cl" target="_blank" rel="noopener">compin.cerofilas.gob.cl ↗</a></div>
+      <div class="card contact"><h3>Tu municipalidad</h3><span>Pregunta por la Oficina de Discapacidad o por Chile Cuida. Allí también se hace el Registro Social de Hogares.</span></div>
+    </div>
+    <p><a href="https://www.senadis.gob.cl/pag/190/1408/direcciones_y_telefonos" target="_blank" rel="noopener">Direcciones regionales de SENADIS ↗</a></p>
+  </section>
+
+  <!-- CIFRAS -->
+  <section id="cifras" aria-labelledby="t-ci">
+    <h2 id="t-ci">7. La discapacidad en Chile y en el mundo</h2>
+    <p class="lead">No estás solo ni sola. Estas son las cifras oficiales.</p>
+    <div class="grid g3">
+      <div class="card"><div class="stat">3,29 millones</div><p>personas de 2 años o más en Chile, el 17% de la población.</p></div>
+      <div class="card"><div class="stat">1 de cada 6</div><p>personas en el mundo (1.300 millones, el 16%).</p></div>
+      <div class="card"><div class="stat">587.709</div><p>niños, niñas y adolescentes de 2 a 17 años en Chile (14,7%).</p></div>
+    </div>
+    <div class="card" style="margin-top:12px">
+      <h3>Adultos con discapacidad en Chile (18 años o más)</h3>
+      <div class="barrow"><div class="lbl"><span>Mujeres</span><b>21,9%</b></div><div class="track" role="img" aria-label="21,9%"><div class="fill" style="width:21.9%"></div></div></div>
+      <div class="barrow"><div class="lbl"><span>Total adultos</span><b>17,6%</b></div><div class="track" role="img" aria-label="17,6%"><div class="fill" style="width:17.6%"></div></div></div>
+      <div class="barrow"><div class="lbl"><span>Hombres</span><b>13,1%</b></div><div class="track" role="img" aria-label="13,1%"><div class="fill" style="width:13.1%"></div></div></div>
+      <div class="barrow"><div class="lbl"><span>Discapacidad severa</span><b>11,4%</b></div><div class="track" role="img" aria-label="11,4%"><div class="fill" style="width:11.4%"></div></div></div>
+      <p class="src">Fuentes: III Estudio Nacional de la Discapacidad (ENDIDE 2022), Ministerio de Desarrollo Social y SENADIS; OMS, nota descriptiva del 7 de marzo de 2023. Las barras usan una escala de 0% a 100%.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p><b>Aviso:</b> esta guía orienta, pero no reemplaza a los organismos oficiales. Los montos y requisitos pueden cambiar. Antes de postular, confírmalos en ChileAtiende o en SENADIS.</p>
+  <p>Información revisada el 27 de septiembre de 2026 en ChileAtiende, SENADIS, IPS, Superintendencia de Pensiones, CMF, BCN, MINSAL, Dirección del Trabajo y OMS.</p>
+  <p>Hecho por <a href="https://dataconsultingrrl.com/">DataconsultingRRL</a>.</p>
+</footer>
+
+<script>
+const TIPOS=[
+ {id:"fisica",n:"Física o motora"},
+ {id:"visual",n:"Visual"},
+ {id:"auditiva",n:"Auditiva"},
+ {id:"intelectual",n:"Intelectual"},
+ {id:"psiquica",n:"Psíquica o mental"},
+ {id:"tea",n:"Autismo (TEA)"},
+ {id:"visceral",n:"Visceral u orgánica"},
+ {id:"multiple",n:"Múltiple o no sé"}
+];
+const EDADES=[{id:"nino",n:"Menor de 18"},{id:"adulto",n:"18 a 64 años"},{id:"mayor",n:"65 o más"}];
+const L=(u,t="Ver ficha oficial")=>`<a href="${u}" target="_blank" rel="noopener">${t} ↗</a>`;
+const B={
+ rnd:{t:"Credencial de discapacidad (RND)",d:"Es la base para acceder a casi todos los beneficios. Es gratis certificarse en la COMPIN.",x:'<a href="#tramites">Ver paso a paso ↓</a>'},
+ sdm:{t:"Subsidio de Discapacidad: $125.138 al mes",d:"Para discapacidad severa, con Registro Social de Hogares en el 60% más vulnerable.",x:L("https://www.chileatiende.gob.cl/fichas/43187-subsidio-de-discapacidad-para-menores-de-18-anos")},
+ pbsi:{t:"Pensión de invalidez (PBSI): $250.275 al mes",d:"Para quien no tiene otra pensión. También puede corresponder el APSI o la pensión de invalidez de la AFP.",x:'<a href="#pensiones">Ver pensiones ↓</a>'},
+ pgu:{t:"Pensión Garantizada Universal (PGU)",d:"Desde los 65 años la PBSI termina y se puede pedir la PGU si se cumplen los requisitos.",x:L("https://www.chileatiende.gob.cl/fichas/130457-aumento-de-la-pension-garantizada-universal-pgu")},
+ ayudas:{t:"Ayudas técnicas SENADIS",d:"Por ejemplo, sillas de ruedas, bastones o audífonos. Es para personas de 10 años o más inscritas en el RND, con un máximo de 2 ayudas por persona. La convocatoria 2026 ya cerró: estate atento a la próxima.",x:L("https://www.chileatiende.gob.cl/fichas/140696-programa-regular-de-ayudas-tecnicas")},
+ ricarte:{t:"Ley Ricarte Soto",d:"Cubre el 100% del diagnóstico y tratamiento de alto costo de las enfermedades incluidas en la ley.",x:L("https://www.minsal.cl/ley-ricarte-soto-preguntas-frecuentes/","Ver preguntas frecuentes")},
+ est:{t:"Estacionamientos reservados",d:"Pon la credencial RND a la vista en el parabrisas.",x:L("https://www.senadis.gob.cl/pag/188/734/preguntas_frencuentes","Preguntas frecuentes SENADIS")},
+ auto:{t:"Importar un vehículo con franquicia",d:"Pagas el 50% del arancel y puedes pagar el IVA hasta en 36 cuotas. El vehículo debe quedar 3 años para uso de la persona con discapacidad.",x:L("https://www.chileatiende.gob.cl/fichas/102249-solicitud-de-franquicia-por-discapacidad")},
+ pie:{t:"Programa de Integración Escolar (PIE)",d:"Da apoyos especializados dentro de la sala de clases común. Pregunta en el colegio.",x:""},
+ beca:{t:"Beca para estudiantes con discapacidad (educación superior)",d:"En instituciones privadas acreditadas cubre hasta $1.150.000. Requiere estar en el RND y en el 70% de menores ingresos del RSH.",x:L("https://www.chileatiende.gob.cl/fichas/36380-beca-para-estudiantes-en-situacion-de-discapacidad")},
+ laboral:{t:"Inclusión laboral (Ley 21.015)",d:"Las empresas con 100 o más trabajadores deben tener al menos un 1% de personas con discapacidad o con pensión de invalidez.",x:L("https://www.dt.gob.cl/portal/1626/w3-propertyvalue-167780.html","Dirección del Trabajo")},
+ herencia:{t:"Rebaja en impuesto a herencias y donaciones",d:"Rebaja del 30%, con un tope de 8.000 UF al año, para personas inscritas en el RND.",x:L("https://www.sii.cl/preguntas_frecuentes/herencias/001_160_7508.htm","SII")},
+ cuid:{t:"Beneficios para tu cuidador o cuidadora",d:"Credencial de Persona Cuidadora, estipendio y permisos laborales.",x:'<a href="#cuidadores">Ver cuidadores ↓</a>'},
+ seg:{t:"Revisa si tienes seguros de invalidez",d:"Puedes revisarlo gratis en la CMF con tu ClaveÚnica.",x:'<a href="#seguros">Ver cómo ↓</a>'}
+};
+const ESP={
+ visual:[{t:"Perros de asistencia (perro guía)",d:"Nadie puede negar la entrada a un perro de asistencia. La multa es de 10 a 120 UTM.",x:L("https://www.bcn.cl/portal/leyfacil/recurso/perros-de-asistencia-para-personas-con-discapacidad","Ley Fácil BCN")}],
+ auditiva:[{t:"Lengua de señas chilena (Ley 21.303)",d:"Es la lengua oficial de las personas sordas. En educación, la lengua de señas es la primera lengua.",x:L("https://www.bcn.cl/leychile/navegar?idNorma=1154963","Ver ley")},{t:"Intérprete de lengua de señas por video",d:"Servicio para comunicarte con los servicios públicos.",x:L("https://www.vi-sor.cl","vi-sor.cl")},{t:"Perros de asistencia (perro señal)",d:"Tienen el mismo derecho de acceso que los perros guía.",x:""}],
+ tea:[{t:"Ley TEA (Ley 21.545)",d:"Protege la inclusión y la atención integral en salud, educación y ámbito social.",x:L("https://www.bcn.cl/leychile/navegar?idNorma=1190123","Ver ley")},{t:"Permiso laboral por emergencias en el colegio",d:"Padres, madres o tutores de menores con TEA pueden ausentarse del trabajo para atenderlas (art. 66 quinquies del Código del Trabajo).",x:""}],
+ fisica:[{t:"Perros de servicio",d:"Asisten en tareas de movilidad y tienen derecho de acceso a lugares públicos.",x:""}],
+ visceral:[{t:"Ley Ricarte Soto y atención preferente",d:"Revisa si tu enfermedad está incluida en la Ley Ricarte Soto. La Ley 21.380 da atención preferente en salud.",x:L("https://www.minsal.cl/ley-ricarte-soto-preguntas-frecuentes/")}],
+ psiquica:[{t:"El Subsidio de Discapacidad incluye la discapacidad mental",d:"Para menores de 18 años con discapacidad mental severa. Salud Responde atiende las 24 horas en el 600 360 7777.",x:""}],
+ intelectual:[{t:"Apoyo escolar PIE",d:"Incluye apoyos para estudiantes con discapacidad intelectual dentro del aula común.",x:""}],
+ multiple:[{t:"Empieza por la certificación",d:"La COMPIN evalúa tu situación y define el tipo y el grado de discapacidad. Llama gratis a SENADIS al 800 000 058 para que te orienten.",x:""}]
+};
+const POR_EDAD={nino:["rnd","sdm","ayudas","pie","ricarte","est","cuid","seg"],
+ adulto:["rnd","pbsi","ayudas","laboral","beca","ricarte","est","auto","herencia","cuid","seg"],
+ mayor:["rnd","pgu","ayudas","ricarte","est","auto","herencia","cuid","seg"]};
+let st={tipo:null,edad:null};
+try{const s=JSON.parse(localStorage.getItem("gdc")||"{}");st={...st,...s}}catch(e){}
+function chips(el,arr,key){el.innerHTML=arr.map(o=>`<button class="chip" data-v="${o.id}" aria-pressed="${st[key]===o.id}"><span class="dot" aria-hidden="true"></span>${o.n}</button>`).join("");
+ el.onclick=e=>{const b=e.target.closest("button");if(!b)return;st[key]=b.dataset.v;try{localStorage.setItem("gdc",JSON.stringify(st))}catch(e){}chips(el,arr,key);const cambio=key==="tipo"&&autoMode(st.tipo);render(!cambio);if(cambio)ajuste.scrollIntoView({block:"center"})}}
+const card=(b,esp)=>`<div class="benefit${esp?" esp":""}">${esp?'<span class="tag">Específico para tu caso</span>':""}<b>${b.t}</b><span>${b.d}</span>${b.x?`<br><small>${b.x}</small>`:""}</div>`;
+function render(scroll){const r=document.getElementById("resultado");
+ if(!st.tipo||!st.edad){r.innerHTML=`<div class="note">${!st.tipo?"Elige el tipo de discapacidad.":"Elige la edad."}</div>`;return}
+ const t=TIPOS.find(x=>x.id===st.tipo),e=EDADES.find(x=>x.id===st.edad);
+ r.innerHTML=`<div class="card res"><h2 style="font-size:1.2rem">Beneficios que te pueden corresponder</h2><p class="src">Discapacidad ${t.n.toLowerCase().replace("(tea)","(TEA)")} · ${e.n}</p>
+ <h3>Específicos para tu caso</h3>${(ESP[st.tipo]||[]).map(b=>card(b,1)).join("")}
+ <h3>Para todas las personas inscritas en el RND</h3>${POR_EDAD[st.edad].map(k=>card(B[k])).join("")}
+ <div class="note">Cada beneficio tiene sus propios requisitos. Si tienes dudas, llama gratis a SENADIS al <a href="tel:800000058"><b>800 000 058</b></a>.</div></div>`;
+ if(scroll)r.scrollIntoView({behavior:(document.documentElement.dataset.mode==="calma"||matchMedia("(prefers-reduced-motion: reduce)").matches)?"auto":"smooth",block:"start"})}
+chips(document.getElementById("tipos"),TIPOS,"tipo");chips(document.getElementById("edades"),EDADES,"edad");render(false);
+let fs=1.0625;try{fs=parseFloat(localStorage.getItem("gdc-fs"))||fs}catch(e){}
+const setFs=v=>{fs=Math.min(1.5,Math.max(.9,v));document.documentElement.style.setProperty("--fs",fs+"rem");try{localStorage.setItem("gdc-fs",fs)}catch(e){}};setFs(fs);
+fsUp.onclick=()=>setFs(fs+.125);fsDown.onclick=()=>setFs(fs-.125);
+const MODE_HELP={vivos:"Azul y naranja cálido, sin blanco puro. Letra grande y todo al centro de la pantalla.",sinblancos:"Fondo oscuro cálido y letra crema. Para quien se encandila con el blanco.",contraste:"Amarillo sobre negro. Máximo contraste para baja visión.",calma:"Colores suaves, sin contrastes fuertes ni movimiento. Pensado para autismo y sensibilidad sensorial."};
+const setMode=m=>{if(!MODE_HELP[m])m="vivos";m==="vivos"?delete document.documentElement.dataset.mode:document.documentElement.dataset.mode=m;
+ document.querySelectorAll(".mode").forEach(b=>b.setAttribute("aria-pressed",b.dataset.m===m));modeHelp.textContent=MODE_HELP[m];try{localStorage.setItem("gdc-mode",m)}catch(e){}};
+let m0="vivos";try{m0=localStorage.getItem("gdc-mode")||m0}catch(e){}setMode(m0);
+document.querySelector(".modes .row").onclick=e=>{const b=e.target.closest(".mode");if(b){setMode(b.dataset.m);ajuste.textContent=""}};
+/* Ajuste automático de la vista según el tipo de discapacidad elegido */
+const AUTO={tea:{m:"calma",t:"Como elegiste autismo, cambiamos la vista a «Calma»: colores suaves y sin movimiento."},
+ intelectual:{m:"calma",t:"Cambiamos la vista a «Calma»: colores suaves y sin movimiento, para que sea más fácil de leer."},
+ psiquica:{m:"calma",t:"Cambiamos la vista a «Calma»: colores suaves y sin movimiento, para que sea más tranquila de leer."},
+ visual:{m:"contraste",big:1,t:"Como elegiste discapacidad visual, cambiamos a «Alto contraste» y agrandamos la letra. Si te molesta el brillo, prueba «Sin blancos» arriba."}};
+function autoMode(tipo){const a=AUTO[tipo],cur=document.documentElement.dataset.mode||"vivos";
+ if(!a||a.m===cur){ajuste.textContent="";return false}
+ const prev=cur,prevFs=fs;setMode(a.m);if(a.big)setFs(Math.max(fs,1.3125));
+ ajuste.innerHTML="";const p=document.createElement("span");p.textContent=a.t;const b=document.createElement("button");b.type="button";b.textContent="Volver a la vista anterior";
+ b.onclick=()=>{setMode(prev);setFs(prevFs);ajuste.textContent=""};ajuste.append(p,document.createElement("br"),b);return true}
+</script>
+</body>
+</html>
