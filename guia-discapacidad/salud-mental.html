@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salud mental · Guía Discapacidad Chile</title>
+<meta name="description" content="Ruta paso a paso para personas con esquizofrenia, trastorno bipolar o depresión grave en Chile y sus familias: líneas de crisis, GES, derechos de la Ley 21.331, licencias rechazadas, pensión y apoyos.">
+<link rel="canonical" href="https://dataconsultingrrl.com/guia-discapacidad/salud-mental.html">
+<meta name="theme-color" content="#08091a">
+<meta property="og:title" content="Salud mental: la ruta paso a paso">
+<meta property="og:description" content="Ruta paso a paso para personas con esquizofrenia, trastorno bipolar o depresión grave en Chile y sus familias: líneas de crisis, GES, derechos de la Ley 21.331, licencias rechazadas, pensión y apoyos.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dataconsultingrrl.com/guia-discapacidad/salud-mental.html">
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+:root{
+  /* Vista normal: la identidad de dataconsultingrrl.com (azul noche, violeta y cian) con contraste alto */
+  --bg:#08091A;--surface:#141733;--ink:#E7E9F7;--muted:#B3B8D9;--line:#4A5190;
+  --brand:#9D85FF;--brand-ink:#FFFFFF;--brand-soft:#1B1F3F;
+  --accent:#22D3EE;--on-accent:#08091A;
+  --ok:#22D3EE;--ok-soft:#22D3EE;--warn:#9D85FF;--warn-soft:#1B1F3F;
+  --focus:#22D3EE;--radius:16px;--fs:1.125rem;--bw:2px;
+}
+/* Modo sin blancos: fondo oscuro cálido, para fotofobia y encandilamiento */
+:root[data-mode="sinblancos"]{
+  --bg:#1C1914;--surface:#27221A;--ink:#E8DCC3;--muted:#C9BC9F;--line:#5E523D;
+  --brand:#D9A441;--brand-ink:#1C1914;--brand-soft:#3A3226;
+  --accent:#D9A441;--on-accent:#1C1914;
+  --ok:#D9A441;--ok-soft:#3A3226;--warn:#D9A441;--warn-soft:#312A1F;--focus:#F2B705;
+}
+/* Modo alto contraste: amarillo sobre negro, para baja visión */
+:root[data-mode="contraste"]{
+  --bg:#000000;--surface:#000000;--ink:#FFE14D;--muted:#FFE14D;--line:#FFE14D;
+  --brand:#FFE14D;--brand-ink:#000000;--brand-soft:#3D3500;
+  --accent:#FFE14D;--on-accent:#000000;
+  --ok:#FFE14D;--ok-soft:#000000;--warn:#FFE14D;--warn-soft:#000000;--focus:#7FD4FF;
+}
+:root[data-mode="calma"]{
+  /* Modo calma: para autismo y sensibilidad sensorial. Colores suaves, poco contraste de color, sin movimiento */
+  --bg:#DDE3DF;--surface:#E6EBE7;--ink:#23302B;--muted:#3E4B45;--line:#8E9C94;
+  --brand:#3F5F73;--brand-ink:#EEF1EE;--brand-soft:#CBD5D0;
+  --accent:#AFC3B8;--on-accent:#23302B;
+  --ok:#23302B;--ok-soft:#AFC3B8;--warn:#6B7A72;--warn-soft:#D2DAD5;--focus:#3F5F73;
+}
+:root[data-mode="calma"] *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+*{box-sizing:border-box}
+html{font-size:var(--fs)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Atkinson Hyperlegible",Verdana,system-ui,sans-serif;line-height:1.6}
+a{color:var(--brand);text-underline-offset:3px}
+:focus-visible{outline:4px solid var(--focus);outline-offset:3px}
+button{font-family:inherit}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:8px;background:var(--surface);padding:8px 12px;z-index:9}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+header.top{background:var(--surface);border-bottom:var(--bw) solid var(--line);z-index:5}
+@media(min-width:640px){header.top{position:sticky;top:0}}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 0}
+.logo{font-weight:700;font-size:1.05rem;color:var(--ink);text-decoration:none}
+.tools{display:flex;gap:6px}
+.tools button{min-width:48px;min-height:48px;font-weight:700;border:var(--bw) solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;font-size:1rem;cursor:pointer}
+.modes{padding:0 0 12px}
+.modes .lbl{font-size:.85rem;font-weight:700;color:var(--muted);margin-bottom:6px}
+.modes .row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;max-width:680px}
+@media(min-width:640px){.modes .row{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.mode{min-height:60px;padding:6px;border-radius:12px;border:3px solid var(--line);font-size:.9rem;font-weight:700;line-height:1.15;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.mode .sw{width:26px;height:14px;border-radius:7px;border:2px solid currentColor}
+.mode[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent)}
+.m-vivos{background:#08091A;color:#E7E9F7}.m-vivos .sw{background:linear-gradient(100deg,#7C5CFF,#22D3EE)}
+.m-sinblancos{background:#1C1914;color:#E8DCC3}.m-sinblancos .sw{background:#D9A441}
+.m-contraste{background:#000;color:#FFE14D}.m-contraste .sw{background:#FFE14D}
+.m-calma{background:#DDE3DF;color:#23302B}.m-calma .sw{background:#AFC3B8}
+#ajuste:empty{display:none}
+#ajuste button{margin-top:8px;min-height:44px;padding:8px 14px;border-radius:10px;border:var(--bw) solid var(--line);background:var(--surface);color:var(--ink);font-weight:700;cursor:pointer}
+.modes .help{font-size:.85rem;color:var(--muted);margin-top:6px}
+nav.menu{display:flex;gap:6px;overflow-x:auto;padding:0 0 10px;scrollbar-width:thin}
+nav.menu a{white-space:nowrap;padding:10px 14px;min-height:44px;font-weight:700;border-radius:999px;background:var(--brand-soft);text-decoration:none;font-size:.9rem;color:var(--ink)}
+.hero{padding:32px 0 8px}
+.hero h1{font-size:1.9rem;line-height:1.2;margin:0 0 10px}
+.hero p{color:var(--muted);margin:0 0 6px;max-width:62ch}
+section{padding:28px 0;border-bottom:1px solid var(--line)}
+h2{font-size:1.45rem;margin:0 0 6px}
+h3{font-size:1.1rem;margin:0 0 4px}
+.lead{color:var(--muted);margin:0 0 18px;max-width:65ch}
+.card{background:var(--surface);border:var(--bw) solid var(--line);border-radius:var(--radius);padding:18px}
+.grid{display:grid;gap:12px}
+@media(min-width:640px){.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}}
+.chips{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media(min-width:640px){.chips{grid-template-columns:repeat(4,1fr)}}
+.chip{min-height:64px;border:3px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:10px;font-size:.98rem;font-weight:600;cursor:pointer;text-align:left;display:flex;gap:8px;align-items:center}
+.chip .dot{width:18px;height:18px;border-radius:50%;border:3px solid currentColor;flex-shrink:0}
+.chip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent);color:var(--on-accent)}
+.chip[aria-pressed="true"] .dot{background:currentColor}
+.step-label{font-weight:700;margin:18px 0 8px}
+.ages{display:flex;flex-wrap:wrap;gap:8px}
+.ages .chip{min-height:48px;flex:1 1 140px}
+#resultado{margin-top:18px}
+.res h3{margin-top:14px}
+.benefit{border-left:4px solid var(--brand);padding:10px 12px;background:var(--surface);border-radius:0 10px 10px 0;margin:8px 0;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.benefit.esp{border-left-color:var(--ok)}
+.benefit b{display:block}
+.benefit small{color:var(--muted)}
+.tag{display:inline-block;font-size:.8rem;font-weight:700;padding:2px 10px;border-radius:8px;background:var(--accent);color:var(--on-accent);margin-bottom:4px}
+.money{font-size:1.5rem;font-weight:800;color:var(--brand)}
+.note{background:var(--warn-soft);color:var(--ink);border-left:4px solid var(--warn);padding:12px 14px;border-radius:0 10px 10px 0;margin:14px 0}
+ol.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+ol.steps>li{counter-increment:s;position:relative;padding:0 0 18px 52px}
+ol.steps>li::before{content:counter(s);position:absolute;left:0;top:0;width:38px;height:38px;border-radius:50%;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-weight:800}
+ol.steps>li:not(:last-child)::after{content:"";position:absolute;left:18px;top:40px;bottom:4px;width:2px;background:var(--line)}
+details{background:var(--surface);border:var(--bw) solid var(--line);border-radius:12px;margin:8px 0}
+summary{cursor:pointer;padding:14px 16px;font-weight:700;min-height:48px}
+details>div{padding:0 16px 14px}
+.contact{display:flex;flex-direction:column;gap:2px}
+.tel{font-size:1.25rem;font-weight:800;text-decoration:none}
+.stat{font-size:2.2rem;font-weight:800;line-height:1.1;color:var(--brand)}
+.barrow{margin:10px 0}
+.barrow .lbl{display:flex;justify-content:space-between;font-size:.95rem}
+.track{height:14px;background:var(--brand-soft);border-radius:999px;overflow:hidden}
+.fill{height:100%;background:var(--brand);border-radius:999px}
+.src{font-size:.85rem;color:var(--muted)}
+footer{padding:28px 0 48px;color:var(--muted);font-size:.9rem}
+.btn{display:inline-block;background:var(--brand);color:var(--brand-ink);padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;min-height:48px}
+/* Detalles de marca solo en la vista normal */
+:root:not([data-mode]) .btn,:root:not([data-mode]) ol.steps>li::before{background:linear-gradient(100deg,#7C5CFF 0%,#5B7CFF 100%);color:#fff}
+:root:not([data-mode]) header.top{background:rgba(8,9,26,.92)}
+:root:not([data-mode]) .hero{background:radial-gradient(600px 300px at 10% 0%,rgba(124,92,255,.30),transparent 65%),radial-gradient(500px 280px at 95% 10%,rgba(34,211,238,.16),transparent 60%)}
+:root:not([data-mode]) .money,:root:not([data-mode]) .stat{color:#22D3EE}
+:root:not([data-mode]) .fill{background:linear-gradient(90deg,#7C5CFF,#22D3EE)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="top">
+  <div class="wrap">
+    <div class="bar">
+      <a class="logo" href="index.html">Guía Discapacidad Chile</a>
+      <div class="tools" aria-label="Accesibilidad">
+        <button id="fsDown" aria-label="Achicar letra">A−</button>
+        <button id="fsUp" aria-label="Agrandar letra">A+</button>
+      </div>
+    </div>
+    <div class="modes" role="group" aria-labelledby="l-modo">
+      <div class="lbl" id="l-modo">¿Cómo ves mejor?</div>
+      <div class="row">
+        <button class="mode m-vivos" data-m="vivos" aria-pressed="true"><span class="sw" aria-hidden="true"></span>Normal</button>
+        <button class="mode m-sinblancos" data-m="sinblancos" aria-pressed="false"><span class="sw" aria-hidden="true"></span>Sin blancos</button>
+        <button class="mode m-contraste" data-m="contraste" aria-pressed="false"><span class="sw" aria-hidden="true"></span>Alto contraste</button>
+        <button class="mode m-calma" data-m="calma" aria-pressed="false"><span class="sw" aria-hidden="true"></span>Calma</button>
+      </div>
+      <div class="help" id="modeHelp" aria-live="polite"></div>
+    </div>
+    <nav class="menu" aria-label="Secciones">
+      <a href="#inicio">En crisis</a>
+      <a href="#ruta">La ruta</a>
+      <a href="#prevision">FONASA o isapre</a>
+      <a href="#derechos">Derechos</a>
+      <a href="#licencias">Licencias</a>
+      <a href="#organizaciones">Organizaciones</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <div class="hero" id="inicio">
+    <p><a href="index.html#rutas">← Volver a las rutas</a></p>
+
+    <div class="card" role="region" aria-labelledby="t-crisis" style="border-width:3px;border-color:var(--accent);margin-bottom:22px">
+      <h2 id="t-crisis" style="margin-top:0">Si tú o alguien está en crisis ahora</h2>
+      <ul>
+        <li><b>Si piensas en quitarte la vida o te preocupa alguien:</b> llama al <a class="tel" href="tel:*4141">*4141</a>. Es gratis, atiende las 24 horas, todos los días, y contestan psicólogos. Se marca desde celular.</li>
+        <li><b>Urgencia médica:</b> SAMU <a class="tel" href="tel:131">131</a>, o ve al servicio de urgencia más cercano.</li>
+        <li><b>Orientación en salud mental:</b> Salud Responde <a class="tel" href="tel:6003607777">600 360 7777</a>, las 24 horas.</li>
+      </ul>
+      <p class="src" style="margin-bottom:0">No estás solo ni sola. <a href="https://www.minsal.cl/linea-de-atencion-4141-no-estas-solo-no-estas-sola/" target="_blank" rel="noopener">MINSAL: línea *4141 ↗</a></p>
+    </div>
+
+    <h1>Salud mental: la ruta paso a paso</h1>
+    <p>Para personas con una condición de salud mental que afecta su vida diaria, como esquizofrenia, trastorno bipolar o depresión grave, y para sus familias: atención y garantías GES, derechos, licencias, certificación, pensión y apoyos.</p>
+    <p>Todo viene de fuentes oficiales, revisadas en septiembre de 2026.</p>
+    <p class="src">Esta página se abre en la vista «Calma». Puedes cambiarla en «¿Cómo ves mejor?», arriba.</p>
+  </div>
+
+  <section id="clave" aria-labelledby="t-k">
+    <h2 id="t-k">Lo más importante primero</h2>
+    <div class="grid g2">
+      <div class="card"><h3>Tres condiciones tienen garantía GES</h3>
+        <ul>
+          <li><b>Esquizofrenia:</b> evaluación, confirmación y tratamiento. Atención con especialista dentro de 20 días desde la derivación.</li>
+          <li><b>Depresión, desde los 15 años:</b> especialista dentro de 30 días si el caso lo requiere.</li>
+          <li><b>Trastorno bipolar, desde los 15 años:</b> tratamiento dentro de 24 horas desde la confirmación, y hospitalización dentro de 24 horas si se indica.</li>
+        </ul>
+        <a href="https://auge.minsal.cl/problemasdesalud/index/15" target="_blank" rel="noopener">GES esquizofrenia ↗</a> · <a href="https://auge.minsal.cl/problemasdesalud/index/34" target="_blank" rel="noopener">GES depresión ↗</a> · <a href="https://auge.minsal.cl/problemasdesalud/index/75" target="_blank" rel="noopener">GES bipolar ↗</a></div>
+      <div class="card"><h3>La Ley de Salud Mental protege tus derechos</h3>
+        <p>La Ley 21.331 reconoce, entre otros, tus derechos al consentimiento informado, a la privacidad, a la no discriminación y a designar personas de confianza que te acompañen a decidir.</p>
+        <a href="https://diprece.minsal.cl/wp-content/uploads/2022/09/Guia-legal-Ley-21.331.pdf" target="_blank" rel="noopener">Guía legal de la Ley 21.331 ↗</a></div>
+      <div class="card"><h3>Las isapres no pueden dar menos cobertura a la salud mental</h3>
+        <p>Desde 2022, los planes nuevos de isapre no pueden tener topes más bajos para la salud mental que para la salud física. La declaración de salud ya no puede preguntar por enfermedades mentales.</p>
+        <a href="https://www.superdesalud.gob.cl/noticias/2021/11/nuevos-planes-de-isapres-no-tendran-cobertura-restringida-en-atenciones-de-salud-mental/" target="_blank" rel="noopener">Superintendencia de Salud ↗</a></div>
+      <div class="card"><h3>Si te rechazan una licencia médica, puedes reclamar</h3>
+        <p>Hay plazos cortos, así que actúa rápido.</p>
+        <a href="#licencias">Ver cómo reclamar ↓</a></div>
+    </div>
+  </section>
+
+  <section id="ruta" aria-labelledby="t-r">
+    <h2 id="t-r">La ruta</h2>
+    <ol class="steps">
+      <li><h3>Consulta en tu CESFAM</h3>
+        <p>Es la puerta de entrada. Allí se atienden los casos leves y se notifica la sospecha GES si corresponde.</p></li>
+      <li><h3>Si es moderado o grave: derivación al centro de salud mental comunitaria</h3>
+        <p>El CESFAM deriva al COSAM o Centro de Salud Mental Comunitaria, que atiende con equipo especializado. Desde allí se puede derivar a hospital de día o a psiquiatría. <b>Exige los plazos GES.</b></p>
+        <p class="src"><a href="https://www.minsal.cl/wp-content/uploads/2015/09/2018.03.28_MODELO-DE-GESTION-CENTRO-DE-SALUD-MENTAL-COMUNITARIA_DIGITAL.pdf" target="_blank" rel="noopener">MINSAL: centros de salud mental comunitaria ↗</a></p></li>
+      <li><h3>Si no cumplen un plazo GES: reclama</h3>
+        <p>Tienes 30 días para reclamar a FONASA o a tu isapre. Deben designarte otro prestador en 2 días, y ese prestador debe atenderte dentro de 10 días.</p></li>
+      <li><h3>Conoce tus derechos si hay una hospitalización</h3>
+        <p><a href="#derechos">Detalle abajo ↓</a></p></li>
+      <li><h3>Pide la pensión en paralelo, si la condición afecta tu trabajo</h3>
+        <p><a href="#pension">Detalle abajo ↓</a></p></li>
+      <li><h3>Evalúa la credencial de discapacidad</h3>
+        <p>Es gratis en la COMPIN. Para una condición psiquiátrica se pide además un <b>informe de psiquiatría o del equipo de salud mental tratante</b>. La credencial abre programas de SENADIS, la cuota laboral y la credencial de cuidador. Si no estás de acuerdo con el resultado, puedes pedir reposición dentro de 5 días hábiles.</p>
+        <p><a href="index.html#tramites">Cómo se pide ↗</a></p></li>
+      <li><h3>La familia también necesita apoyo</h3>
+        <p>Registra a quien cuida y busca una agrupación de familiares. <a href="#cuidadores">Detalle abajo ↓</a></p></li>
+    </ol>
+  </section>
+
+  <section id="prevision" aria-labelledby="t-pv">
+    <h2 id="t-pv">Según tu previsión: FONASA o isapre</h2>
+    <div class="grid g2">
+      <div class="card"><h3>Si estás en FONASA</h3>
+        <ul>
+          <li><b>Red pública:</b> CESFAM, luego el centro de salud mental comunitaria, y hospital si hace falta.</li>
+          <li><b>GES sin copago</b> en la red pública (Copago Cero), para todos los tramos.</li>
+          <li>Existe también videoconsulta de psiquiatría coordinada por los Servicios de Salud.</li>
+        </ul>
+      </div>
+      <div class="card"><h3>Si estás en una isapre</h3>
+        <ul>
+          <li><b>GES:</b> copago de hasta el 20%, en los prestadores de la red GES de tu isapre.</li>
+          <li><b>Planes contratados desde 2022:</b> no pueden tener topes más bajos para la salud mental que para la salud física.</li>
+          <li>Pide el detalle de tu cobertura por correo.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="src">Si FONASA o tu isapre no cumple, reclama en la <a href="https://www.superdesalud.gob.cl/" target="_blank" rel="noopener">Superintendencia de Salud ↗</a>.</p>
+  </section>
+
+  <section id="derechos" aria-labelledby="t-d">
+    <h2 id="t-d">Tus derechos (Ley 21.331)</h2>
+    <div class="grid g2">
+      <div class="card"><h3>Decidir sobre tu tratamiento</h3>
+        <ul>
+          <li>Desde el primer ingreso tienes derecho a dar tu consentimiento libre e informado.</li>
+          <li>Puedes dejar <b>instrucciones anticipadas</b> sobre cómo quieres ser tratado si más adelante no puedes decidir.</li>
+          <li>Puedes designar personas de confianza que te acompañen a tomar decisiones.</li>
+        </ul></div>
+      <div class="card"><h3>Si hay una hospitalización sin tu consentimiento</h3>
+        <p>Solo procede si hay un riesgo real e inmediato para tu vida o la de otros y no existe otra alternativa. La deben indicar dos profesionales, uno de ellos médico, y debe tener un plazo.</p>
+        <p>Si dura más de <b>72 horas</b>, la revisa un <b>Tribunal de Familia</b>. La contención física solo se permite por indicación médica y por el menor tiempo posible.</p>
+        <p class="src">Si ves un trato indigno, se informa a la Comisión Regional de Protección de los Derechos de las Personas con Enfermedades Mentales. <a href="https://www.leychile.cl/Navegar?idNorma=1159383" target="_blank" rel="noopener">Ley 21.331 ↗</a></p></div>
+    </div>
+  </section>
+
+  <section id="licencias" aria-labelledby="t-l">
+    <h2 id="t-l">Si te rechazan una licencia médica</h2>
+    <ol>
+      <li><b>Si la rechazó tu isapre:</b> reclama ante la COMPIN dentro de <b>15 días hábiles</b>.</li>
+      <li><b>Si la rechazó la COMPIN:</b> presenta un recurso de reposición dentro de <b>5 días</b>.</li>
+      <li><b>Última instancia:</b> reclama ante la Superintendencia de Seguridad Social (SUSESO), dentro de 6 meses desde que terminó la licencia.</li>
+    </ol>
+    <p>Todo se hace en milicencia.cl.</p>
+    <p class="src"><a href="https://www.suseso.gob.cl/605/w3-article-784808.html" target="_blank" rel="noopener">SUSESO: licencias rechazadas ↗</a></p>
+  </section>
+
+  <section id="pension" aria-labelledby="t-p">
+    <h2 id="t-p">Pensión, trabajo y decisiones legales</h2>
+    <div class="grid g2">
+      <div class="card"><h3>Pensión e ingresos</h3>
+        <ul>
+          <li><b>Pensión de invalidez de la AFP:</b> para menores de 65 años. La Comisión Médica evalúa la condición según un capítulo propio para trastornos mentales, una vez agotados los tratamientos disponibles.</li>
+          <li><b>Pensión Básica Solidaria de Invalidez:</b> $250.275 al mes, para personas de 18 a 64 años sin otra pensión, en el 80% más vulnerable.</li>
+          <li><b>Subsidio de Discapacidad para menores de 18 años:</b> $125.138 al mes, incluida la discapacidad mental.</li>
+        </ul>
+        <p class="src"><a href="https://www.chileatiende.gob.cl/fichas/5262-pension-de-invalidez-del-sistema-de-pensiones-afp" target="_blank" rel="noopener">Pensión AFP ↗</a> · <a href="https://www.chileatiende.gob.cl/fichas/5178-pension-basica-solidaria-de-invalidez-pbsi" target="_blank" rel="noopener">PBSI ↗</a></p></div>
+      <div class="card"><h3>Trabajo y vida independiente</h3>
+        <ul>
+          <li><b>Cuota laboral:</b> las empresas y organismos públicos con 100 o más trabajadores deben tener al menos un 1% de personas con discapacidad o con pensión de invalidez. La Ley 21.690 lo subirá a 2%.</li>
+          <li><b>Tránsito a la Vida Independiente (SENADIS):</b> apoyos para personas de 18 a 59 años inscritas en el Registro Nacional de la Discapacidad.</li>
+          <li><b>Decisiones legales:</b> la interdicción y la curaduría también pueden aplicar a la discapacidad psíquica. Está en tramitación un proyecto de ley para reemplazarlas por apoyos. <a href="sindrome-down.html#dieciocho">Ver cómo funciona ↗</a></li>
+        </ul></div>
+    </div>
+  </section>
+
+  <section id="cuidadores" aria-labelledby="t-cu">
+    <h2 id="t-cu">Para la familia y quien cuida</h2>
+    <p>La <b>credencial de persona cuidadora</b> da atención preferente. La persona cuidada debe estar en el Registro Nacional de la Discapacidad o tener dependencia moderada o mayor en el Registro Social de Hogares. <a href="https://www.chileatiende.gob.cl/fichas/112779-persona-cuidadora" target="_blank" rel="noopener">Cómo pedirla ↗</a></p>
+  </section>
+
+  <section id="organizaciones" aria-labelledby="t-o">
+    <h2 id="t-o">Organizaciones que acompañan</h2>
+    <div class="grid g2">
+      <div class="card contact"><h3>Agrupación de Familiares, Usuarios y Amigos (Instituto Psiquiátrico Dr. José Horwitz)</h3><span>Agrupación comunitaria de familias y usuarios.</span><a href="https://psiquiatrico.cl/afudis/" target="_blank" rel="noopener">Ver agrupación ↗</a></div>
+      <div class="card contact"><h3>Salud Responde: salud mental</h3><a class="tel" href="tel:6003607777">600 360 7777</a><span>Las 24 horas. Tiene una opción de orientación psicológica: confírmala en el menú al llamar.</span></div>
+    </div>
+    <p class="src">¿Conoces otra agrupación de usuarios o familiares? <a href="mailto:rocio.rojas@dataconsultingrrl.com?subject=Organizaci%C3%B3n%20para%20la%20gu%C3%ADa">Escríbenos</a>.</p>
+  </section>
+
+  <section id="experiencia" aria-labelledby="t-e">
+    <h2 id="t-e">¿Vives con una condición de salud mental, o acompañas a alguien?</h2>
+    <div class="card">
+      <p>Esta ruta la armamos con información oficial. Queremos sumarle lo más valioso: la experiencia de una persona o una familia que lo vive. Qué descubrieron tarde, qué trámite les costó más y qué le dirían a quien recién empieza.</p>
+      <p style="margin-bottom:0"><a class="btn" href="mailto:rocio.rojas@dataconsultingrrl.com?subject=Mi%20experiencia%20con%20la%20salud%20mental">Comparte tu experiencia</a></p>
+    </div>
+  </section>
+</main>
+
+
+<footer class="wrap">
+  <p><b>Aviso:</b> esta guía orienta, pero no reemplaza a los organismos oficiales. Los montos y requisitos pueden cambiar. Antes de postular, confírmalos en ChileAtiende o en SENADIS.</p>
+  <p>Información revisada el 27 de septiembre de 2026 en ChileAtiende, SENADIS, IPS, Superintendencia de Pensiones, CMF, BCN, MINSAL, Dirección del Trabajo y OMS.</p>
+  <p>Hecho por <a href="https://dataconsultingrrl.com/">DataconsultingRRL</a>.</p>
+</footer>
+
+<script>
+let fs=1.0625;try{fs=parseFloat(localStorage.getItem("gdc-fs"))||fs}catch(e){}
+const setFs=v=>{fs=Math.min(1.5,Math.max(.9,v));document.documentElement.style.setProperty("--fs",fs+"rem");try{localStorage.setItem("gdc-fs",fs)}catch(e){}};setFs(fs);
+fsUp.onclick=()=>setFs(fs+.125);fsDown.onclick=()=>setFs(fs-.125);
+const MODE_HELP={vivos:"Los colores de DataconsultingRRL, con letra grande y buen contraste.",sinblancos:"Fondo oscuro cálido y letra crema. Para quien se encandila con el blanco.",contraste:"Amarillo sobre negro. Máximo contraste para baja visión.",calma:"Colores suaves, sin contrastes fuertes ni movimiento. Pensado para autismo y sensibilidad sensorial."};
+const setMode=m=>{if(!MODE_HELP[m])m="vivos";m==="vivos"?delete document.documentElement.dataset.mode:document.documentElement.dataset.mode=m;
+ document.querySelectorAll(".mode").forEach(b=>b.setAttribute("aria-pressed",b.dataset.m===m));modeHelp.textContent=MODE_HELP[m];try{localStorage.setItem("gdc-mode",m)}catch(e){}};
+/* Discapacidad psíquica: abre en «Calma» salvo que la persona haya elegido otra vista distinta de la normal */
+let m0="calma";try{const g=localStorage.getItem("gdc-mode");if(g&&g!=="vivos")m0=g}catch(e){}setMode(m0);
+document.querySelector(".modes .row").onclick=e=>{const b=e.target.closest(".mode");if(b)setMode(b.dataset.m)};
+/* Ajuste automático de la vista según el tipo de discapacidad elegido */
+</script>
+</body>
+</html>
