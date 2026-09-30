@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hipoacusia y sordera · Guía Discapacidad Chile</title>
+<meta name="description" content="Ruta paso a paso para personas con hipoacusia o sordera en Chile y sus familias: GES según la edad, implante coclear por Ley Ricarte Soto, audífonos SENADIS, lengua de señas, colegio, trabajo y pensión.">
+<link rel="canonical" href="https://dataconsultingrrl.com/guia-discapacidad/hipoacusia.html">
+<meta name="theme-color" content="#08091a">
+<meta property="og:title" content="Hipoacusia y sordera: la ruta paso a paso">
+<meta property="og:description" content="Ruta paso a paso para personas con hipoacusia o sordera en Chile y sus familias: GES según la edad, implante coclear por Ley Ricarte Soto, audífonos SENADIS, lengua de señas, colegio, trabajo y pensión.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dataconsultingrrl.com/guia-discapacidad/hipoacusia.html">
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+:root{
+  /* Vista normal: la identidad de dataconsultingrrl.com (azul noche, violeta y cian) con contraste alto */
+  --bg:#08091A;--surface:#141733;--ink:#E7E9F7;--muted:#B3B8D9;--line:#4A5190;
+  --brand:#9D85FF;--brand-ink:#FFFFFF;--brand-soft:#1B1F3F;
+  --accent:#22D3EE;--on-accent:#08091A;
+  --ok:#22D3EE;--ok-soft:#22D3EE;--warn:#9D85FF;--warn-soft:#1B1F3F;
+  --focus:#22D3EE;--radius:16px;--fs:1.125rem;--bw:2px;
+}
+/* Modo sin blancos: fondo oscuro cálido, para fotofobia y encandilamiento */
+:root[data-mode="sinblancos"]{
+  --bg:#1C1914;--surface:#27221A;--ink:#E8DCC3;--muted:#C9BC9F;--line:#5E523D;
+  --brand:#D9A441;--brand-ink:#1C1914;--brand-soft:#3A3226;
+  --accent:#D9A441;--on-accent:#1C1914;
+  --ok:#D9A441;--ok-soft:#3A3226;--warn:#D9A441;--warn-soft:#312A1F;--focus:#F2B705;
+}
+/* Modo alto contraste: amarillo sobre negro, para baja visión */
+:root[data-mode="contraste"]{
+  --bg:#000000;--surface:#000000;--ink:#FFE14D;--muted:#FFE14D;--line:#FFE14D;
+  --brand:#FFE14D;--brand-ink:#000000;--brand-soft:#3D3500;
+  --accent:#FFE14D;--on-accent:#000000;
+  --ok:#FFE14D;--ok-soft:#000000;--warn:#FFE14D;--warn-soft:#000000;--focus:#7FD4FF;
+}
+:root[data-mode="calma"]{
+  /* Modo calma: para autismo y sensibilidad sensorial. Colores suaves, poco contraste de color, sin movimiento */
+  --bg:#DDE3DF;--surface:#E6EBE7;--ink:#23302B;--muted:#3E4B45;--line:#8E9C94;
+  --brand:#3F5F73;--brand-ink:#EEF1EE;--brand-soft:#CBD5D0;
+  --accent:#AFC3B8;--on-accent:#23302B;
+  --ok:#23302B;--ok-soft:#AFC3B8;--warn:#6B7A72;--warn-soft:#D2DAD5;--focus:#3F5F73;
+}
+:root[data-mode="calma"] *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+*{box-sizing:border-box}
+html{font-size:var(--fs)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Atkinson Hyperlegible",Verdana,system-ui,sans-serif;line-height:1.6}
+a{color:var(--brand);text-underline-offset:3px}
+:focus-visible{outline:4px solid var(--focus);outline-offset:3px}
+button{font-family:inherit}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:8px;background:var(--surface);padding:8px 12px;z-index:9}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+header.top{background:var(--surface);border-bottom:var(--bw) solid var(--line);z-index:5}
+@media(min-width:640px){header.top{position:sticky;top:0}}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 0}
+.logo{font-weight:700;font-size:1.05rem;color:var(--ink);text-decoration:none}
+.tools{display:flex;gap:6px}
+.tools button{min-width:48px;min-height:48px;font-weight:700;border:var(--bw) solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;font-size:1rem;cursor:pointer}
+.modes{padding:0 0 12px}
+.modes .lbl{font-size:.85rem;font-weight:700;color:var(--muted);margin-bottom:6px}
+.modes .row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;max-width:680px}
+@media(min-width:640px){.modes .row{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.mode{min-height:60px;padding:6px;border-radius:12px;border:3px solid var(--line);font-size:.9rem;font-weight:700;line-height:1.15;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.mode .sw{width:26px;height:14px;border-radius:7px;border:2px solid currentColor}
+.mode[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent)}
+.m-vivos{background:#08091A;color:#E7E9F7}.m-vivos .sw{background:linear-gradient(100deg,#7C5CFF,#22D3EE)}
+.m-sinblancos{background:#1C1914;color:#E8DCC3}.m-sinblancos .sw{background:#D9A441}
+.m-contraste{background:#000;color:#FFE14D}.m-contraste .sw{background:#FFE14D}
+.m-calma{background:#DDE3DF;color:#23302B}.m-calma .sw{background:#AFC3B8}
+#ajuste:empty{display:none}
+#ajuste button{margin-top:8px;min-height:44px;padding:8px 14px;border-radius:10px;border:var(--bw) solid var(--line);background:var(--surface);color:var(--ink);font-weight:700;cursor:pointer}
+.modes .help{font-size:.85rem;color:var(--muted);margin-top:6px}
+nav.menu{display:flex;gap:6px;overflow-x:auto;padding:0 0 10px;scrollbar-width:thin}
+nav.menu a{white-space:nowrap;padding:10px 14px;min-height:44px;font-weight:700;border-radius:999px;background:var(--brand-soft);text-decoration:none;font-size:.9rem;color:var(--ink)}
+.hero{padding:32px 0 8px}
+.hero h1{font-size:1.9rem;line-height:1.2;margin:0 0 10px}
+.hero p{color:var(--muted);margin:0 0 6px;max-width:62ch}
+section{padding:28px 0;border-bottom:1px solid var(--line)}
+h2{font-size:1.45rem;margin:0 0 6px}
+h3{font-size:1.1rem;margin:0 0 4px}
+.lead{color:var(--muted);margin:0 0 18px;max-width:65ch}
+.card{background:var(--surface);border:var(--bw) solid var(--line);border-radius:var(--radius);padding:18px}
+.grid{display:grid;gap:12px}
+@media(min-width:640px){.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}}
+.chips{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media(min-width:640px){.chips{grid-template-columns:repeat(4,1fr)}}
+.chip{min-height:64px;border:3px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:10px;font-size:.98rem;font-weight:600;cursor:pointer;text-align:left;display:flex;gap:8px;align-items:center}
+.chip .dot{width:18px;height:18px;border-radius:50%;border:3px solid currentColor;flex-shrink:0}
+.chip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent);color:var(--on-accent)}
+.chip[aria-pressed="true"] .dot{background:currentColor}
+.step-label{font-weight:700;margin:18px 0 8px}
+.ages{display:flex;flex-wrap:wrap;gap:8px}
+.ages .chip{min-height:48px;flex:1 1 140px}
+#resultado{margin-top:18px}
+.res h3{margin-top:14px}
+.benefit{border-left:4px solid var(--brand);padding:10px 12px;background:var(--surface);border-radius:0 10px 10px 0;margin:8px 0;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.benefit.esp{border-left-color:var(--ok)}
+.benefit b{display:block}
+.benefit small{color:var(--muted)}
+.tag{display:inline-block;font-size:.8rem;font-weight:700;padding:2px 10px;border-radius:8px;background:var(--accent);color:var(--on-accent);margin-bottom:4px}
+.money{font-size:1.5rem;font-weight:800;color:var(--brand)}
+.note{background:var(--warn-soft);color:var(--ink);border-left:4px solid var(--warn);padding:12px 14px;border-radius:0 10px 10px 0;margin:14px 0}
+ol.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+ol.steps>li{counter-increment:s;position:relative;padding:0 0 18px 52px}
+ol.steps>li::before{content:counter(s);position:absolute;left:0;top:0;width:38px;height:38px;border-radius:50%;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-weight:800}
+ol.steps>li:not(:last-child)::after{content:"";position:absolute;left:18px;top:40px;bottom:4px;width:2px;background:var(--line)}
+details{background:var(--surface);border:var(--bw) solid var(--line);border-radius:12px;margin:8px 0}
+summary{cursor:pointer;padding:14px 16px;font-weight:700;min-height:48px}
+details>div{padding:0 16px 14px}
+.contact{display:flex;flex-direction:column;gap:2px}
+.tel{font-size:1.25rem;font-weight:800;text-decoration:none}
+.stat{font-size:2.2rem;font-weight:800;line-height:1.1;color:var(--brand)}
+.barrow{margin:10px 0}
+.barrow .lbl{display:flex;justify-content:space-between;font-size:.95rem}
+.track{height:14px;background:var(--brand-soft);border-radius:999px;overflow:hidden}
+.fill{height:100%;background:var(--brand);border-radius:999px}
+.src{font-size:.85rem;color:var(--muted)}
+footer{padding:28px 0 48px;color:var(--muted);font-size:.9rem}
+.btn{display:inline-block;background:var(--brand);color:var(--brand-ink);padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;min-height:48px}
+/* Detalles de marca solo en la vista normal */
+:root:not([data-mode]) .btn,:root:not([data-mode]) ol.steps>li::before{background:linear-gradient(100deg,#7C5CFF 0%,#5B7CFF 100%);color:#fff}
+:root:not([data-mode]) header.top{background:rgba(8,9,26,.92)}
+:root:not([data-mode]) .hero{background:radial-gradient(600px 300px at 10% 0%,rgba(124,92,255,.30),transparent 65%),radial-gradient(500px 280px at 95% 10%,rgba(34,211,238,.16),transparent 60%)}
+:root:not([data-mode]) .money,:root:not([data-mode]) .stat{color:#22D3EE}
+:root:not([data-mode]) .fill{background:linear-gradient(90deg,#7C5CFF,#22D3EE)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="top">
+  <div class="wrap">
+    <div class="bar">
+      <a class="logo" href="index.html">Guía Discapacidad Chile</a>
+      <div class="tools" aria-label="Accesibilidad">
+        <button id="fsDown" aria-label="Achicar letra">A−</button>
+        <button id="fsUp" aria-label="Agrandar letra">A+</button>
+      </div>
+    </div>
+    <div class="modes" role="group" aria-labelledby="l-modo">
+      <div class="lbl" id="l-modo">¿Cómo ves mejor?</div>
+      <div class="row">
+        <button class="mode m-vivos" data-m="vivos" aria-pressed="true"><span class="sw" aria-hidden="true"></span>Normal</button>
+        <button class="mode m-sinblancos" data-m="sinblancos" aria-pressed="false"><span class="sw" aria-hidden="true"></span>Sin blancos</button>
+        <button class="mode m-contraste" data-m="contraste" aria-pressed="false"><span class="sw" aria-hidden="true"></span>Alto contraste</button>
+        <button class="mode m-calma" data-m="calma" aria-pressed="false"><span class="sw" aria-hidden="true"></span>Calma</button>
+      </div>
+      <div class="help" id="modeHelp" aria-live="polite"></div>
+    </div>
+    <nav class="menu" aria-label="Secciones">
+      <a href="#clave">Según tu edad</a>
+      <a href="#ruta">La ruta</a>
+      <a href="#implante">Implante y audífonos</a>
+      <a href="#prevision">FONASA o isapre</a>
+      <a href="#derechos">Lengua de señas</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <div class="hero" id="inicio">
+    <p><a href="index.html#rutas">← Volver a las rutas</a></p>
+    <h1>Hipoacusia y sordera: la ruta paso a paso</h1>
+    <p>Qué hacer si tú o alguien de tu familia tiene pérdida auditiva: audífonos, implante coclear, certificación, lengua de señas, colegio, trabajo, licencia de conducir y apoyos.</p>
+    <p>Todo viene de fuentes oficiales, revisadas en septiembre de 2026.</p>
+    <p><b>¿Prefieres lengua de señas?</b> SENADIS tiene intérprete de lengua de señas chilena por video: entra a <a href="https://www.senadis.gob.cl" target="_blank" rel="noopener">senadis.gob.cl ↗</a> y usa el botón VI-SOR (necesitas cámara, en Chrome o Firefox).</p>
+  </div>
+
+  <section id="clave" aria-labelledby="t-k">
+    <h2 id="t-k">Lo primero: la cobertura depende de la edad</h2>
+    <div class="grid g3">
+      <div class="card"><h3>Menores de 4 años y prematuros</h3>
+        <p><b>Garantía GES:</b> audífonos, implante coclear (también en los dos oídos), recambio del procesador y rehabilitación.</p>
+        <ul>
+          <li>Diagnóstico en 90 días desde la sospecha.</li>
+          <li>Audífono en 90 días desde la confirmación.</li>
+          <li>Implante en 180 días desde la indicación.</li>
+        </ul>
+        <p>En los prematuros de menos de 1.500 g o de menos de 32 semanas se hace un examen de audición antes del alta.</p>
+        <a href="https://www.superdesalud.gob.cl/orientacion-en-salud/hipoacusia-moderada-severa-y-profunda-en-personas-menores-de-4-anos/" target="_blank" rel="noopener">GES menores de 4 años ↗</a></div>
+      <div class="card"><h3>De 4 a 64 años</h3>
+        <p><b>No hay GES.</b> Las alternativas son:</p>
+        <ul>
+          <li><b>Implante coclear por la Ley Ricarte Soto</b>, sin copago, si cumples los requisitos (ver abajo).</li>
+          <li><b>Audífonos gratis de SENADIS</b> desde los 10 años.</li>
+          <li><b>FONASA o tu isapre</b> para el resto.</li>
+        </ul>
+        <a href="#implante">Ver implante y audífonos ↓</a></div>
+      <div class="card"><h3>65 años o más</h3>
+        <p><b>Garantía GES:</b> audífono dentro de 45 días desde el diagnóstico, audiometría de control y rehabilitación.</p>
+        <p>No incluye implante ni cirugía.</p>
+        <a href="https://www.superdesalud.gob.cl/orientacion-en-salud/hipoacusia-bilateral-en-personas-de-65-anos-y-mas-que-requieren-uso-de-audifono/" target="_blank" rel="noopener">GES 65 años y más ↗</a></div>
+    </div>
+  </section>
+
+  <section id="ruta" aria-labelledby="t-r">
+    <h2 id="t-r">La ruta</h2>
+    <ol class="steps">
+      <li><h3>Diagnóstico con otorrino y audiometría</h3>
+        <p>Pide una evaluación en tu CESFAM o con tu isapre. Si hay un menor de 4 años o un prematuro, o una persona de 65 años o más, <b>exige la garantía GES</b>.</p></li>
+      <li><h3>Pide la pensión en paralelo, si la pérdida afecta tu trabajo</h3>
+        <ul>
+          <li><b>Si cotizas en una AFP:</b> para la pensión de invalidez te piden al menos 2 audiometrías y una logoaudiometría.</li>
+          <li><b>Si no tienes derecho a otra pensión:</b> la Pensión Básica Solidaria de Invalidez, de $250.275 al mes, para personas de 18 a 64 años en el 80% más vulnerable.</li>
+          <li><b>Si la pérdida se debe al ruido del trabajo:</b> es una enfermedad profesional. Denúnciala a tu mutualidad o al ISL (Ley 16.744).</li>
+        </ul>
+        <p class="src"><a href="https://www.chileatiende.gob.cl/fichas/5178-pension-basica-solidaria-de-invalidez-pbsi" target="_blank" rel="noopener">PBSI ↗</a> · <a href="https://www.chileatiende.gob.cl/fichas/5262-pension-de-invalidez-del-sistema-de-pensiones-afp" target="_blank" rel="noopener">Pensión AFP ↗</a></p></li>
+      <li><h3>Certifica la discapacidad y obtén la credencial</h3>
+        <p>Es gratis en la COMPIN, con ClaveÚnica. Adjunta tus exámenes de audición al informe. Con la credencial puedes postular a los audífonos de SENADIS y, si la pérdida es severa, al Subsidio de Discapacidad para menores de 18 años ($125.138 al mes).</p>
+        <p><a href="index.html#tramites">Cómo se pide la credencial ↗</a></p></li>
+      <li><h3>Audífonos o implante</h3>
+        <p><a href="#implante">Detalle abajo ↓</a></p></li>
+      <li><h3>Colegio: lengua de señas como primera lengua</h3>
+        <p>Los estudiantes sordos tienen derecho a aprender todo el currículo con la lengua de señas chilena como primera lengua y el español escrito como segunda. Hay escuelas especiales para sordos y el Programa de Integración Escolar (PIE) en colegios regulares.</p>
+        <p class="src"><a href="https://especial.mineduc.cl/educacion-estudiantes-con-discapacidad-auditiva/" target="_blank" rel="noopener">MINEDUC: estudiantes sordos ↗</a> · <a href="https://especial.mineduc.cl/directorio-de-establecimientos/" target="_blank" rel="noopener">Directorio de escuelas ↗</a></p></li>
+      <li><h3>Trabajo</h3>
+        <p>Las empresas y organismos públicos con 100 o más trabajadores deben tener al menos un 1% de personas con discapacidad. La Ley 21.690 lo subirá a 2% y obliga a hacer ajustes en los procesos de selección.</p></li>
+      <li><h3>Licencia de conducir</h3>
+        <p>La hipoacusia no impide por sí sola tener licencia clase B. Para las licencias profesionales se exige una audición mejor, pero se acepta con audífonos.</p>
+        <p class="src"><a href="https://www.conaset.cl/wp-content/uploads/2018/04/DTO-170_02-ENE-1986-2.pdf" target="_blank" rel="noopener">Decreto 170 ↗</a></p></li>
+    </ol>
+  </section>
+
+  <section id="implante" aria-labelledby="t-i">
+    <h2 id="t-i">Implante coclear y audífonos</h2>
+    <div class="grid g2">
+      <div class="card"><h3>Implante coclear por la Ley Ricarte Soto</h3>
+        <p><b>Para quién:</b> personas mayores de 4 años con hipoacusia severa o profunda en los dos oídos que ya habían desarrollado el lenguaje oral. Esto lo acredita un informe fonoaudiológico.</p>
+        <p><b>Qué cubre, sin copago:</b> un implante, sus accesorios y el recambio del procesador cada 5 años.</p>
+        <p><b>Cómo se pide:</b> lo postula tu otorrino en la plataforma de FONASA.</p>
+        <div class="note">No cubre a quienes nacieron sordos o perdieron la audición antes de aprender a hablar, ni a quienes llevan 8 años o más sin audición total.</div>
+        <a href="https://www.superdesalud.gob.cl/orientacion-en-salud/hipoacusia-sensorioneural-bilateral-severa-o-profunda-postlocutiva/" target="_blank" rel="noopener">Superintendencia de Salud ↗</a></div>
+      <div class="card"><h3>Audífonos gratis de SENADIS</h3>
+        <p><b>Para quién:</b> personas de 10 a 64 años inscritas en el Registro Nacional de la Discapacidad y en el 70% más vulnerable del Registro Social de Hogares.</p>
+        <p><b>Qué entrega:</b> un par de audífonos cuenta como una ayuda técnica, y se renueva cada 3 años. Necesitas la indicación de un otorrino y exámenes de menos de 6 meses.</p>
+        <div class="note">Se postula una vez al año. En 2026 fue del 5 de marzo al 7 de abril en portal.senadis.cl. <b>Ten listos la credencial y los exámenes antes de marzo.</b></div>
+        <a href="https://www.senadis.gob.cl/pag/801/2095/convocatoria_2026_programa_regular_de_ayudas_tecnicas" target="_blank" rel="noopener">SENADIS ↗</a></div>
+    </div>
+  </section>
+
+  <section id="prevision" aria-labelledby="t-pv">
+    <h2 id="t-pv">Según tu previsión: FONASA o isapre</h2>
+    <div class="grid g2">
+      <div class="card"><h3>Si estás en FONASA</h3>
+        <ul>
+          <li><b>GES</b> (menores de 4 años, prematuros y 65 años o más): copago 0% en los tramos A, B, C y D.</li>
+          <li><b>Ley Ricarte Soto:</b> implante coclear sin copago.</li>
+          <li><b>De 4 a 64 años:</b> evaluación en la red pública, con derivación desde el CESFAM a otorrino.</li>
+        </ul>
+      </div>
+      <div class="card"><h3>Si estás en una isapre</h3>
+        <ul>
+          <li><b>GES:</b> copago del 20%, en los prestadores de la red GES de tu isapre.</li>
+          <li><b>Ley Ricarte Soto:</b> implante coclear sin copago, también si estás en isapre.</li>
+          <li><b>Audífonos fuera del GES:</b> dependen de tu plan. Pide el detalle por correo.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="src">Si FONASA o tu isapre no cumple, reclama en la <a href="https://www.superdesalud.gob.cl/" target="_blank" rel="noopener">Superintendencia de Salud ↗</a>.</p>
+  </section>
+
+  <section id="derechos" aria-labelledby="t-d">
+    <h2 id="t-d">Lengua de señas y derechos</h2>
+    <ul>
+      <li><b>La lengua de señas chilena es la lengua oficial de las personas sordas</b> (Ley 21.303). El Estado debe garantizar el acceso en lengua de señas a servicios públicos y privados, educación, trabajo y salud. <a href="https://www.bcn.cl/leychile/navegar?idNorma=1154963" target="_blank" rel="noopener">Ley 21.303 ↗</a></li>
+      <li><b>Intérprete en salud:</b> en 2024, un tribunal ordenó a un hospital tener intérprete de lengua de señas. Si te lo niegan, puedes pedir orientación a la Corporación de Asistencia Judicial.</li>
+      <li><b>Televisión:</b> las cadenas nacionales, la propaganda electoral, los debates presidenciales y los avisos de emergencia deben ir con subtítulos y lengua de señas.</li>
+      <li><b>Emergencias:</b> Bomberos y SENADIS lanzaron en 2022 una app gratuita para que las personas sordas pidan ayuda a Bomberos eligiendo el tipo de emergencia.</li>
+    </ul>
+  </section>
+
+  <section id="organizaciones" aria-labelledby="t-o">
+    <h2 id="t-o">Organizaciones</h2>
+    <div class="grid g2">
+      <div class="card contact"><h3>Asociación de Sordos de Chile (ASOCH)</h3><span>Fundada en 1926.</span><a href="https://www.asoch.cl" target="_blank" rel="noopener">asoch.cl ↗</a></div>
+      <div class="card contact"><h3>Línea «Conectados al Cuidar» (financiada por SENADIS)</h3><a class="tel" href="tel:800000058">800 000 058</a><span>Personas sordas: atención con intérprete por video en vi-sor.cl.</span></div>
+    </div>
+  </section>
+
+  <section id="experiencia" aria-labelledby="t-e">
+    <h2 id="t-e">¿Vives con hipoacusia o sordera?</h2>
+    <div class="card">
+      <p>Esta ruta la armamos con información oficial. Queremos sumarle lo más valioso: la experiencia de una persona o una familia que lo vive. Qué descubrieron tarde, qué trámite les costó más y qué le dirían a quien recién empieza.</p>
+      <p style="margin-bottom:0"><a class="btn" href="mailto:rocio.rojas@dataconsultingrrl.com?subject=Mi%20experiencia%20con%20la%20hipoacusia">Comparte tu experiencia</a></p>
+    </div>
+  </section>
+</main>
+
+
+<footer class="wrap">
+  <p><b>Aviso:</b> esta guía orienta, pero no reemplaza a los organismos oficiales. Los montos y requisitos pueden cambiar. Antes de postular, confírmalos en ChileAtiende o en SENADIS.</p>
+  <p>Información revisada el 27 de septiembre de 2026 en ChileAtiende, SENADIS, IPS, Superintendencia de Pensiones, CMF, BCN, MINSAL, Dirección del Trabajo y OMS.</p>
+  <p>Hecho por <a href="https://dataconsultingrrl.com/">DataconsultingRRL</a>.</p>
+</footer>
+
+<script>
+let fs=1.0625;try{fs=parseFloat(localStorage.getItem("gdc-fs"))||fs}catch(e){}
+const setFs=v=>{fs=Math.min(1.5,Math.max(.9,v));document.documentElement.style.setProperty("--fs",fs+"rem");try{localStorage.setItem("gdc-fs",fs)}catch(e){}};setFs(fs);
+fsUp.onclick=()=>setFs(fs+.125);fsDown.onclick=()=>setFs(fs-.125);
+const MODE_HELP={vivos:"Los colores de DataconsultingRRL, con letra grande y buen contraste.",sinblancos:"Fondo oscuro cálido y letra crema. Para quien se encandila con el blanco.",contraste:"Amarillo sobre negro. Máximo contraste para baja visión.",calma:"Colores suaves, sin contrastes fuertes ni movimiento. Pensado para autismo y sensibilidad sensorial."};
+const setMode=m=>{if(!MODE_HELP[m])m="vivos";m==="vivos"?delete document.documentElement.dataset.mode:document.documentElement.dataset.mode=m;
+ document.querySelectorAll(".mode").forEach(b=>b.setAttribute("aria-pressed",b.dataset.m===m));modeHelp.textContent=MODE_HELP[m];try{localStorage.setItem("gdc-mode",m)}catch(e){}};
+/* Discapacidad auditiva: abre en la vista normal o en la que la persona ya eligió */
+let m0="vivos";try{m0=localStorage.getItem("gdc-mode")||m0}catch(e){}
+document.querySelector(".modes .row").onclick=e=>{const b=e.target.closest(".mode");if(b)setMode(b.dataset.m)};
+/* Ajuste automático de la vista según el tipo de discapacidad elegido */
+</script>
+</body>
+</html>
