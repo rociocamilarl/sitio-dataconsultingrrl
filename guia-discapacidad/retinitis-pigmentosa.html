@@ -154,6 +154,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.9rem}
     <nav class="menu" aria-label="Secciones">
       <a href="#aprendimos">Lo que aprendimos</a>
       <a href="#ruta">La ruta</a>
+      <a href="#prevision">FONASA o isapre</a>
       <a href="#salud">Salud</a>
       <a href="#trabajo">Trabajo</a>
       <a href="#movilidad">Movilidad</a>
@@ -168,6 +169,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.9rem}
     <p><a href="index.html">← Volver a la guía</a></p>
     <h1>Retinitis pigmentosa: la ruta paso a paso</h1>
     <p>Qué hacer desde el diagnóstico en adelante: salud, certificación, rehabilitación, trabajo, movilidad y tecnología.</p>
+    <p class="src">Esta página se abre en la vista «Alto contraste», pensada para baja visión. Puedes cambiarla en «¿Cómo ves mejor?», arriba.</p>
     <p>Es la ruta que nos hubiera gustado tener cuando empezamos. Todo viene de fuentes oficiales o de las instituciones que se citan, revisadas en septiembre de 2026.</p>
   </div>
 
@@ -243,6 +245,28 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.9rem}
         <div class="note">La postulación se abre una vez al año. En 2026 fue del 5 de marzo al 7 de abril en portal.senadis.cl. <b>Ten listos la credencial y el Registro Social de Hogares antes de marzo.</b></div>
         <p class="src"><a href="https://www.senadis.gob.cl/sala_prensa/d/noticias/9722/publicacion-de-las-bases-para-postular-al-programa-regular-de-ayudas-tecnicas" target="_blank" rel="noopener">SENADIS: bases de ayudas técnicas ↗</a></p></li>
     </ol>
+  </section>
+
+  <section id="prevision" aria-labelledby="t-pv">
+    <h2 id="t-pv">Según tu previsión: FONASA o isapre</h2>
+    <p class="lead">Dónde atenderte cambia según tu sistema de salud. Estas son las alternativas.</p>
+    <div class="grid g2">
+      <div class="card"><h3>Si estás en FONASA</h3>
+        <ul>
+          <li><b>Red pública:</b> en tu CESFAM pide la derivación a oftalmología. En la red pública está el Departamento de Oculogenética del Hospital del Salvador.</li>
+          <li><b>Rehabilitación:</b> FONASA la cubre en la modalidad institucional, con derivación desde el CESFAM.</li>
+          <li><b>Desde los 65 años:</b> los lentes tienen garantía GES.</li>
+        </ul>
+      </div>
+      <div class="card"><h3>Si estás en una isapre</h3>
+        <ul>
+          <li>La retinitis pigmentosa <b>no es GES</b>, así que la cobertura de consultas, exámenes y rehabilitación depende de tu plan.</li>
+          <li><b>Pide a tu isapre, por correo, el detalle de la cobertura</b> de oftalmología, campo visual, estudio genético y rehabilitación. Así queda respaldo.</li>
+          <li><b>Desde los 65 años:</b> los lentes tienen garantía GES también en isapre.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="src">Si tu isapre o FONASA no cumple, reclama en la <a href="https://www.superdesalud.gob.cl/" target="_blank" rel="noopener">Superintendencia de Salud ↗</a>.</p>
   </section>
 
   <section id="salud" aria-labelledby="t-s">
@@ -357,7 +381,8 @@ fsUp.onclick=()=>setFs(fs+.125);fsDown.onclick=()=>setFs(fs-.125);
 const MODE_HELP={vivos:"Los colores de DataconsultingRRL, con letra grande y buen contraste.",sinblancos:"Fondo oscuro cálido y letra crema. Para quien se encandila con el blanco.",contraste:"Amarillo sobre negro. Máximo contraste para baja visión.",calma:"Colores suaves, sin contrastes fuertes ni movimiento. Pensado para autismo y sensibilidad sensorial."};
 const setMode=m=>{if(!MODE_HELP[m])m="vivos";m==="vivos"?delete document.documentElement.dataset.mode:document.documentElement.dataset.mode=m;
  document.querySelectorAll(".mode").forEach(b=>b.setAttribute("aria-pressed",b.dataset.m===m));modeHelp.textContent=MODE_HELP[m];try{localStorage.setItem("gdc-mode",m)}catch(e){}};
-let m0="vivos";try{m0=localStorage.getItem("gdc-mode")||m0}catch(e){}setMode(m0);
+/* La ruta de retinitis pigmentosa abre en «Alto contraste», salvo que la persona haya elegido otra vista distinta de la normal */
+let m0="contraste";try{const g=localStorage.getItem("gdc-mode");if(g&&g!=="vivos")m0=g}catch(e){}setMode(m0);
 document.querySelector(".modes .row").onclick=e=>{const b=e.target.closest(".mode");if(b)setMode(b.dataset.m)};
 /* Ajuste automático de la vista según el tipo de discapacidad elegido */
 </script>
