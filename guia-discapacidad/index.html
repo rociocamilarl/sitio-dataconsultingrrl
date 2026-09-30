@@ -80,6 +80,11 @@ nav.menu a{white-space:nowrap;padding:10px 14px;min-height:44px;font-weight:700;
 .hero{padding:32px 0 8px}
 .hero h1{font-size:1.9rem;line-height:1.2;margin:0 0 10px}
 .hero p{color:var(--muted);margin:0 0 6px;max-width:62ch}
+.ruta-card{display:flex;flex-direction:column;gap:4px;margin-top:18px;max-width:560px;padding:16px 18px;border:var(--bw) solid var(--accent);border-radius:var(--radius);background:var(--surface);color:var(--ink);text-decoration:none}
+.ruta-card b{font-size:1.1rem}
+.ruta-card .tag{align-self:flex-start}
+.ruta-card .ir{color:var(--brand);font-weight:700;margin-top:4px}
+.ruta-card:hover .ir{text-decoration:underline}
 section{padding:28px 0;border-bottom:1px solid var(--line)}
 h2{font-size:1.45rem;margin:0 0 6px}
 h3{font-size:1.1rem;margin:0 0 4px}
@@ -153,6 +158,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.9rem}
     </div>
     <nav class="menu" aria-label="Secciones">
       <a href="#orientador">Mi caso</a>
+      <a href="retinitis-pigmentosa.html">Retinitis pigmentosa</a>
       <a href="#pensiones">Pensiones</a>
       <a href="#tramites">Trámites</a>
       <a href="#cuidadores">Cuidadores</a>
@@ -168,6 +174,12 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.9rem}
     <h1>Orientación sobre beneficios y trámites para personas con discapacidad en Chile</h1>
     <p>Aquí puedes ver qué beneficios del Estado te pueden corresponder, qué trámites hay que hacer y dónde preguntar.</p>
     <p>Todo es gratis. La información sale de fuentes oficiales, revisadas en septiembre de 2026.</p>
+    <a class="ruta-card" href="retinitis-pigmentosa.html">
+      <span class="tag">Ruta completa</span>
+      <b>Retinitis pigmentosa: la ruta paso a paso</b>
+      <span>Seguros, pensión, certificación, rehabilitación, trabajo y tecnología, desde la experiencia de una familia que lo vivió.</span>
+      <span class="ir">Ver la ruta →</span>
+    </a>
   </div>
 
   <!-- ORIENTADOR -->
@@ -386,7 +398,7 @@ const B={
  auto:{t:"Importar un vehículo con franquicia",d:"Pagas el 50% del arancel y puedes pagar el IVA hasta en 36 cuotas. El vehículo debe quedar 3 años para uso de la persona con discapacidad.",x:L("https://www.chileatiende.gob.cl/fichas/102249-solicitud-de-franquicia-por-discapacidad")},
  pie:{t:"Programa de Integración Escolar (PIE)",d:"Da apoyos especializados dentro de la sala de clases común. Pregunta en el colegio.",x:""},
  beca:{t:"Beca para estudiantes con discapacidad (educación superior)",d:"En instituciones privadas acreditadas cubre hasta $1.150.000. Requiere estar en el RND y en el 70% de menores ingresos del RSH.",x:L("https://www.chileatiende.gob.cl/fichas/36380-beca-para-estudiantes-en-situacion-de-discapacidad")},
- laboral:{t:"Inclusión laboral (Ley 21.015)",d:"Las empresas con 100 o más trabajadores deben tener al menos un 1% de personas con discapacidad o con pensión de invalidez.",x:L("https://www.dt.gob.cl/portal/1626/w3-propertyvalue-167780.html","Dirección del Trabajo")},
+ laboral:{t:"Inclusión laboral (Leyes 21.015 y 21.690)",d:"Las empresas y los organismos públicos con 100 o más trabajadores deben tener al menos un 1% de personas con discapacidad o con pensión de invalidez. La Ley 21.690 (2024) lo sube a 2%, pero solo cuando el 80% de las empresas e instituciones obligadas cumpla el 1%. Mientras tanto rige el 1%.",x:L("https://www.dt.gob.cl/portal/1626/w3-propertyvalue-167780.html","Dirección del Trabajo")+" · "+L("https://www.bcn.cl/leychile/navegar?idLey=21690","Ley 21.690")},
  herencia:{t:"Rebaja en impuesto a herencias y donaciones",d:"Rebaja del 30%, con un tope de 8.000 UF al año, para personas inscritas en el RND.",x:L("https://www.sii.cl/preguntas_frecuentes/herencias/001_160_7508.htm","SII")},
  cuid:{t:"Beneficios para tu cuidador o cuidadora",d:"Credencial de Persona Cuidadora, estipendio y permisos laborales.",x:'<a href="#cuidadores">Ver cuidadores ↓</a>'},
  seg:{t:"Revisa si tienes seguros de invalidez",d:"Puedes revisarlo gratis en la CMF con tu ClaveÚnica.",x:'<a href="#seguros">Ver cómo ↓</a>'}
