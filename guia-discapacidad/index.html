@@ -80,9 +80,11 @@ nav.menu a{white-space:nowrap;padding:10px 14px;min-height:44px;font-weight:700;
 .hero{padding:32px 0 8px}
 .hero h1{font-size:1.9rem;line-height:1.2;margin:0 0 10px}
 .hero p{color:var(--muted);margin:0 0 6px;max-width:62ch}
-.ruta-card{display:flex;flex-direction:column;gap:4px;margin-top:18px;max-width:560px;padding:16px 18px;border:var(--bw) solid var(--accent);border-radius:var(--radius);background:var(--surface);color:var(--ink);text-decoration:none}
+.ruta-card{display:flex;flex-direction:column;gap:6px;padding:16px 18px;border:var(--bw) solid var(--accent);border-radius:var(--radius);background:var(--surface);color:var(--ink);text-decoration:none}
 .ruta-card b{font-size:1.1rem}
-.ruta-card .tag{align-self:flex-start}
+.ruta-card .cat{font-size:.85rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.ruta-card.pedir{border-style:dashed;border-color:var(--line)}
+#rutas .tag{margin-bottom:8px}
 .ruta-card .ir{color:var(--brand);font-weight:700;margin-top:4px}
 .ruta-card:hover .ir{text-decoration:underline}
 section{padding:28px 0;border-bottom:1px solid var(--line)}
@@ -158,7 +160,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.9rem}
     </div>
     <nav class="menu" aria-label="Secciones">
       <a href="#orientador">Mi caso</a>
-      <a href="retinitis-pigmentosa.html">Retinitis pigmentosa</a>
+      <a href="#rutas">Rutas por condición</a>
       <a href="#pensiones">Pensiones</a>
       <a href="#tramites">Trámites</a>
       <a href="#cuidadores">Cuidadores</a>
@@ -174,13 +176,28 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.9rem}
     <h1>Orientación sobre beneficios y trámites para personas con discapacidad en Chile</h1>
     <p>Aquí puedes ver qué beneficios del Estado te pueden corresponder, qué trámites hay que hacer y dónde preguntar.</p>
     <p>Todo es gratis. La información sale de fuentes oficiales, revisadas en septiembre de 2026.</p>
-    <a class="ruta-card" href="retinitis-pigmentosa.html">
-      <span class="tag">Ruta completa</span>
-      <b>Retinitis pigmentosa: la ruta paso a paso</b>
-      <span>Seguros, pensión, certificación, rehabilitación, trabajo y tecnología, desde la experiencia de una familia que lo vivió.</span>
-      <span class="ir">Ver la ruta →</span>
-    </a>
   </div>
+
+  <!-- RUTAS POR CONDICIÓN -->
+  <section id="rutas" aria-labelledby="t-ru">
+    <span class="tag">Rutas completas</span>
+    <h2 id="t-ru">Rutas por condición</h2>
+    <p class="lead">Cada ruta explica, paso a paso y desde la experiencia de una familia, qué hacer con una condición específica: salud, seguros, pensión, certificación, trabajo, movilidad y tecnología.</p>
+    <div class="grid g2">
+      <a class="ruta-card" href="retinitis-pigmentosa.html">
+        <span class="cat">Discapacidad visual</span>
+        <b>Retinitis pigmentosa</b>
+        <span>Desde el diagnóstico hasta la rehabilitación, contada por una familia que lo vivió.</span>
+        <span class="ir">Ver la ruta →</span>
+      </a>
+      <a class="ruta-card pedir" href="mailto:rocio.rojas@dataconsultingrrl.com?subject=Ruta%20para%20mi%20condici%C3%B3n">
+        <span class="cat">¿Tu condición no está?</span>
+        <b>Ayúdanos a hacer la próxima ruta</b>
+        <span>Cuéntanos qué condición vives tú o tu familia, y qué te hubiera gustado saber. Así elegimos la siguiente. Nadie camina solo.</span>
+        <span class="ir">Escríbenos →</span>
+      </a>
+    </div>
+  </section>
 
   <!-- ORIENTADOR -->
   <section id="orientador" aria-labelledby="t-or">
