@@ -58,6 +58,10 @@ button{font-family:inherit}
 header.top{background:var(--surface);border-bottom:var(--bw) solid var(--line);z-index:5}
 @media(min-width:640px){header.top{position:sticky;top:0}}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 0}
+.marca-wrap{display:flex;flex-direction:column;gap:2px;min-width:0}
+.dcr{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:700;color:var(--muted);text-decoration:none;min-height:28px}
+.dcr img{width:22px;height:22px;border-radius:50%;flex-shrink:0}
+.dcr:hover{color:var(--ink);text-decoration:underline}
 .logo{font-weight:700;font-size:1.05rem;color:var(--ink);text-decoration:none}
 .tools{display:flex;gap:6px}
 .tools button{min-width:48px;min-height:48px;font-weight:700;border:var(--bw) solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;font-size:1rem;cursor:pointer}
@@ -135,7 +139,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.9rem}
 <header class="top">
   <div class="wrap">
     <div class="bar">
-      <a class="logo" href="index.html">Guía Discapacidad Chile</a>
+      <div class="marca-wrap"><a class="dcr" href="https://dataconsultingrrl.com/" aria-label="Ir al sitio de DataconsultingRRL"><img src="https://dataconsultingrrl.com/apple-touch-icon.png" alt="" width="22" height="22">DataconsultingRRL ↗</a><a class="logo" href="index.html">Guía Discapacidad Chile</a></div>
       <div class="tools" aria-label="Accesibilidad">
         <button id="fsDown" aria-label="Achicar letra">A−</button>
         <button id="fsUp" aria-label="Agrandar letra">A+</button>
@@ -152,6 +156,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.9rem}
       <div class="help" id="modeHelp" aria-live="polite"></div>
     </div>
     <nav class="menu" aria-label="Secciones">
+      <a href="index.html">← Guía principal</a>
       <a href="#inicio">En crisis</a>
       <a href="#ruta">La ruta</a>
       <a href="#prevision">FONASA o isapre</a>
