@@ -193,6 +193,12 @@
     .carrusel-grupo{flex-wrap:wrap;justify-content:center}
     .carrusel-grupo[aria-hidden],.carrusel-grupo .dup{display:none}}
 
+  .franja{flex-direction:row;align-items:center;gap:20px;margin-top:22px}
+  .franja .icono{flex:none;margin-bottom:0}
+  .franja h3{margin-bottom:.25em}
+  .franja p{margin:0}
+  @media(max-width:600px){.franja{flex-direction:column;align-items:flex-start;gap:0}
+    .franja .icono{margin-bottom:16px}}
   .dolor{display:flex;gap:15px;align-items:flex-start;margin-bottom:24px}
   .dolor .n{flex:none;width:32px;height:32px;border-radius:9px;display:grid;place-items:center;
             font-weight:800;font-size:.82rem;color:var(--violeta-cl);
@@ -439,8 +445,10 @@
           gana la empresa y en qué orden conviene hacerlo. Su valor se descuenta si avanzas con la
           implementación.</p>
       </div>
-      <div class="card">
-        <div class="icono">✦</div>
+    </div>
+    <div class="card franja">
+      <div class="icono">✦</div>
+      <div>
         <h3>Plan de Continuidad</h3>
         <p>Después de la puesta en marcha, si quieres que sigamos manteniendo y mejorando lo
           construido, contratas un plan mensual con las horas incluidas a la vista y sin
