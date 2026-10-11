@@ -52,19 +52,19 @@
     "@type": "OfferCatalog",
     "name": "Soluciones DataconsultingRRL",
     "itemListElement": [
-      { "@type": "Offer", "priceCurrency": "CLP", "price": "2250000",
+      { "@type": "Offer",
         "itemOffered": { "@type": "Service", "name": "Empresa Digital 360",
           "description": "Digitalización completa: procesos, información centralizada y tableros de control." } },
-      { "@type": "Offer", "priceCurrency": "CLP", "price": "750000",
+      { "@type": "Offer",
         "itemOffered": { "@type": "Service", "name": "Automatización y Digitalización de Procesos",
           "description": "Formularios, aprobaciones, correos, registros y reportes que se ejecutan solos." } },
-      { "@type": "Offer", "priceCurrency": "CLP", "price": "450000",
+      { "@type": "Offer",
         "itemOffered": { "@type": "Service", "name": "Cobranza Inteligente",
           "description": "Control de deuda por cliente con recordatorios y seguimiento automático." } },
-      { "@type": "Offer", "priceCurrency": "CLP", "price": "375000",
+      { "@type": "Offer",
         "itemOffered": { "@type": "Service", "name": "Dashboard Gerencial",
           "description": "Indicadores clave del negocio en un panel actualizado automáticamente." } },
-      { "@type": "Offer", "priceCurrency": "CLP", "price": "225000",
+      { "@type": "Offer",
         "itemOffered": { "@type": "Service", "name": "Diagnóstico Inicial",
           "description": "Levantamiento de procesos con informe de qué automatizar primero." } }
     ]
@@ -169,10 +169,26 @@
   .icono{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;margin-bottom:16px;
          background:linear-gradient(135deg,rgba(124,92,255,.22),rgba(34,211,238,.16));
          border:1px solid rgba(124,92,255,.32);font-size:1.15rem}
-  .precio{margin-top:18px;padding-top:16px;border-top:1px solid var(--linea);
-          font-weight:800;font-size:1.06rem;color:var(--tinta)}
-  .precio small{display:block;font-weight:500;color:#7c80a0;font-size:.79rem;margin-top:4px}
-  .claro .precio{border-top-color:#e2e5f2}
+
+  .partners{padding:64px 0 70px;border-bottom:1px solid var(--linea)}
+  .partners .intro{margin:0 auto 34px;text-align:center}
+  .carrusel{overflow:hidden;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+  .carrusel-pista{display:flex;width:max-content;animation:desliza 26s linear infinite}
+  .carrusel:hover .carrusel-pista{animation-play-state:paused}
+  .carrusel-grupo{display:flex;gap:28px;padding-right:28px}
+  .logo-socio{flex:none;width:240px;height:110px;border-radius:var(--radio);background:#fff;
+    display:grid;place-items:center;padding:20px 26px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  .logo-socio img{width:100%;height:100%;object-fit:contain;display:block}
+  @keyframes desliza{to{transform:translateX(-50%)}}
+  @media(max-width:600px){.logo-socio{width:180px;height:86px;padding:14px 18px}
+    .carrusel-grupo{gap:18px;padding-right:18px}}
+  @media(prefers-reduced-motion:reduce){.carrusel-pista{animation:none}
+    .carrusel{-webkit-mask-image:none;mask-image:none}
+    .carrusel-pista{width:auto;justify-content:center}
+    .carrusel-grupo{flex-wrap:wrap;justify-content:center}
+    .carrusel-grupo[aria-hidden],.carrusel-grupo .dup{display:none}}
 
   .dolor{display:flex;gap:15px;align-items:flex-start;margin-bottom:24px}
   .dolor .n{flex:none;width:32px;height:32px;border-radius:9px;display:grid;place-items:center;
@@ -236,6 +252,7 @@
     <nav>
       <a href="#" class="marca"><span class="punto"></span>DataconsultingRRL</a>
       <div class="enlaces">
+        <a href="#partners">Partners</a>
         <a href="#problema">Qué resolvemos</a>
         <a href="#ia">Con IA</a>
         <a href="#productos">Soluciones</a>
@@ -273,6 +290,35 @@
     </div>
   </div>
 </div>
+
+<section id="partners" class="partners">
+  <div class="env">
+    <div class="intro">
+      <span class="ojo">Partners</span>
+      <h2>Empresas que trabajan con nosotros</h2>
+    </div>
+  </div>
+  <div class="carrusel">
+    <div class="carrusel-pista">
+      <div class="carrusel-grupo">
+          <div class="logo-socio"><img src="assets/partners/pernosfast.png" alt="Pernos Fast" width="594" height="140" loading="lazy"></div>
+          <div class="logo-socio"><img src="assets/partners/solmit.png" alt="SOLMIT" width="432" height="128" loading="lazy"></div>
+          <div class="logo-socio dup"><img src="assets/partners/pernosfast.png" alt="" width="594" height="140" loading="lazy"></div>
+          <div class="logo-socio dup"><img src="assets/partners/solmit.png" alt="" width="432" height="128" loading="lazy"></div>
+          <div class="logo-socio dup"><img src="assets/partners/pernosfast.png" alt="" width="594" height="140" loading="lazy"></div>
+          <div class="logo-socio dup"><img src="assets/partners/solmit.png" alt="" width="432" height="128" loading="lazy"></div>
+      </div>
+      <div class="carrusel-grupo" aria-hidden="true">
+          <div class="logo-socio"><img src="assets/partners/pernosfast.png" alt="" width="594" height="140" loading="lazy"></div>
+          <div class="logo-socio"><img src="assets/partners/solmit.png" alt="" width="432" height="128" loading="lazy"></div>
+          <div class="logo-socio dup"><img src="assets/partners/pernosfast.png" alt="" width="594" height="140" loading="lazy"></div>
+          <div class="logo-socio dup"><img src="assets/partners/solmit.png" alt="" width="432" height="128" loading="lazy"></div>
+          <div class="logo-socio dup"><img src="assets/partners/pernosfast.png" alt="" width="594" height="140" loading="lazy"></div>
+          <div class="logo-socio dup"><img src="assets/partners/solmit.png" alt="" width="432" height="128" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="problema">
   <div class="env">
@@ -347,9 +393,9 @@
   <div class="env">
     <div class="intro">
       <span class="ojo">Soluciones</span>
-      <h2>Alcance y precio definidos antes de empezar</h2>
-      <p>Nada de proyectos abiertos. Cada solución tiene alcance escrito, duración estimada y un
-        rango de precio que depende de la complejidad real de tu empresa, no de una negociación.</p>
+      <h2>Alcance definido antes de empezar</h2>
+      <p>Nada de proyectos abiertos. Cada solución tiene alcance escrito, duración estimada y una
+        propuesta formal que depende de la complejidad real de tu empresa, no de una negociación.</p>
     </div>
     <div class="rejilla r3">
       <div class="card">
@@ -357,47 +403,42 @@
         <h3>Empresa Digital 360</h3>
         <p>La transformación completa: procesos digitalizados, información centralizada y
           tableros de control para dirigir la empresa con datos y no con impresiones.</p>
-        <div class="precio">Desde $2.250.000 <small>3 a 14 semanas · valor final según diagnóstico</small></div>
       </div>
       <div class="card">
         <div class="icono">⚡</div>
         <h3>Automatización y Digitalización de Procesos</h3>
         <p>Los procesos repetitivos dejan de hacerse a mano: formularios, aprobaciones, correos,
           registros y reportes que se ejecutan solos y quedan trazados.</p>
-        <div class="precio">Desde $750.000 <small>1 a 8 semanas · valor final según diagnóstico</small></div>
       </div>
       <div class="card">
         <div class="icono">◎</div>
         <h3>Cobranza Inteligente</h3>
         <p>Saber en todo momento quién debe, cuánto y hace cuánto. Recordatorios automáticos y
           seguimiento que no depende de que alguien se acuerde.</p>
-        <div class="precio">Desde $450.000 <small>1 a 5 semanas · valor final según diagnóstico</small></div>
       </div>
       <div class="card">
         <div class="icono">▦</div>
         <h3>Dashboard Gerencial</h3>
         <p>Los indicadores que de verdad se miran, en una sola pantalla, actualizados solos y
           con la misma cifra para todos.</p>
-        <div class="precio">Desde $375.000 <small>1 semana</small></div>
       </div>
       <div class="card">
         <div class="icono">◆</div>
         <h3>Diagnóstico Inicial</h3>
         <p>Levantamiento de tus procesos y datos con un informe de qué automatizar primero, qué
-          gana la empresa y en qué orden conviene hacerlo.</p>
-        <div class="precio">$225.000 <small>Se descuenta si avanzas con la implementación</small></div>
+          gana la empresa y en qué orden conviene hacerlo. Su valor se descuenta si avanzas con la
+          implementación.</p>
       </div>
       <div class="card">
         <div class="icono">✦</div>
         <h3>Plan de Continuidad</h3>
-        <p>Los proyectos desde $1.000.000 incluyen <b>2 meses de acompañamiento sin costo</b>. Después,
-          si quieres que sigamos manteniendo y mejorando lo construido, contratas
-          el <b>10% del valor del proyecto al mes</b>, con las horas incluidas a la vista.</p>
-        <div class="precio">10% / mes <small>Opcional, sin permanencia mínima</small></div>
+        <p>Después de la puesta en marcha, si quieres que sigamos manteniendo y mejorando lo
+          construido, contratas un plan mensual con las horas incluidas a la vista y sin
+          permanencia mínima.</p>
       </div>
     </div>
     <p style="margin-top:30px;color:#7c80a0;font-size:.89rem">
-      Valores en pesos chilenos, no incluyen IVA. Servicios complementarios disponibles: CRM
+      Servicios complementarios disponibles: CRM
       comercial, gestión de órdenes de trabajo, inventario inteligente, gestión de activos y
       mantenimiento, dashboard financiero y automatizaciones de correo y archivos.
     </p>
@@ -441,13 +482,13 @@
     <div class="intro">
       <span class="ojo">Cómo trabajamos</span>
       <h2>Cinco etapas, cada una con algo concreto en tus manos</h2>
-      <p>Sin sorpresas de alcance ni de precio.</p>
+      <p>Sin sorpresas de alcance ni de valor.</p>
     </div>
     <div>
       <div class="paso"><div class="num">1</div><div>
         <h3>Pre-diagnóstico en línea</h3>
-        <p>Respondes unas preguntas y obtienes al instante una estimación de complejidad y un
-          rango de precio referencial. Gratis y sin compromiso.</p></div></div>
+        <p>Respondes unas preguntas y obtienes al instante una estimación de complejidad y de
+          duración. Gratis y sin compromiso.</p></div></div>
       <div class="paso"><div class="num">2</div><div>
         <h3>Conversación de 15 minutos</h3>
         <p>Revisamos si el problema que tienes es de los que sabemos resolver. Si no lo es, te lo
@@ -535,7 +576,7 @@
   <div class="env">
     <h2>Empieza por saber dónde estás parado</h2>
     <p>El pre-diagnóstico toma menos de cinco minutos y te entrega una estimación inmediata de
-      complejidad y precio referencial. Sin costo y sin compromiso.</p>
+      complejidad y duración. Sin costo y sin compromiso.</p>
     <a href="diagnostico.html" class="btn">Hacer el pre-diagnóstico</a>
   </div>
 </section>
@@ -574,9 +615,8 @@
       </div>
     </div>
     <div class="legal">
-      © <span id="anio">2026</span> DataconsultingRRL · Santiago, Chile. Los valores publicados son
-      referenciales, en pesos chilenos y no incluyen IVA. El precio final de cada proyecto se
-      determina en el diagnóstico.
+      © <span id="anio">2026</span> DataconsultingRRL · Santiago, Chile. El valor de cada proyecto
+      se define en una propuesta formal después del diagnóstico.
     </div>
   </div>
 </footer>

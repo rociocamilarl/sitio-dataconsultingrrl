@@ -4,8 +4,8 @@ Sitio estático, sin dependencias externas, listo para publicar. Cuatro archivos
 
 | Archivo | Qué es |
 |---|---|
-| `index.html` | Portada: problema, soluciones con precios desde, ejemplo demostrativo, proceso, quién está detrás |
-| `diagnostico.html` | Pre-diagnóstico en línea. Calcula complejidad y precio referencial, y envía la solicitud |
+| `index.html` | Portada: partners (logos en movimiento), problema, soluciones sin precios, ejemplo, proceso, quién está detrás |
+| `diagnostico.html` | Pre-diagnóstico en línea. Calcula complejidad y duración (sin precios), y envía la solicitud |
 | `terminos.html` | Términos de uso |
 | `privacidad.html` | Política de privacidad (Leyes 19.628 y 21.719) |
 
@@ -113,7 +113,7 @@ Para automatizarlo del todo, ver `estado_empresa/ingesta/README.md`, sección 4.
 
 ## Qué revisar antes de difundir el enlace
 
-- [ ] Los precios del sitio coinciden con `Productos Dataconsultingrrl.com/docs/matriz_precios.md`
+- [ ] El sitio no muestra precios (ni en el texto ni en el código). Los valores viven en `Productos Dataconsultingrrl.com/docs/matriz_precios.md`
 - [ ] Términos y privacidad revisados por un abogado
 - [ ] El pre-diagnóstico probado en teléfono, no solo en computador
 - [ ] La solicitud de prueba llegó al correo y entró al pipeline
