@@ -4,7 +4,7 @@ Sitio estático, sin dependencias externas, listo para publicar. Cuatro archivos
 
 | Archivo | Qué es |
 |---|---|
-| `index.html` | Portada: partners (logos en movimiento), problema, soluciones sin precios, ejemplo, proceso, quién está detrás |
+| `index.html` | Portada: clientes (logos en movimiento), problema, soluciones sin precios, ejemplo, proceso, quién está detrás |
 | `diagnostico.html` | Pre-diagnóstico en línea. Calcula complejidad y duración (sin precios), y envía la solicitud |
 | `terminos.html` | Términos de uso |
 | `privacidad.html` | Política de privacidad (Leyes 19.628 y 21.719) |
