@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DataconsultingRRL — Automatización con IA, Business Intelligence y Control de Gestión</title>
-<meta name="description" content="Construimos automatizaciones con inteligencia artificial, tableros de control y sistemas de gestión para PYMEs en Chile. Tus datos dejan de ser planillas y pasan a ser decisiones.">
-<meta property="og:title" content="DataconsultingRRL — Inteligencia artificial aplicada a tu operación">
-<meta property="og:description" content="Automatización con IA, Business Intelligence y control de gestión para PYMEs en Chile. Tus datos dejan de ser planillas y pasan a ser decisiones.">
+<title>DataconsultingRRL — Asesorías en soluciones digitales</title>
+<meta name="description" content="Asesorías en soluciones digitales para empresas en Chile: ordenamos, automatizamos y digitalizamos tu operación para que tengas control y mejor información para decidir.">
+<meta property="og:title" content="DataconsultingRRL — Asesorías en soluciones digitales">
+<meta property="og:description" content="Ordenamos, automatizamos y digitalizamos tu operación para que tengas control y mejor información para decidir.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://dataconsultingrrl.com/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="DataconsultingRRL — Inteligencia artificial aplicada a tu operación">
-<meta name="twitter:description" content="Automatización con IA, Business Intelligence y control de gestión para PYMEs en Chile. Tus datos dejan de ser planillas y pasan a ser decisiones.">
+<meta name="twitter:title" content="DataconsultingRRL — Asesorías en soluciones digitales">
+<meta name="twitter:description" content="Ordenamos, automatizamos y digitalizamos tu operación para que tengas control y mejor información para decidir.">
 <meta name="twitter:image" content="https://dataconsultingrrl.com/assets/og-image.png">
 <meta name="theme-color" content="#08091a">
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -35,7 +35,7 @@
   "url": "https://dataconsultingrrl.com/",
   "email": "rocio.rojas@dataconsultingrrl.com",
   "sameAs": ["https://www.linkedin.com/company/dataconsultingrrl"],
-  "description": "Automatización con inteligencia artificial, Business Intelligence y control de gestión para PYMEs en Chile.",
+  "description": "Asesorías en soluciones digitales para empresas en Chile: operación en terreno, automatización, Business Intelligence y presencia web.",
   "areaServed": { "@type": "Country", "name": "Chile" },
   "address": { "@type": "PostalAddress", "addressLocality": "Santiago", "addressCountry": "CL" },
   "founder": {
@@ -67,6 +67,9 @@
       { "@type": "Offer",
         "itemOffered": { "@type": "Service", "name": "Control de Obras y Equipos en Terreno",
           "description": "Cierre de jornada desde el celular con avance y fotos, aprobación del supervisor, Carta Gantt e informe diario automáticos." } },
+      { "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Carpetas de Cierre y Protocolos Técnicos",
+          "description": "Protocolos, informes y carpeta de cierre de obra generados desde el itemizado y el registro fotográfico." } },
       { "@type": "Offer",
         "itemOffered": { "@type": "Service", "name": "Asesoría en Implementación Web",
           "description": "Dominio, publicación del sitio, correo corporativo y políticas legales para tener presencia web propia." } },
@@ -198,6 +201,10 @@
 
   .franja{flex-direction:row;align-items:center;gap:20px;margin-top:22px}
   .franja + .franja{margin-top:14px}
+  .franja.primera{margin-top:0}
+  .claro .linea{font-size:.82rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase;
+         color:#5a5f80;margin:40px 0 16px;padding-bottom:10px;border-bottom:1px solid #e2e5f2}
+  .claro .intro + .linea{margin-top:0}
   .franja .icono{flex:none;margin-bottom:0}
   .franja h3{margin-bottom:.25em}
   .franja p{margin:0}
@@ -288,11 +295,10 @@
 <div class="hero">
   <div class="env">
     <span class="chip"><span class="pulso"></span>Inteligencia artificial aplicada al negocio</span>
-    <h1>Tu empresa ya tiene los datos.<br><span class="grad">Le falta poder usarlos.</span></h1>
+    <h1>Asesorías en<br><span class="grad">soluciones digitales.</span></h1>
     <p class="bajada">
-      Construimos automatizaciones con IA, tableros de control y sistemas de gestión para
-      empresas de 10 a 50 personas que crecieron más rápido que su forma de controlar el negocio.
-      Menos planillas, menos errores, decisiones con información real.
+      Ordenamos, automatizamos y digitalizamos tu operación para que tengas control y mejor
+      información para decidir. Menos planillas, menos errores, más tiempo para tu negocio.
     </p>
     <div class="acciones">
       <a href="diagnostico.html" class="btn">Hacer el pre-diagnóstico</a>
@@ -419,24 +425,30 @@
       <p>Nada de proyectos abiertos. Cada solución tiene alcance escrito, duración estimada y una
         propuesta formal que depende de la complejidad real de tu empresa, no de una negociación.</p>
     </div>
-    <div class="rejilla r3">
+    <h3 class="linea">Operación y terreno</h3>
+    <div class="rejilla r2">
       <div class="card">
-        <div class="icono">◈</div>
-        <h3>Empresa Digital 360</h3>
-        <p>La transformación completa: procesos digitalizados, información centralizada y
-          tableros de control para dirigir la empresa con datos y no con impresiones.</p>
+        <div class="icono">▤</div>
+        <h3>Control de Obras y Equipos en Terreno</h3>
+        <p>La cuadrilla cierra la jornada desde el celular con avance y fotos, aunque no haya señal.
+          El supervisor aprueba con un clic, la Carta Gantt se actualiza sola y el informe diario
+          se arma sin que nadie lo redacte.</p>
       </div>
+      <div class="card">
+        <div class="icono">▣</div>
+        <h3>Carpetas de Cierre y Protocolos Técnicos</h3>
+        <p>Los protocolos, informes y la carpeta de cierre que exige tu mandante se generan desde
+          el itemizado y las fotos de la obra: ordenados, completos y listos para validar, sin
+          armarlos a mano documento por documento.</p>
+      </div>
+    </div>
+    <h3 class="linea">Gestión e información</h3>
+    <div class="rejilla r2">
       <div class="card">
         <div class="icono">⚡</div>
         <h3>Automatización y Digitalización de Procesos</h3>
         <p>Los procesos repetitivos dejan de hacerse a mano: formularios, aprobaciones, correos,
           registros y reportes que se ejecutan solos y quedan trazados.</p>
-      </div>
-      <div class="card">
-        <div class="icono">◎</div>
-        <h3>Cobranza Inteligente</h3>
-        <p>Saber en todo momento quién debe, cuánto y hace cuánto. Recordatorios automáticos y
-          seguimiento que no depende de que alguien se acuerde.</p>
       </div>
       <div class="card">
         <div class="icono">▦</div>
@@ -445,20 +457,29 @@
           con la misma cifra para todos.</p>
       </div>
       <div class="card">
-        <div class="icono">◐</div>
+        <div class="icono">◎</div>
+        <h3>Cobranza Inteligente</h3>
+        <p>Saber en todo momento quién debe, cuánto y hace cuánto. Recordatorios automáticos y
+          seguimiento que no depende de que alguien se acuerde.</p>
+      </div>
+      <div class="card">
+        <div class="icono">◈</div>
+        <h3>Empresa Digital 360</h3>
+        <p>La transformación completa: procesos digitalizados, información centralizada y
+          tableros de control para dirigir la empresa con datos y no con impresiones.</p>
+      </div>
+    </div>
+    <h3 class="linea">Presencia y venta digital</h3>
+    <div class="card franja primera">
+      <div class="icono">◐</div>
+      <div>
         <h3>Asesoría en Implementación Web</h3>
         <p>Tu sitio en línea con dominio propio, correo con el nombre de tu empresa y textos
           legales en regla. Todo queda a tu nombre, sin depender de cuentas de terceros.</p>
       </div>
-      <div class="card">
-        <div class="icono">▤</div>
-        <h3>Control de Obras y Equipos en Terreno</h3>
-        <p>La cuadrilla cierra la jornada desde el celular con avance y fotos, aunque no haya señal.
-          El supervisor aprueba con un clic, la Carta Gantt se actualiza sola y el informe diario
-          se arma sin que nadie lo redacte.</p>
-      </div>
     </div>
-    <div class="card franja">
+    <h3 class="linea">Para empezar y para seguir</h3>
+    <div class="card franja primera">
       <div class="icono">◆</div>
       <div>
         <h3>Diagnóstico Inicial</h3>
@@ -642,8 +663,8 @@
     <div class="pie">
       <div>
         <h4>DataconsultingRRL</h4>
-        <p style="margin:0;max-width:32ch">Automatización con IA, Business Intelligence y control
-          de gestión para PYMEs en Chile.</p>
+        <p style="margin:0;max-width:32ch">Asesorías en soluciones digitales para empresas
+          en Chile.</p>
       </div>
       <div>
         <h4>Soluciones</h4>
@@ -653,6 +674,7 @@
           <li><a href="#productos">Cobranza Inteligente</a></li>
           <li><a href="#productos">Dashboard Gerencial</a></li>
           <li><a href="#productos">Control de Obras en Terreno</a></li>
+          <li><a href="#productos">Carpetas de Cierre y Protocolos</a></li>
           <li><a href="#productos">Implementación Web</a></li>
         </ul>
       </div>
