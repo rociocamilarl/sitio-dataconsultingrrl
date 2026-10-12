@@ -175,10 +175,6 @@
         <b>Automatizaciones de Correo y Archivos</b>
         <small>Correos, documentos y flujos que se ejecutan solos en Microsoft 365 o Google Workspace. 1–4 semanas</small>
       </div>
-      <div class="prod" data-p="ot" onclick="elegir('ot',this)">
-        <b>Gestión de Órdenes de Trabajo</b>
-        <small>Órdenes con responsables, fotos e historial, para equipos en terreno. 4–8 semanas</small>
-      </div>
       <div class="prod" data-p="act" onclick="elegir('act',this)">
         <b>Gestión de Activos y Mantenimiento</b>
         <small>Activos, mantenciones preventivas y planificación con historial completo. 4–10 semanas</small>
@@ -189,7 +185,7 @@
     <div class="productos">
       <div class="prod" data-p="obra" onclick="elegir('obra',this)">
         <b>Control de Obras y Equipos en Terreno</b>
-        <small>La cuadrilla cierra la jornada desde el celular con avance y fotos; Carta Gantt e informe diario se actualizan solos.</small>
+        <small>Obras y órdenes de trabajo con responsables, avance y fotos desde el celular; Carta Gantt, historial e informe diario se actualizan solos.</small>
       </div>
       <div class="prod" data-p="cierre" onclick="elegir('cierre',this)">
         <b>Carpetas de Cierre y Protocolos Técnicos</b>
@@ -347,13 +343,6 @@ const MATRICES = {
       {id:"plataforma", label:"¿Qué plataforma usa su empresa?", ops:[["Microsoft 365",0],["Google Workspace",0],["Otra o ninguna",2]]},
       {id:"flujos", label:"¿Cuántos flujos automáticos estima necesitar?", ops:[["1–3",0],["4–8",1],["9–15",2],["Más de 15",3]]},
       {id:"documentos", label:"¿Necesita generar documentos automáticos (PDF, informes)?", ops:[["No",0],["Sí, algunos al mes",1],["Sí, muchos y con formato propio",2]]}
-    ]},
-  "ot": { tipo:"complementario",
-    nombre:"Gestión de Órdenes de Trabajo", dur:"2–4 semanas",
-    criterios:[
-      {id:"ots", label:"¿Cuántas órdenes de trabajo emite al mes?", ops:[["Menos de 20",0],["20–100",1],["101–300",2],["Más de 300",3]]},
-      {id:"terreno", label:"¿Cuántas personas trabajan en terreno?", ops:[["1–3",0],["4–10",1],["11–25",2],["26 o más",3]]},
-      {id:"evidencia", label:"¿Necesita registro de fotos, firma o evidencia en terreno?", ops:[["No",0],["Sí, fotos",1],["Sí, fotos y firma del cliente",2]]}
     ]},
   "act": { tipo:"complementario",
     nombre:"Gestión de Activos y Mantenimiento", dur:"2–5 semanas",
