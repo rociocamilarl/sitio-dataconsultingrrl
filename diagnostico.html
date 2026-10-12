@@ -185,6 +185,22 @@
       </div>
     </div>
 
+    <p class="grupo">Operación en terreno y presencia digital</p>
+    <div class="productos">
+      <div class="prod" data-p="obra" onclick="elegir('obra',this)">
+        <b>Control de Obras y Equipos en Terreno</b>
+        <small>La cuadrilla cierra la jornada desde el celular con avance y fotos; Carta Gantt e informe diario se actualizan solos.</small>
+      </div>
+      <div class="prod" data-p="cierre" onclick="elegir('cierre',this)">
+        <b>Carpetas de Cierre y Protocolos Técnicos</b>
+        <small>Protocolos, informes y carpeta de cierre generados desde el itemizado y las fotos de la obra, listos para validar.</small>
+      </div>
+      <div class="prod" data-p="web" onclick="elegir('web',this)">
+        <b>Asesoría en Implementación Web</b>
+        <small>Sitio en línea con dominio propio, correo con el nombre de su empresa y textos legales en regla.</small>
+      </div>
+    </div>
+
     <p class="grupo">Otros servicios</p>
     <div class="productos">
       <div class="prod" data-p="diag" onclick="elegir('diag',this)">
@@ -345,6 +361,30 @@ const MATRICES = {
       {id:"activos", label:"¿Cuántos equipos o activos debe controlar?", ops:[["Menos de 20",0],["20–100",1],["101–500",2],["Más de 500",3]]},
       {id:"preventivo", label:"¿Necesita planificar mantenciones preventivas?", ops:[["No, solo registrar fallas",0],["Sí, con calendario",2]]},
       {id:"historial", label:"¿Necesita historial completo por equipo?", ops:[["No",0],["Sí",1]]}
+    ]},
+  "obra": { tipo:"complementario",
+    nombre:"Control de Obras y Equipos en Terreno", dur:"Se define en la propuesta",
+    criterios:[
+      {id:"obras", label:"¿Cuántas obras o faenas lleva al mismo tiempo?", ops:[["1",0],["2–3",1],["4–10",2],["Más de 10",3]]},
+      {id:"cuadrilla", label:"¿Cuántas personas trabajan en terreno?", ops:[["1–5",0],["6–15",1],["16–40",2],["Más de 40",3]]},
+      {id:"senal", label:"¿Hay señal de internet donde se trabaja?", ops:[["Sí, siempre",0],["A veces",1],["Casi nunca",2]]},
+      {id:"informe", label:"¿Debe entregar informe diario o Carta Gantt a su mandante?", ops:[["No",0],["Sí, informe diario",1],["Sí, informe diario y Carta Gantt",2]]}
+    ]},
+  "cierre": { tipo:"complementario",
+    nombre:"Carpetas de Cierre y Protocolos Técnicos", dur:"Se define en la propuesta",
+    criterios:[
+      {id:"cierres", label:"¿Cuántas obras cierra al año?", ops:[["1–2",0],["3–6",1],["7–12",2],["Más de 12",3]]},
+      {id:"docs", label:"¿Cuántos protocolos o documentos lleva la carpeta de una obra?", ops:[["Menos de 20",0],["20–50",1],["51–100",2],["Más de 100",3]]},
+      {id:"fotos", label:"¿Requiere registro fotográfico por equipo o tablero?", ops:[["No",0],["Sí",1]]},
+      {id:"formato", label:"¿Su mandante exige un formato propio de entrega?", ops:[["No",0],["Sí",1]]}
+    ]},
+  "web": { tipo:"complementario",
+    nombre:"Asesoría en Implementación Web", dur:"Se define en la propuesta",
+    criterios:[
+      {id:"sitio", label:"¿Tiene hoy un sitio web?", ops:[["No",1],["Sí, en una plataforma como Canva o Wix",1],["Sí, propio",0]]},
+      {id:"dominio", label:"¿Tiene dominio propio (por ejemplo, suempresa.cl)?", ops:[["Sí",0],["No",1]]},
+      {id:"correos", label:"¿Necesita correos con el nombre de su empresa?", ops:[["No",0],["Sí, 1 a 5 casillas",1],["Sí, más de 5",2]]},
+      {id:"catalogo", label:"¿Necesita mostrar productos o un catálogo?", ops:[["No",0],["Sí, hasta 20 productos",1],["Sí, más de 20",2]]}
     ]},
   "diag": { tipo:"fijo",
     nombre:"Diagnóstico Inicial", dur:"1–2 semanas",
