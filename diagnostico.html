@@ -472,8 +472,19 @@ function resumenTexto(r, c){
   }
   return 'Solicitud de Diagnóstico\n\nProducto: ' + r.producto + '\n' + r.detalle.join('\n') + '\n'
     + bloque + '\nDuración estimada: ' + r.duracion
-    + '\n\nEmpresa: ' + c.empresa + '\nContacto: ' + c.nombre + '\nCorreo: ' + c.email + '\nTeléfono: ' + c.telefono;
+    + '\n\nEmpresa: ' + c.empresa + '\nContacto: ' + c.nombre + '\nCorreo: ' + c.email + '\nTeléfono: ' + c.telefono
+    + (campana ? '\n\nOrigen: ' + Object.values(campana).join(' / ') : '');
 }
+
+// Origen de campaña leído de la URL (utm_). No se guarda en el navegador.
+const campana = (function(){
+  const q = new URLSearchParams(location.search), o = {};
+  ['utm_source','utm_medium','utm_campaign','utm_content'].forEach(k => {
+    const v = (q.get(k) || '').replace(/[^a-zA-Z0-9_-]/g, '').slice(0, 60);
+    if(v) o[k.slice(4)] = v;
+  });
+  return Object.keys(o).length ? o : null;
+})();
 
 function msg(t, ok){
   const el = document.getElementById('envMsg');
@@ -500,7 +511,7 @@ function enviarSolicitud(){
   msg('Enviando…', true);
   fetch(FLOW_URL, {
     method:'POST', headers:{'Content-Type':'application/json'},
-    body: JSON.stringify({ ...ultimoResultado, contacto: c, origen:'web/diagnostico_cliente.html' })
+    body: JSON.stringify({ ...ultimoResultado, contacto: c, origen:'web/diagnostico_cliente.html', campana: campana })
   }).then(r => {
     if(!r.ok) throw new Error(r.status);
     msg('¡Solicitud recibida! Le contactaremos a la brevedad a ' + c.email + '.', true);

@@ -702,5 +702,18 @@
 </footer>
 
 <script>document.getElementById('anio').textContent=new Date().getFullYear();</script>
+<script>
+// Origen de campaña: si la visita llegó con parámetros utm_, se traspasan al pre-diagnóstico
+// por la URL. No se guarda nada en el navegador.
+(function(){
+  const q = new URLSearchParams(location.search), out = new URLSearchParams();
+  ['utm_source','utm_medium','utm_campaign','utm_content'].forEach(k => { if(q.get(k)) out.set(k, q.get(k)); });
+  if(![...out].length) return;
+  document.querySelectorAll('a[href^="diagnostico.html"]').forEach(el => {
+    const [ruta, ancla] = el.getAttribute('href').split('#');
+    el.setAttribute('href', ruta + '?' + out + (ancla ? '#' + ancla : ''));
+  });
+})();
+</script>
 </body>
 </html>
