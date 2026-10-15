@@ -436,7 +436,7 @@ const setMode=m=>{if(!MODE_HELP[m])m="vivos";m==="vivos"?delete document.documen
 /* Discapacidad física: abre en la vista normal o en la que la persona ya eligió */
 let m0="vivos";try{m0=localStorage.getItem("gdc-mode")||m0}catch(e){}
 document.querySelector(".modes .row").onclick=e=>{const b=e.target.closest(".mode");if(b)setMode(b.dataset.m)};
-/* Ajuste automático de la vista según el tipo de discapacidad elegido */
+setMode(m0);
 </script>
 </body>
 </html>
