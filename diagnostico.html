@@ -195,6 +195,10 @@
         <b>Asesoría en Implementación Web</b>
         <small>Sitio en línea con dominio propio, correo con el nombre de su empresa y textos legales en regla.</small>
       </div>
+      <div class="prod" data-p="app" onclick="elegir('app',this)">
+        <b>Asesoría en la Creación de Apps</b>
+        <small>Una app propia en el celular de su equipo o de sus clientes: desarrollo, publicación en el App Store y Google Play y, si corresponde, cobro por suscripción.</small>
+      </div>
     </div>
 
     <p class="grupo">Otros servicios</p>
@@ -374,6 +378,15 @@ const MATRICES = {
       {id:"dominio", label:"¿Tiene dominio propio (por ejemplo, suempresa.cl)?", ops:[["Sí",0],["No",1]]},
       {id:"correos", label:"¿Necesita correos con el nombre de su empresa?", ops:[["No",0],["Sí, 1 a 5 casillas",1],["Sí, más de 5",2]]},
       {id:"catalogo", label:"¿Necesita mostrar productos o un catálogo?", ops:[["No",0],["Sí, hasta 20 productos",1],["Sí, más de 20",2]]}
+    ]},
+  "app": { tipo:"complementario",
+    nombre:"Asesoría en la Creación de Apps", dur:"Se define en la propuesta",
+    criterios:[
+      {id:"dispositivo", label:"¿En qué teléfonos debe funcionar?", ops:[["Solo iPhone",1],["Solo Android",1],["iPhone y Android",2]]},
+      {id:"usuarios", label:"¿Quién va a usarla?", ops:[["Solo mi equipo interno",0],["Mis clientes",2],["Mi equipo y mis clientes",3]]},
+      {id:"integracion", label:"¿Debe conectarse con sistemas que ya usa (ERP, planillas, correo)?", ops:[["No, parte de cero",0],["Sí, con uno",1],["Sí, con varios",2]]},
+      {id:"sincobro", label:"¿La app debe cobrar dentro de la tienda (suscripción o pago único)?", ops:[["No",0],["Sí",2]]},
+      {id:"sinsenal", label:"¿Debe funcionar sin señal de internet?", ops:[["No",0],["Sí",2]]}
     ]},
   "diag": { tipo:"fijo",
     nombre:"Diagnóstico Inicial", dur:"1–2 semanas",
