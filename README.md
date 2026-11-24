@@ -9,6 +9,12 @@ Sitio estático, sin dependencias externas, listo para publicar. Cuatro archivos
 | `terminos.html` | Términos de uso |
 | `privacidad.html` | Política de privacidad (Leyes 19.628 y 21.719) |
 
+Además, un script de un solo uso:
+
+| Archivo | Qué es |
+|---|---|
+| `instalar_cloudflare_analytics.py` | `python3 instalar_cloudflare_analytics.py <token>`: pega el contador de visitas de Cloudflare Web Analytics en todas las páginas y declara esa medición en la política de privacidad. **Todavía no se ha ejecutado**: hoy el sitio no mide visitas. Antes de correrlo, cambiar en el script el mes que escribe en «Última actualización» |
+
 No usa cookies, no carga analítica ni fuentes externas, no hace llamadas a terceros. Todo el CSS
 va dentro de cada archivo: se puede abrir con doble clic y funciona.
 
