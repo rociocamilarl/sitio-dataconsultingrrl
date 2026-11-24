@@ -46,7 +46,7 @@
   "knowsAbout": [
     "Automatización de procesos", "Business Intelligence", "Power BI",
     "Control de gestión", "Dashboards gerenciales", "Inteligencia artificial aplicada",
-    "Digitalización de PYMEs", "Microsoft 365"
+    "Digitalización de PYMEs", "Microsoft 365", "Aplicaciones móviles", "Publicación en App Store"
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -73,6 +73,9 @@
       { "@type": "Offer",
         "itemOffered": { "@type": "Service", "name": "Asesoría en Implementación Web",
           "description": "Dominio, publicación del sitio, correo corporativo y políticas legales para tener presencia web propia." } },
+      { "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Asesoría en la Creación de Apps",
+          "description": "Una app propia para el celular: desarrollo, pruebas, publicación en el App Store y Google Play, y cobro por suscripción, con la cuenta de desarrollador a nombre de la empresa." } },
       { "@type": "Offer",
         "itemOffered": { "@type": "Service", "name": "Diagnóstico Inicial",
           "description": "Levantamiento de procesos con informe de qué automatizar primero." } }
@@ -230,8 +233,8 @@
   .proyecto{background:var(--panel);border:1px solid var(--linea);border-radius:22px;padding:34px;
             display:flex;flex-direction:column}
   .proyecto-logo{background:#fff;border-radius:12px;height:64px;width:200px;padding:12px 18px;
-                 display:grid;place-items:center;margin-bottom:22px}
-  .proyecto-logo img{width:100%;height:100%;object-fit:contain;display:block}
+                 display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+  .proyecto-logo img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}
   .proyecto .tipo{font-size:.79rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
                   color:var(--cian);margin-bottom:8px;display:block}
   .proyecto h4{margin:18px 0 4px;font-size:.82rem;font-weight:800;letter-spacing:.06em;
@@ -478,6 +481,15 @@
           legales en regla. Todo queda a tu nombre, sin depender de cuentas de terceros.</p>
       </div>
     </div>
+    <div class="card franja">
+      <div class="icono">◱</div>
+      <div>
+        <h3>Asesoría en la Creación de Apps</h3>
+        <p>Tu idea convertida en una app en el celular de tus clientes o de tu equipo: desarrollo,
+          pruebas, publicación en el App Store y Google Play y, si corresponde, cobro por
+          suscripción. La cuenta de desarrollador queda a nombre de tu empresa.</p>
+      </div>
+    </div>
     <h3 class="linea">Para empezar y para seguir</h3>
     <div class="card franja primera">
       <div class="icono">◆</div>
@@ -510,7 +522,7 @@
     <div class="intro">
       <span class="ojo">Proyectos ejecutados</span>
       <h2>Lo que ya está funcionando</h2>
-      <p>Dos empresas, dos problemas distintos, el mismo criterio: que lo construido funcione en el
+      <p>Tres casos, tres problemas distintos, el mismo criterio: que lo construido funcione en el
         día a día de quienes lo usan.</p>
     </div>
     <div class="rejilla r2">
@@ -549,6 +561,29 @@
         <p>La presencia web queda a nombre de la empresa, con correo corporativo y sin depender de
           cuentas ajenas.</p>
         <a class="enlace" href="https://pernosfast.cl/" target="_blank" rel="noopener">Ver pernosfast.cl →</a>
+      </article>
+      <article class="proyecto">
+        <div class="proyecto-logo"><img src="assets/partners/duraznito.png" alt="Duraznito" width="256" height="256" loading="lazy"></div>
+        <span class="tipo">Creación de apps</span>
+        <h3>De una idea a una app publicada en el App Store</h3>
+        <h4>Antes</h4>
+        <p>Una idea y un estudio de la tienda de aplicaciones. Sin app, sin cuenta de desarrollador
+          y sin forma de cobrar.</p>
+        <h4>Qué construimos</h4>
+        <p>Duraznito, una app de iPhone que estima calorías y macronutrientes con una foto del
+          plato: la app, su servicio de inteligencia artificial, las suscripciones con prueba
+          gratis y la ficha de tienda escrita para que la encuentren. Es un desarrollo propio de
+          DataconsultingRRL, usado como banco de pruebas del camino completo.</p>
+        <h4>Resultado</h4>
+        <p>Aprobada por Apple en la primera revisión y publicada en 174 países. El mismo camino
+          —idea, desarrollo, revisión de la tienda y cobro— es el que recorremos con la app de tu
+          empresa.</p>
+        <div class="metricas">
+          <div class="metrica"><div class="v">174</div><div class="e">países donde está publicada</div></div>
+          <div class="metrica"><div class="v">1ª</div><div class="e">revisión de Apple, sin rechazos</div></div>
+          <div class="metrica"><div class="v">2 días</div><div class="e">del envío a la aprobación</div></div>
+        </div>
+        <a class="enlace" href="https://apps.apple.com/cl/app/id6835375797" target="_blank" rel="noopener">Ver Duraznito en el App Store →</a>
       </article>
     </div>
   </div>
@@ -676,6 +711,7 @@
           <li><a href="#productos">Control de Obras en Terreno</a></li>
           <li><a href="#productos">Carpetas de Cierre y Protocolos</a></li>
           <li><a href="#productos">Implementación Web</a></li>
+          <li><a href="#productos">Creación de Apps</a></li>
         </ul>
       </div>
       <div>
