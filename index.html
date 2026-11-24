@@ -244,6 +244,26 @@
   .proyecto .metrica .v{font-size:1.75rem}
   .proyecto .enlace{margin-top:24px;color:var(--cian);font-weight:650;text-decoration:none}
   .proyecto .enlace:hover{text-decoration:underline}
+  /* Nuestras apps: cada app con su color de acento (D-004) */
+  #apps{border-top:1px solid var(--linea)}
+  .app{background:var(--panel);border:1px solid var(--linea);border-radius:22px;padding:34px;display:flex;flex-direction:column;
+       border-top:4px solid var(--acento)}
+  .app-cab{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .app-cab img{width:56px;height:56px;border-radius:14px;display:block;background:#fff}
+  .app-cab .nombre{font-size:1.25rem;font-weight:800;color:#fff;line-height:1.1}
+  .app-cab .para{font-size:.79rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--acento-cl)}
+  .app h3{margin-bottom:.5em}
+  .app p{color:var(--suave);font-size:.96rem;margin:0 0 14px}
+  .app ul{margin:0 0 6px;padding-left:1.1em;color:var(--suave);font-size:.94rem}
+  .app li{margin:0 0 6px}
+  .app li b{color:var(--texto)}
+  .app .acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:auto;padding-top:18px}
+  .app .acciones a{display:inline-block;text-decoration:none;font-weight:650;font-size:.95rem;padding:11px 20px;border-radius:12px}
+  .app .acciones .pri{background:var(--acento);color:#fff}
+  .app .acciones .sec{border:1px solid var(--acento-cl);color:var(--acento-cl)}
+  .app .acciones a:hover{filter:brightness(1.12)}
+  .constata{--acento:#0079c8;--acento-cl:#5cb3ec}
+  .duraznito{--acento:#C9287A;--acento-cl:#f07bb5}
   .metricas{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:24px;margin-top:30px;
             padding-top:28px;border-top:1px solid var(--linea)}
   .metrica .v{font-size:2rem;font-weight:800;line-height:1;
@@ -289,6 +309,7 @@
         <a href="#ia">Con IA</a>
         <a href="#productos">Soluciones</a>
         <a href="#proyectos">Proyectos</a>
+        <a href="#apps">Apps</a>
         <a href="diagnostico.html" class="btn">Pre-diagnóstico gratis</a>
       </div>
     </nav>
@@ -584,6 +605,46 @@
           <div class="metrica"><div class="v">2 días</div><div class="e">del envío a la aprobación</div></div>
         </div>
         <a class="enlace" href="https://apps.apple.com/cl/app/id6835375797" target="_blank" rel="noopener">Ver Duraznito en el App Store →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="apps">
+  <div class="env">
+    <div class="intro">
+      <span class="ojo">Nuestras apps</span>
+      <h2>Productos propios, listos para usar</h2>
+      <p>Además de construir a la medida, desarrollamos apps propias para problemas concretos.
+        Se pueden probar hoy.</p>
+    </div>
+    <div class="rejilla r2">
+      <article class="app constata">
+        <div class="app-cab"><img src="assets/partners/constata.png" alt="" width="56" height="56" loading="lazy">
+          <div><div class="nombre">Constata Salud</div><div class="para">Entidades acreditadoras de salud</div></div></div>
+        <h3>De la evaluación en terreno al informe oficial de acreditación</h3>
+        <p>El equipo evaluador registra las constataciones desde el celular, incluso sin señal, y el
+          informe se arma solo en el formato oficial de la Superintendencia de Salud.</p>
+        <ul>
+          <li><b>Pautas de cotejo oficiales</b> de los 13 estándares generales, con su regla de decisión.</li>
+          <li><b>Acreditación y verificación del plan de corrección</b> (Circular IP N°40).</li>
+          <li><b>Informe en Word</b> con la estructura del formato oficial.</li>
+          <li><b>Los datos quedan en los equipos de la entidad</b>, cifrados, y cada evaluador firma lo que registra.</li>
+        </ul>
+        <div class="acciones">
+          <a class="pri" href="https://constata.dataconsultingrrl.com/" target="_blank" rel="noopener">Ver la demostración →</a>
+          <a class="sec" href="https://constata.dataconsultingrrl.com/videos.html" target="_blank" rel="noopener">Ver los videos</a>
+        </div>
+      </article>
+      <article class="app duraznito">
+        <div class="app-cab"><img src="assets/partners/duraznito.png" alt="" width="56" height="56" loading="lazy">
+          <div><div class="nombre">Duraznito</div><div class="para">App de iPhone</div></div></div>
+        <h3>Calorías y macronutrientes con una foto del plato</h3>
+        <p>Se saca una foto a la comida y la app estima sus calorías, proteínas, grasas y
+          carbohidratos. Publicada en el App Store en 174 países, con prueba gratis.</p>
+        <div class="acciones">
+          <a class="pri" href="https://apps.apple.com/cl/app/id6835375797" target="_blank" rel="noopener">Ver en el App Store →</a>
+        </div>
       </article>
     </div>
   </div>
